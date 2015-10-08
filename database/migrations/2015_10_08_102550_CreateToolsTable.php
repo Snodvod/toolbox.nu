@@ -16,6 +16,7 @@ class CreateToolsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('brand');
+            $table->string('type');
             $table->date('bought_at');
             $table->string('about');
             $table->timestamps();
