@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateToolUserTable extends Migration
+class CreateJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateToolUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('tool_user', function(Blueprint $table) {
+        Schema::create('jobs', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('tool_id');
-            $table->integer('user_id');
-
+            $table->string('name');
+            $table->integer('difficulty'); // Tussen 1 en 5 => controller validation?
+            $table->string('description');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateToolUserTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tool_user');
+        Schema::drop('jobs');
     }
 }

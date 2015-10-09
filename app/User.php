@@ -41,4 +41,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsToMany('App\Tool');
     }
+
+    public function expertises()
+    {
+        return $this->hasMany('App\Expertise');
+    }
 }

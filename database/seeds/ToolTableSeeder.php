@@ -22,5 +22,6 @@ class ToolTableSeeder extends Seeder
 	            'about' => str_random(30),
 	        ]);
     	}
+
     }
 }

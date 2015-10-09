@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateToolUserTable extends Migration
+class CreateExpertiseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateToolUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('tool_user', function(Blueprint $table) {
+        Schema::create('expertises', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('tool_id');
+            $table->string('title');
+            $table->string('description');
             $table->integer('user_id');
-
+            $table->integer('job_id');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateToolUserTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tool_user');
+        Schema::drop('expertises');
     }
 }

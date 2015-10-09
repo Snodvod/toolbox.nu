@@ -4,6 +4,8 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Tool;
+use App\Job;
+use App\Expertise;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +20,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserTableSeeder::class);
         $this->call(ToolTableSeeder::class);
+        $this->call(JobTableSeeder::class);
+        $this->call(ExpertiseTableSeeder::class);
+
+        //random relationships Tools - Users
 
         $tools = Tool::All();
         $users = User::All();
@@ -30,6 +36,29 @@ class DatabaseSeeder extends Seeder
             $tools->find($i)->users()->save($users->find($rnd));
         }
 
-        Model::reguard();
+        //random relationships Jobs - Tools
+        $jobs = Job::All();
+
+        //double for loop just to add some more tools to the jobs
+        for ($y=1; $y<=2 ; $y++) { 
+            for ($i=1; $i<=20; $i++) { 
+                $rnd = rand(1,50);
+                $jobs->find($i)->tools()->save($tools->find($rnd));
+            }
+        }
+
+        //random relationships Users-Expertise
+
+        $expertises = Expertise::All();
+
+        for ($i=1; $i<=50 ; $i++) {
+            $rndUser = $users->find(rand(1,50));
+            $rndJob = $jobs->find(rand(1,50));
+            $expertise = $expertises->find($i);
+            $expertise->user()->associate($rndUser);
+            $expertise->job()->associate($rndJob);
+            $expertise->save();
+
+        }
     }
 }
