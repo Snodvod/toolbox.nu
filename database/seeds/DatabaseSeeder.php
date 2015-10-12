@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ToolTableSeeder::class);
         $this->call(JobTableSeeder::class);
         $this->call(ExpertiseTableSeeder::class);
+        $this->call(AccesslevelTableSeeder::class);
 
         //random relationships Tools - Users
 
