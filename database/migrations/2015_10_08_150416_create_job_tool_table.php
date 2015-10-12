@@ -14,8 +14,10 @@ class CreateJobToolTable extends Migration
     {
         Schema::create('job_tool', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('job_id');
-            $table->integer('tool_id');
+            $table->integer('job_id')->unsigned();
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
+            $table->integer('tool_id')->unsigned();
+            $table->foreign('tool_id')->references('id')->on('tools')->onDelete('cascade');
         });
     }
 
