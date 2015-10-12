@@ -1,65 +1,11 @@
 body {
-  font-family: "Roboto Slab", sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  color: #1B1C1B; }
-
-a {
-  color: #434542;
-  text-decoration: none; }
-  a:hover {
-    color: #1B1C1B; }
+  height: 100%; }
 
 #landing {
-  background: url("/img/landing.jpeg");
-  background-size: cover;
-  background-position: center bottom;
-  height: 600px;
-  width: 100%; }
-  #landing .nav {
-    position: relative;
-    height: 60px;
-    line-height: 60px;
-    width: 100%;
-    background: #FCFCFC;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0; }
-
-#nav_logo {
-  vertical-align: middle;
-  margin-top: 3px; }
-  #nav_logo img {
-    height: 20px; }
-
-#nav_main {
-  padding: 0 50px;
-  font-weight: 800; }
-
-#nav_auth {
-  margin-left: auto; }
-  #nav_auth a {
-    padding: 0 10px; }
-
-.col {
-  height: auto;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-
-.col-25 {
-  width: 25%; }
-
-.col-50 {
-  width: 50%; }
-
-.col-65 {
-  width: 65%; }
-
-.centered {
-  margin: auto; }
+  background: #000;
+  height: 100vh; }
 
 /*# sourceMappingURL=app.css.map */
