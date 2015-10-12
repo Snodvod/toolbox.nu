@@ -46,4 +46,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Expertise');
     }
+
+    public function accesslevel()
+    {
+        return $this->belongsTo('App\Accesslevel');
+    }
 }
