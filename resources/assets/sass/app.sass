@@ -1,11 +1,76 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+//Fonts
+$accent: "Roboto Slab", sans-serif
+
+//Colors
+$green: #496E31
+$yellow: #E89500
+$dark: #1B1C1B
+$less_dark: #434542
+$light: #FCFCFC
+
 body
+    font-family: $accent
     margin:0
     padding:0
     width:100%
     height:100%
+    color:$dark
+    
+a
+    color: $less_dark
+    text-decoration: none
+    &:hover
+        color:$dark
 
 #landing
-    background:#000
-    height:100vh
+    background: url('/img/landing.jpeg')
+    background-size: cover
+    background-position: center bottom
+    height:600px
+    width: 100%
+    .nav
+        position: relative
+        height:60px
+        line-height:60px
+        width:100%
+        background:$light
+        position: fixed
+        z-index:9999
+        top:0
+        left:0
+
+#nav_logo
+    vertical-align: middle
+    margin-top:3px
+    img
+        height:20px
+        
+#nav_main
+    padding: 0 50px
+    font-weight:800
+
+#nav_auth
+    margin-left: auto
+    a
+        padding: 0 10px
+
+    
+//////////////////////////////////////Cols//////////////////////////////////////////
+
+.col
+    height: auto
+    display: flex
+.col-25  
+    width:25%
+    
+.col-50
+    width: 50%
+        
+.col-65
+    width:65%
+
+.centered
+    margin: auto
+        
