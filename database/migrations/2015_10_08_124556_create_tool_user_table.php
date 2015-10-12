@@ -14,8 +14,10 @@ class CreateToolUserTable extends Migration
     {
         Schema::create('tool_user', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('tool_id');
-            $table->integer('user_id');
+            $table->integer('tool_id')->unsigned();
+            $table->foreign('tool_id')->references('id')->on('tools')->onDelete('cascade');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
         });
     }
