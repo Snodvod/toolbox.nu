@@ -9,6 +9,7 @@ $green: #496E31
 $yellow: #E89500
 $dark: #1B1C1B
 $less_dark: #434542
+$less_light: #F0F0F0
 $light: #FCFCFC
 
 body
@@ -24,6 +25,26 @@ a
     text-decoration: none
     &:hover
         color:$dark
+    
+button
+    cursor: pointer
+    margin: auto
+    background:$yellow
+    border:0
+    font-family:$accent
+    color:$light
+    font-weight: bold
+    font-size:11pt
+    padding:10px 20px
+    &:hover
+        background:#E8A430
+    &:active
+        background:#A86C00
+
+.main_content
+    margin-top: 60px
+    padding: 100px 0
+    background: $less_light
 
 #landing
     position: relative
@@ -33,15 +54,16 @@ a
     background-position: bottom center
     background-repeat: no-repeat
     background-size: 100% 
-    .nav
-        height:60px
-        line-height:60px
-        width:100%
-        background:$light
-        position: fixed
-        z-index:9999
-        top:0
-        left:0
+
+.nav
+    height:60px
+    line-height:60px
+    width:100%
+    background:$light
+    position: fixed
+    z-index:9999
+    top:0
+    left:0
 
 @media only screen and (max-width: 1168px)
     #landing 
@@ -59,9 +81,37 @@ a
     font-weight:800
 
 #nav_auth
+    display: flex
+    position: relative
     margin-left: auto
     a
         padding: 0 10px
+
+#showlogin
+    color:$less_dark
+    padding: 0 10px
+    cursor: pointer
+    &:hover
+        color: $dark
+
+#login_box
+    display: none
+    top: 60px
+    position: absolute
+    background: #E2E2E2
+    font-family: $main
+    line-height: 25px
+    right:0
+    color: $less_dark
+    form
+        margin:25px 35px
+        input
+            background:$light
+            border: 0
+            padding: 5px 5px
+            margin-bottom: 5px
+        .checkbox
+            margin-bottom: 5px
 
 #landing_content
     position: absolute
@@ -80,8 +130,6 @@ a
         font-family: $main
         color: $less_dark
         
-        
-        
 #landing_search
     color:$light
     background: rgba(27,28,27,0.8)
@@ -91,20 +139,6 @@ a
     width:125px
     margin: auto
     margin-left: 20px
-    button
-        cursor: pointer
-        margin: auto
-        background:$yellow
-        border:0
-        font-family:$accent
-        color:$light
-        font-weight: bold
-        font-size:14pt
-        padding:15px 30px
-        &:hover
-            background:#E8A430
-        &:active
-            background:#A86C00
         
 #search_box
     display: flex
@@ -126,6 +160,9 @@ a
         padding: 15px 15px
         color:$light
         font-weight: bold
+    button
+        font-size:14pt
+        padding:15px 30px
 
 @mixin placeholder 
     ::-webkit-input-placeholder 
@@ -141,12 +178,24 @@ a
     color: #E2E2E2
     font-family: $main !important
     font-weight: bold
-
-.main_content
-    height:500px
-    background:#FCFCFC
-    z-index: 5
-
+    
+#register_box
+    h1
+        margin-top: 0
+    form
+        font-family: $main
+        label
+            display: block
+            margin-bottom: 5px
+        input
+            max-width: 490px
+            font-family: $main
+            width: 100%
+            padding: 10px
+            border: 0
+            margin-bottom: 20px
+        button
+            margin-top:5px
 
     
 //////////////////////////////////////Cols//////////////////////////////////////////
