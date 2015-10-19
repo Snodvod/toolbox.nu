@@ -22,6 +22,9 @@
                 <td>{!! Form::text('email') !!}</td>
                 <td>{!! Form::submit('Update') !!}</td>
             {!! Form::close() !!}
+            {!! Form::model($user, array('route' => array('users.destroy', $user->id), 'method' => 'delete')) !!}
+                <td>{!! Form::submit('Delete') !!}</td>
+            {!! Form::close() !!}
         </tr>
     @endforeach
     </table>
