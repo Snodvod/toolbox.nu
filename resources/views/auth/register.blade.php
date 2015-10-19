@@ -1,4 +1,4 @@
-@extends('app') @section('content') @section('navigation')
+@extends('app') @section('navigation')
 <div id="nav_logo">
     <a href="/"><img src="/img/logo.svg"></a>
 </div>
@@ -42,9 +42,10 @@
     </div>
 </div>
 @stop
+@section('content') 
 <div class="main_content">
     <div id="register_box" class="col-50 centered">
-        <h1>Registreer je hier</h1>
+        <h1>Join the club!</h1>
         <form method="POST" action="/auth/register">
             {!! csrf_field() !!}
 

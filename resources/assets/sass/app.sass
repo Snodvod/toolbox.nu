@@ -17,8 +17,16 @@ body
     margin:0
     padding:0
     width:100%
-    height:2000px
+    height: auto
     color:$dark
+
+textarea
+    &:focus
+        outline: 0
+
+input
+    &:focus
+        outline: 0
     
 a
     color: $less_dark
@@ -42,8 +50,8 @@ button
         background:#A86C00
 
 .main_content
-    margin-top: 60px
-    padding: 100px 0
+    margin-top: 80px
+    padding: 20px 0
     background: $less_light
 
 #landing
@@ -198,6 +206,8 @@ button
         padding: 15px 15px
         color:$light
         font-weight: bold
+        &:focus
+            border-color: $yellow
     button
         font-size:14pt
         padding:15px 30px
@@ -218,8 +228,7 @@ button
     font-weight: bold
     
 #register_box
-    h1
-        margin-top: 0
+    margin-top: 50px
     form
         font-family: $main
         label

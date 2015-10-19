@@ -6,13 +6,17 @@ $(document).ready(function () {
 
 function showLogin() {
     $('#showlogin').click(function () {
-        if ($('.nav_item').hasClass('active')) {
+        
+        if (!$('.nav_item').hasClass('active')) {
+            $('#login_box').toggle();
+            $('#showlogin').toggleClass("highlight").toggleClass("active");
+        } else if($('.nav_item').hasClass('active')) {
             $('.nav_item').removeClass('active');
 
             $('#login_box').show();
             $('#showlogin').addClass("highlight").addClass("active");
         } else {
-            $('#register').addClass('active');
+            $('.nav_item').addClass('active');
 
             $('#login_box').hide();
             $('#showlogin').removeClass("highlight").removeClass("active");

@@ -1,4 +1,4 @@
-@extends('app') @section('content') @section('navigation')
+@extends('app') @section('navigation')
 <div id="nav_logo">
     <a href="/"><img src="/img/logo.svg"></a>
 </div>
@@ -42,6 +42,8 @@
     </div>
 </div>
 @stop
+@section('content')
 <div class="main_content">
     <h1>Hello</h1>
 </div>
+@stop
