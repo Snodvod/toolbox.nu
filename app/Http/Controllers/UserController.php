@@ -50,6 +50,19 @@ class UserController extends Controller
     {
         //
     }
+    
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+//        $user = User::findOrFail($id);
+//        return index();
+    }
+    
     /**
      * Update the specified resource in storage.
      *
@@ -59,7 +72,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->adress = $request->adress;
+        $user->email = $request->email;
+        $user->save();
+        return redirect('/users');
     }
 
     /**

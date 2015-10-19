@@ -6,6 +6,26 @@
 @section('content')
 
 <div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Adress</th>
+            <th>Email</th>
+        </tr>
+    @foreach ($users as $user)
+        <tr>
+            {!! Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'put')) !!}
+                <td>{{ $user->id }}</td>
+                <td>{!! Form::text('name') !!}</td>
+                <td>{!! Form::text('adress') !!}</td>
+                <td>{!! Form::text('email') !!}</td>
+                <td>{!! Form::submit('Update') !!}</td>
+            {!! Form::close() !!}
+        </tr>
+    @endforeach
+    </table>
+<!--
 	<form action="/users/edit" method="POST">
 		{!! method_field('PUT') !!}
 		<table>
@@ -27,6 +47,7 @@
 
 		</table>
 	</form>
+-->
 </div>
 
 @stop
