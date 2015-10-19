@@ -14,7 +14,7 @@
             <div class="col col-50">
                 <div id="nav_auth">
                     @if (Auth::check())
-                    <a href="/auth/getLogout">Logout</a> 
+                    <a href="/auth/logout">Logout</a> 
                     @else
                     <a href="/auth/register">Registreren</a>
                     <div id="showlogin">Login</div> 
