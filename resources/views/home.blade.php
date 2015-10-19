@@ -14,9 +14,11 @@
             <div class="col col-50">
                 <div id="nav_auth">
                     @if (Auth::check())
-                    <a href="/auth/getLogout">Logout</a> @else
+                    <a href="/auth/getLogout">Logout</a> 
+                    @else
                     <a href="/auth/register">Registreren</a>
-                    <div id="showlogin">Login</div> @endif
+                    <div id="showlogin">Login</div> 
+                    @endif
                     <div id="login_box">
                         <form method="POST" action="/auth/login">
                             {!! csrf_field() !!}
