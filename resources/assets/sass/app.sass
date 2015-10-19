@@ -56,8 +56,9 @@ button
     background-size: 100% 
 
 .nav
-    height:60px
-    line-height:60px
+    border-bottom: 2px solid $yellow
+    height:80px
+    line-height:80px
     width:100%
     background:$light
     position: fixed
@@ -71,8 +72,8 @@ button
 
 
 #nav_logo
-    vertical-align: middle
-    margin-top:1px
+    height: 80px
+    margin-top: 3px
     img
         height:20px
         
@@ -83,6 +84,7 @@ button
 #nav_auth
     display: flex
     position: relative
+    height: 80px !important
     margin-left: auto
     a
         padding: 0 10px
@@ -94,9 +96,45 @@ button
     &:hover
         color: $dark
 
+.highlight
+    text-decoration: underline
+
+.active
+    position: relative
+    background: $light
+    &:after
+        top: 100%
+        left: 50%
+        border: solid transparent
+        content: "";
+        height: 0
+        width: 0
+        position: absolute
+        pointer-events: none
+        border-color: rgba(73,110,49,0)
+        border-top-color: $light
+        border-width: 10px
+        margin-left: -10px
+        z-index: 99999
+    &:before
+        top: 100%
+        left: 50%
+        border: solid transparent
+        content: "";
+        height: 0
+        width: 0
+        position: absolute
+        pointer-events: none
+        border-color: rgba(73,110,49,0)
+        border-top-color: $yellow
+        border-width: 13px
+        margin-left: -13px
+        z-index: 99998
+
 #login_box
+    border-top: 2px solid $yellow
     display: none
-    top: 60px
+    top: 80px
     position: absolute
     background: #E2E2E2
     font-family: $main
@@ -133,7 +171,7 @@ button
 #landing_search
     color:$light
     background: rgba(27,28,27,0.8)
-    padding:50px
+    padding:35px
     
 .search_button
     width:125px
@@ -203,6 +241,8 @@ button
 .col
     height: auto
     display: flex
+    width: 100%
+    
 .col-25  
     width:25%
     

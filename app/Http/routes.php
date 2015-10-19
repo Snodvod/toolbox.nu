@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-
+Route::get('/tools', 'ToolController@index');
 Route::resource('users', 'UserController');
 
 // Authentication routes...
