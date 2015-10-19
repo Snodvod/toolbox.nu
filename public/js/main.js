@@ -6,10 +6,6 @@ $(document).ready(function () {
 
 function showLogin() {
     $('#showlogin').click(function () {
-
-        $('#login_box').show();
-        $('#showlogin').addClass("highlight").addClass("active");
-
         if ($('.nav_item').hasClass('active')) {
             $('.nav_item').removeClass('active');
 
