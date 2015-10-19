@@ -13,7 +13,7 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($userId)
     {
         return view('tools');
     }
@@ -23,7 +23,7 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($userId)
     {
         //
     }
@@ -34,7 +34,7 @@ class ToolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $userId)
     {
         //
     }
@@ -45,7 +45,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($userId, $id)
     {
         //
     }
@@ -56,7 +56,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($userId, $id)
     {
         //
     }
@@ -68,7 +68,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $userId, $id)
     {
         //
     }
@@ -79,7 +79,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($userId, $id)
     {
         //
     }
