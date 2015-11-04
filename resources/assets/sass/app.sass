@@ -1,265 +1,449 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 //Fonts
-$accent: "Roboto Slab", serif
-$main: "Open Sans", sans-serif
+$main: "Roboto", serif
+$accent: "Open Sans", sans-serif
 
 //Colors
 $green: #496E31
+$bright-green: #7CBA53
+$red: #D42B37
 $yellow: #E89500
 $dark: #1B1C1B
+$darkish: #313331
 $less_dark: #434542
-$less_light: #F0F0F0
+$less_lightish: #A5ABA3
+$lightish: #DBDBDB
+$less_light: #F5F5F5
 $light: #FCFCFC
 
 body
-    font-family: $accent
-    margin:0
-    padding:0
-    width:100%
-    height: auto
-    color:$dark
+  font-family: $accent
+  margin: 0
+  padding: 0
+  width: 100%
+  height: auto
+  color: $dark
+
+p
+  font-family: $main
+  color: $less_lightish
 
 textarea
-    &:focus
-        outline: 0
+  &:focus
+    outline: 0
 
 input
-    &:focus
-        outline: 0
-    
+  &:focus
+    outline: 0
+
 a
-    color: $less_dark
-    text-decoration: none
-    &:hover
-        color:$dark
-    
+  color: $less_dark
+  text-decoration: none
+  &:hover
+    color: $dark
+
 button
-    cursor: pointer
-    margin: auto
-    background:$yellow
-    border:0
-    font-family:$accent
-    color:$light
-    font-weight: bold
-    font-size:11pt
-    padding:10px 20px
-    &:hover
-        background:#E8A430
-    &:active
-        background:#A86C00
+  cursor: pointer
+  margin: auto
+  background: $yellow
+  border: 0
+  font-family: $accent
+  color: $light
+  font-weight: bold
+  font-size: 11pt
+  padding: 10px 20px
+  &:hover
+    background: #E8A430
+  &:active
+    background: #A86C00
+
+//GRID SYSTEM
+
+.grid
+  width: 80%
+  margin: auto
+  .item
+    border-radius: 4px
+    width: 20%
+    background: $less_light
+    color: $less_dark
+    overflow: hidden
+    box-shadow: 1px 1px 5px rgba(67,69,66,0.5)
+    img
+      width: 100%
+    .item_info
+      padding: 0px 25px
+      .info_header
+        display: flex
+        justify-content: space-between
+        h4
+          margin-bottom: 2px
+        h5
+          margin-bottom: 0
+    .item_price
+      text-align: center
+      color: $less_lightish
+      h2
+        margin-top: 15px
+        font-size: 24pt
+        span
+          font-size: 12pt
+
+
+//////////////////////////////
+
+.success
+  background: $bright-green
+  padding: 5px 10px
+  border-radius: 4px
+  color: $light
+
+.error
+  background: $red
+  padding: 5px 10px
+  border-radius: 4px
+  color: $light
 
 .main_content
-    margin-top: 80px
-    padding: 20px 0
-    background: $less_light
+  margin-top: 80px
+  padding-top: 20px
+  background: $less_light
 
 #landing
-    position: relative
-    height:100vh
-    width: 100%
-    background: url('/img/landing.jpeg')
-    background-position: bottom center
-    background-repeat: no-repeat
-    background-size: 100% 
+  position: relative
+  height: 100vh
+  width: 100%
+  background: url('/img/landing_overlay.jpeg') no-repeat bottom center
+  background-size: 100%
 
 .nav
-    border-bottom: 2px solid $yellow
-    height:80px
-    line-height:80px
-    width:100%
-    background:$light
-    position: fixed
-    z-index:9999
-    top:0
-    left:0
+  border-bottom: 2px solid $yellow
+  height: 80px
+  line-height: 80px
+  width: 100%
+  background: $light
+  position: fixed
+  z-index: 9999
+  top: 0
+  left: 0
 
 @media only screen and (max-width: 1168px)
-    #landing 
-        background-size: 1168px
-
+  #landing
+    background-size: 1168px
 
 #nav_logo
-    height: 80px
-    margin-top: 3px
-    img
-        height:20px
-        
+  height: 80px
+  margin-top: 3px
+  img
+    height: 20px
+
 #nav_main
-    padding: 0 50px
-    font-weight:800
+  padding: 0 50px
+  font-weight: 500
 
 #nav_auth
-    display: flex
-    position: relative
-    height: 80px !important
-    margin-left: auto
-    a
-        padding: 0 10px
+  display: flex
+  position: relative
+  height: 80px !important
+  margin-left: auto
+  a
+    padding: 0 10px
 
 #showlogin
-    color:$less_dark
-    padding: 0 10px
-    cursor: pointer
-    &:hover
-        color: $dark
+  color: $less_dark
+  padding: 0 10px
+  cursor: pointer
+  &:hover
+    color: $dark
 
 .highlight
-    text-decoration: underline
+  text-decoration: underline
 
 .active
-    position: relative
-    background: $light
-    &:after
-        top: 100%
-        left: 50%
-        border: solid transparent
-        content: "";
-        height: 0
-        width: 0
-        position: absolute
-        pointer-events: none
-        border-color: rgba(73,110,49,0)
-        border-top-color: $light
-        border-width: 10px
-        margin-left: -10px
-        z-index: 99999
-    &:before
-        top: 100%
-        left: 50%
-        border: solid transparent
-        content: "";
-        height: 0
-        width: 0
-        position: absolute
-        pointer-events: none
-        border-color: rgba(73,110,49,0)
-        border-top-color: $yellow
-        border-width: 13px
-        margin-left: -13px
-        z-index: 99998
+  position: relative
+  background: $light
+  &:after
+    top: 100%
+    left: 50%
+    content: ""
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+    border: 10px solid rgba(73, 110, 49, 0)
+    border-top-color: $light
+    margin-left: -10px
+    z-index: 99999
+  &:before
+    top: 100%
+    left: 50%
+    content: ""
+    height: 0
+    width: 0
+    position: absolute
+    pointer-events: none
+    border: 13px solid rgba(73, 110, 49, 0)
+    border-top-color: $yellow
+    margin-left: -13px
+    z-index: 99998
 
 #login_box
-    border-top: 2px solid $yellow
-    display: none
-    top: 80px
-    position: absolute
-    background: #E2E2E2
-    font-family: $main
-    line-height: 25px
-    right:0
-    color: $less_dark
-    form
-        margin:25px 35px
-        input
-            background:$light
-            border: 0
-            padding: 5px 5px
-            margin-bottom: 5px
-        .checkbox
-            margin-bottom: 5px
+  border-top: 2px solid $yellow
+  display: none
+  top: 80px
+  position: absolute
+  background: #F5F5F5
+  font-family: $main
+  line-height: 25px
+  right: 0
+  color: $less_dark
+  form
+    margin: 25px 35px
+    input
+      background: $light
+      border: 0
+      padding: 5px 5px
+      margin-bottom: 5px
+    .checkbox
+      margin-bottom: 5px
 
 #landing_content
-    position: absolute
-    top:50%
-    left:50%
-    transform: translate(-50%, -50%)
+  width: 100%
+  position: absolute
+  top: 65%
+  left: 50%
+  transform: translate(-50%, -50%)
 
 #landing_title
-    padding:50px 0
-    h1
-        font-size: 60pt
-        font-weight:800
-        color:$light
-        text-shadow: 2px 2px $less_dark
-    p
-        font-family: $main
-        color: $less_dark
-        
-#landing_search
-    color:$light
-    background: rgba(27,28,27,0.8)
-    padding:35px
-    
-.search_button
-    width:125px
-    margin: auto
-    margin-left: 20px
-        
-#search_box
-    display: flex
-    align-items: baseline
+  padding-top: 225px
+  width: 90%
+  margin: auto
+  text-align: center
+  h1
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4)
+    font-size: 65pt
+    font-weight: 100
+    //text-transform: uppercase
+    letter-spacing: 10px
+    color: $light
+    span
+      color: $yellow
+  p
     font-family: $main
-    p
-        font-weight: bold
-        margin:0
-        white-space: nowrap
-        margin: 0 20px
-        &:first-child
-            margin-left:0
-    input
-        line-height:16px
-        font-size: 16px
-        width:100px
-        background:0
-        border: 3px solid $light
-        padding: 15px 15px
-        color:$light
-        font-weight: bold
-        &:focus
-            border-color: $yellow
-    button
-        font-size:14pt
-        padding:15px 30px
+    color: $less_dark
 
-@mixin placeholder 
-    ::-webkit-input-placeholder 
-        @content
-    :-moz-placeholder           
-        @content
-    ::-moz-placeholder          
-        @content
-    :-ms-input-placeholder      
-        @content  
+#landing_search
+  color: $light
+  background: rgba(27, 28, 27, 0.8)
+  padding: 35px 0
+
+.search_button
+  width: 125px
+  margin: auto auto auto 20px
+
+#search_box
+  width: 50%
+  margin: auto
+  text-align: center
+  font-family: $main
+  border-radius: 5px
+  p
+    font-weight: bold
+    margin: 0
+    white-space: nowrap
+    margin: 0 20px
+    &:first-child
+      margin-left: 0
+  input
+    height: 20px
+    margin-left: -4px
+    line-height: 14px
+    font-size: 14px
+    background: $light
+    border: 0
+    border-left: 1px solid #C2C2C2
+    padding: 15px 15px
+    color: $less_dark
+    &:focus
+      border-color: $yellow
+  .search_button
+    margin: -4px
+    display: inline
+  button
+    font-weight: 600
+    transform: translateY(1px)
+    font-size: 15px
+    padding: 15px 30px
+
+@media only screen and (max-width: 1168px)
+  #search_box
+    width: 100%
+
+@mixin placeholder
+  ::-webkit-input-placeholder
+    @content
+  ::-moz-placeholder
+    @content
+  ::-moz-placeholder
+    @content
+  ::-ms-input-placeholder
+    @content
 
 @include placeholder
-    color: #E2E2E2
-    font-family: $main !important
-    font-weight: bold
-    
-#register_box
-    margin-top: 50px
-    form
-        font-family: $main
-        label
-            display: block
-            margin-bottom: 5px
-        input
-            max-width: 490px
-            font-family: $main
-            width: 100%
-            padding: 10px
-            border: 0
-            margin-bottom: 20px
-        button
-            margin-top:5px
+  font-family: $main !important
+  color: #7C7C7C
 
-    
+#register_box
+  margin-top: 50px
+  form
+    font-family: $main
+    label
+      display: block
+      margin-bottom: 5px
+    input
+      max-width: 490px
+      font-family: $main
+      width: 100%
+      padding: 10px
+      border: 0
+      margin-bottom: 20px
+    button
+      margin-top: 5px
+
+//////////////////////////////////////Profile///////////////////////////////////////
+
+#divider
+  border-bottom: 1px solid $lightish
+  position: relative
+  z-index: 1
+
+.profile_header
+  width: 75%
+  margin: 100px auto 50px auto
+  #picture
+    width: 40%
+    display: inline-block
+    margin-right: 35px
+    text-align: right
+    vertical-align: middle
+    img
+      border-radius: 50%
+      width: 200px
+  .info
+    width: 40%
+    max-height: 200px
+    display: inline-block
+    vertical-align: middle
+    h1
+      margin: 0 0 5px 0
+      color: $less_dark
+      font-weight: 600
+    p
+      width: 100%
+      max-height: 80px
+  .profile_location
+    font-weight: 600
+    color: $less_dark
+    i
+      font-size: 14pt
+      padding-right: 10px
+      color: $yellow
+
+.profile_action_buttons
+  margin: 25px auto
+  button
+    width: 150px
+    padding: 15px 0
+    &:first-child
+      margin-right: 20px
+      background: $darkish
+      &:hover
+        background: $less_dark
+      &:active
+        background: $dark
+
+.profile_stats
+  display: block
+  margin: 50px auto auto auto
+  ul
+    list-style-type: none
+    padding: 0
+    transform: translateY(1px)
+    li
+      border-top: 1px solid $lightish
+      border-left: 1px solid $lightish
+      float: left
+      padding: 30px 75px
+      width: 75px
+      text-align: center
+      h4
+        margin: 0
+        font-weight: 400
+        color: $less_lightish
+        font-size: 10.5pt
+      p
+        margin: 0
+        font-weight: bold
+        font-size: 20pt
+        color: $less_dark
+        span
+          font-size: 11pt
+      &:last-child
+        border-right: 1px solid $lightish
+    .active_tab
+      background: $light
+      z-index: 9
+      h4
+        color: $less_dark
+        font-weight: 600
+      p
+        color: $yellow
+
+.profile_tabs
+  background: $light
+  height: 800px
+  section
+    padding-top: 100px
+    display: none
+    &:first-of-type
+      display: block
+
+//////////////////////////////////////Stars/////////////////////////////////////////
+
+.rating
+  span
+    display: inline-block
+    position: relative
+    i
+      color: $yellow
+      &:hover
+        color: $yellow
+    &:last-child i
+      color: $lightish
+  #separator
+    padding: 0 15px
+    padding: 0 15px
+
 //////////////////////////////////////Cols//////////////////////////////////////////
 
 .col
-    height: auto
-    display: flex
-    width: 100%
-    
-.col-25  
-    width:25%
-    
+  height: auto
+  display: flex
+  width: 100%
+
+.col-25
+  width: 25%
+  float: left
+
 .col-50
-    width: 50%
-        
+  width: 50%
+  float: left
+
 .col-65
-    width:65%
+  width: 65%
+  float: left
 
 .centered
-    margin: auto
+  margin: auto
+  float: none

@@ -14,7 +14,13 @@
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UserController');
 Route::resource('users.tools', 'ToolController');
-
+Route::get('/tools', 'ToolController@index');
+Route::get('/profile', function() {
+    
+    return view('profile/index');
+    
+});
+    
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

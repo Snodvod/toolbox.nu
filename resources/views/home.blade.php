@@ -35,29 +35,22 @@
         </form>
     </div>
 </div>
-@stop
-
-@section('content')
+@stop @section('content')
 <div id="landing">
+    <div id="landing_title">
+        <h1>Build it <span>together.</span></h1>
+    </div>
     <div id="landing_content">
-        <!--<div id="landing_title">
-            <h1>Add generic title here</h1>
-            <p id="subtext">Hic vidisse ut ullamco, ipsum hic excepteur ut irure. Culpa non ab aliqua 
-                doctrina, veniam se eu noster nescius. Ea si familiaritatem, lorem ab fabulas ad 
-                vidisse dolore incididunt iis iis eram voluptatibus. Commodo dolore nulla 
-                offendit illum est enim nescius comprehenderit.</p>
-        </div>-->
         <div id="landing_search">
             <form>
                 <div id="search_box">
-                    <p>Ik zoek een</p>
-                    <input placeholder="Tool">
-                    <p>van</p>
-                    <input placeholder="Begindatum">
-                    <p>tot</p>
-                    <input placeholder="Einddatum">
-                    <div class="search_button">
-                        <button type="submit">Zoeken</button>
+                    <div id="form">
+                        <input placeholder="Ik zoek naar..">
+                        <input placeholder="Start">
+                        <input placeholder="Einde">
+                        <div class="search_button">
+                            <button type="submit">Zoeken</button>
+                        </div>
                     </div>
                 </div>
             </form>

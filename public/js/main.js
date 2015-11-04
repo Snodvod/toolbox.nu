@@ -1,7 +1,22 @@
 $(document).ready(function () {
 
-    showLogin();
+    var wall = new freewall('.grid');
+    wall.reset({
+        selector: '.item',
+        animate: true,
+        cellW: 350,
+        cellH: 425,
+        gutterX: 40,
+        gutterY: 50,
+        onResize: function() {
+            wall.refresh();
+        }
+    });
+    wall.fitWidth();
+    $(window).trigger('resize');
 
+    showLogin();
+    changeActiveClass();
 });
 
 function showLogin() {
@@ -21,5 +36,24 @@ function showLogin() {
             $('#login_box').hide();
             $('#showlogin').removeClass("highlight").removeClass("active");
         }
+    });
+}
+
+function changeActiveClass() {
+    $('.profile_stats ul li a').click(function(e){
+        $('.profile_stats ul li').removeClass('active_tab');
+        $('.profile_tab').hide();
+
+        var $id = $(this).find('h4').text().toLowerCase();
+        console.log($id)
+        var $parent = $(this).parent();
+
+        if(!$parent.hasClass('active_tab'))
+        {
+            $parent.addClass('active_tab');
+            $('#profile_' + $id).show();
+        }
+        e.preventDefault();
+
     });
 }
