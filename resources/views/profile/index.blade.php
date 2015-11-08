@@ -15,8 +15,8 @@
             <div id="register" class="nav_item">
                 <a href="/auth/register">Registreren</a>
             </div>
-            <div class="nav_item">
-                <div id="showlogin">Login</div>
+            <div class="nav_item" id="showlogin">
+                <a href="#">Login</a>
             </div>@endif
         <div id="login_box">
             <form method="POST" action="/auth/login">
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <div class="col centered" id="divider">
-                <div class="profile_stats">
+                <div class="sub_menu">
                     <ul>
                         <li class="active_tab">
                             <a href="#">
@@ -115,121 +115,112 @@
                     </ul>
                 </div>
             </div>
-            <div class="profile_tabs">
-                <section class="profile_tab" id="profile_tools">
-                    <div class="grid">
-                        <div class="item">
-                            <img src="/img/landing.jpeg">
+            <div class="sub_menu_tabs">
+                <section class="sub_menu_tab" id="tab_tools">
+                    <div class="col col-80 centered">
+                        <div class="grid">
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
 
-                            <div class="item_info">
-                                <div class="info_header">
-                                    <h4>Schroevedraaier Set</h4>
-                                    <h5 class="success">VRIJ</h5>
-                                </div>
-                                <div class="rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <div class="item_price">
-                                    <h2>&euro; 1<span>/dag</span></h2>
+                                <div class="item_info">
+                                    <div class="info_header">
+                                        <h4>Schroevedraaier Set</h4>
+                                        <h4 class="item_price">&euro; 1</h4>
+                                    </div>
+                                    <div class="rating">
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <img src="/img/landing.jpeg">
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
 
-                            <div class="item_info">
-                                <div class="info_header">
-                                    <h4>Werkbank</h4>
-                                    <h5 class="success">VRIJ</h5>
-                                </div>
-                                <div class="rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <div class="item_price">
-                                    <h2>&euro; 3<span>/dag</span></h2>
+                                <div class="item_info">
+                                    <div class="info_header">
+                                        <h4>Werkbank</h4>
+                                        <h4 class="item_price">&euro; 3</h4>
+                                    </div>
+                                    <div class="rating">
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <img src="/img/landing.jpeg">
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
 
-                            <div class="item_info">
-                                <div class="info_header">
-                                    <h4>Meetinstrument</h4>
-                                    <h5 class="error">BEZET</h5>
+                                <div class="not_available">
+                                    <span>BEZET</span>
                                 </div>
-                                <div class="rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <div class="item_price">
-                                    <h2>&euro; 1.5<span>/dag</span></h2>
+
+                                <div class="item_info">
+                                    <div class="info_header">
+                                        <h4>Meetinstrument</h4>
+                                        <h4 class="item_price">&euro; 1.5</h4>
+                                    </div>
+                                    <div class="rating">
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <img src="/img/landing.jpeg">
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
 
-                            <div class="item_info">
-                                <div class="info_header">
-                                    <h4>Kettingzaag</h4>
-                                    <h5 class="success">VRIJ</h5>
-                                </div>
-                                <div class="rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <div class="item_price">
-                                    <h2>&euro; 5<span>/dag</span></h2>
+                                <div class="item_info">
+                                    <div class="info_header">
+                                        <h4>Kettingzaag</h4>
+                                        <h4 class="item_price">&euro; 5</h4>
+                                    </div>
+                                    <div class="rating">
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <img src="/img/landing.jpeg">
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
 
-                            <div class="item_info">
-                                <div class="info_header">
-                                    <h4>Hamer</h4>
-                                    <h5 class="error">BEZET</h5>
-                                </div>
-                                <div class="rating">
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                    <span><i class="fa fa-star"></i></span>
-                                </div>
-                                <div class="item_price">
-                                    <h2>&euro; 0.5<span>/dag</span></h2>
+                                <div class="item_info">
+                                    <div class="info_header">
+                                        <h4>Hamer</h4>
+                                        <h4 class="item_price">&euro; 0.5</h4>
+                                    </div>
+                                    <div class="rating">
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-                <section class="profile_tab" id="profile_contacten">
+                <section class="sub_menu_tab" id="tab_contacten">
                     Contacten
                 </section>
-                <section class="profile_tab" id="profile_reviews">
+                <section class="sub_menu_tab" id="tab_reviews">
                     Reviews
                 </section>
-                <section class="profile_tab" id="profile_rating">
+                <section class="sub_menu_tab" id="tab_rating">
                     Rating
                 </section>
-                <section class="profile_tab" id="profile_afstand">
+                <section class="sub_menu_tab" id="tab_afstand">
                     Afstand
                 </section>
             </div>

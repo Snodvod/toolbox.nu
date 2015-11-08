@@ -12,13 +12,14 @@ $yellow: #E89500
 $dark: #1B1C1B
 $darkish: #313331
 $less_dark: #434542
+$less_darkish: #676C66
 $less_lightish: #A5ABA3
 $lightish: #DBDBDB
 $less_light: #F5F5F5
 $light: #FCFCFC
 
 body
-  font-family: $accent
+  font-family: $main !important
   margin: 0
   padding: 0
   width: 100%
@@ -27,13 +28,32 @@ body
 
 p
   font-family: $main
-  color: $less_lightish
+  color: $less_darkish
+
+ul
+  margin-bottom: 0
+  list-style-type: none
+  padding: 0
 
 textarea
   &:focus
     outline: 0
 
+.button
+  padding: 8px 14px
+  background: $yellow
+  color: $light
+  font-weight: bold
+  &:hover
+    color: $light
+    background: #E8A430
+  &:active
+    color: $light
+    background: #A86C00
+
+
 input
+  font-family: $main
   &:focus
     outline: 0
 
@@ -42,6 +62,20 @@ a
   text-decoration: none
   &:hover
     color: $dark
+    text-decoration: none
+  &:active, &:focus
+    text-decoration: none
+
+h1, h2, h3, h4, h5, a
+  font-family: $accent
+  margin-bottom: 0
+  color: $less_dark
+
+img
+  vertical-align: baseline !important
+
+*
+  box-sizing: content-box !important
 
 button
   cursor: pointer
@@ -61,54 +95,111 @@ button
 //GRID SYSTEM
 
 .grid
-  width: 80%
-  margin: auto
+  width: 100%
+  margin-top: 15px
   .item
+    position: relative
     border-radius: 4px
     width: 20%
     background: $less_light
     color: $less_dark
     overflow: hidden
-    box-shadow: 1px 1px 5px rgba(67,69,66,0.5)
+    box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.1)
+    .overlay
+      z-index: 15
+      position: absolute
+      height: 100%
+      width: 100%
+      background: rgba(245, 245, 245, 0)
+    .item_author
+      position: absolute
+      width: 100%
+      top: 0
+      left: 0
+      padding: 15px
+      img
+        display: inline
+        width: 35px
+        border-radius: 50%
+        vertical-align: middle !important
+        box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
+      h4
+        margin-left: 10px
+        color: $light
+        font-weight: 100
+        text-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
+        display: inline
+        vertical-align: middle
+    &:hover .overlay
+      background: rgba(245, 245, 245, 0.4)
     img
       width: 100%
     .item_info
       padding: 0px 25px
       .info_header
+        margin-top: 10px
         display: flex
         justify-content: space-between
         h4
           margin-bottom: 2px
         h5
           margin-bottom: 0
-    .item_price
-      text-align: center
-      color: $less_lightish
-      h2
-        margin-top: 15px
-        font-size: 24pt
-        span
-          font-size: 12pt
-
-
-//////////////////////////////
-
-.success
+.item_price
   background: $bright-green
   padding: 5px 10px
   border-radius: 4px
   color: $light
+  font-weight: bold
+  display: inline-block
 
-.error
-  background: $red
-  padding: 5px 10px
-  border-radius: 4px
-  color: $light
+//////////////////////////////
+
+.not_available
+  position: absolute
+  right: -5px
+  top: -5px
+  z-index: 1
+  overflow: hidden
+  width: 75px
+  height: 75px
+  text-align: right
+  span
+    font-size: 10px
+    font-weight: bold
+    color: $light
+    text-transform: uppercase
+    text-align: center
+    line-height: 20px
+    transform: rotate(45deg)
+    -webkit-transform: rotate(45deg)
+    width: 100px
+    display: block
+    background: #79A70A
+    background: linear-gradient($red 0%, $red 100%)
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1)
+    position: absolute
+    top: 19px
+    right: -21px
+    &:before, &:after
+      content: ""
+      position: absolute
+      left: 0px
+      top: 100%
+      z-index: -1
+      border: 3px solid $red
+      border-right-color: transparent
+      border-bottom-color: transparent
 
 .main_content
   margin-top: 80px
-  padding-top: 20px
+  padding-top: 120px
   background: $less_light
+  .title
+    h1
+      font-weight: 100
+      span
+        font-weight: bold
+        color: $less_dark
 
 #landing
   position: relative
@@ -117,16 +208,56 @@ button
   background: url('/img/landing_overlay.jpeg') no-repeat bottom center
   background-size: 100%
 
+.nav_inverse
+  background: $darkish !important
+  border-top: 3px solid $yellow
+  border-bottom: 0 !important
+  .active
+    background: $darkish !important
+    &:after, &:before
+      border-top-color: $darkish !important
+  a
+    color: $lightish
+    &:hover
+      color: $light
+
 .nav
   border-bottom: 2px solid $yellow
   height: 80px
-  line-height: 80px
+  line-height: 79px
   width: 100%
   background: $light
   position: fixed
   z-index: 9999
   top: 0
   left: 0
+  .active
+    position: relative
+    background: $light
+    &:after
+      top: 100%
+      left: 50%
+      content: ""
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+      border: 10px solid rgba(73, 110, 49, 0)
+      border-top-color: $light
+      margin-left: -10px
+      z-index: 99999
+    &:before
+      top: 100%
+      left: 50%
+      content: ""
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+      border: 13px solid rgba(73, 110, 49, 0)
+      border-top-color: $yellow
+      margin-left: -13px
+      z-index: 99998
 
 @media only screen and (max-width: 1168px)
   #landing
@@ -150,50 +281,16 @@ button
   a
     padding: 0 10px
 
-#showlogin
-  color: $less_dark
-  padding: 0 10px
-  cursor: pointer
-  &:hover
-    color: $dark
-
 .highlight
   text-decoration: underline
-
-.active
-  position: relative
-  background: $light
-  &:after
-    top: 100%
-    left: 50%
-    content: ""
-    height: 0
-    width: 0
-    position: absolute
-    pointer-events: none
-    border: 10px solid rgba(73, 110, 49, 0)
-    border-top-color: $light
-    margin-left: -10px
-    z-index: 99999
-  &:before
-    top: 100%
-    left: 50%
-    content: ""
-    height: 0
-    width: 0
-    position: absolute
-    pointer-events: none
-    border: 13px solid rgba(73, 110, 49, 0)
-    border-top-color: $yellow
-    margin-left: -13px
-    z-index: 99998
 
 #login_box
   border-top: 2px solid $yellow
   display: none
   top: 80px
   position: absolute
-  background: #F5F5F5
+  background: $less_light
+  box-shadow: 0px 5px 11px -1px rgba(27, 28, 27, 0.2)
   font-family: $main
   line-height: 25px
   right: 0
@@ -311,16 +408,333 @@ button
     button
       margin-top: 5px
 
+//////////////////////////////////////TOOLS//////////////////////////////////////////
+#tools_heading
+  display: flex
+  justify-content: space-between
+  align-items: center
+  margin-bottom: 25px
+  .grid_options
+    height: 32px
+    display: flex
+    h4
+      font-size: 16px
+      color: $less_darkish
+      font-weight: 400
+      padding: 0 10px 0 0
+      margin: 0
+    .grid_view, .grid_sort, .grid_filter
+      height: 32px
+      padding: 0 25px
+      display: flex
+      align-items: center
+    .grid_view
+      li
+        display: inline
+        font-size: 10pt
+        padding: 5px 8px
+        margin: 0 2px
+        cursor: pointer
+        color: $less_lightish
+        background: $lightish
+        border-radius: 4px
+      .active
+        font-weight: bold
+        background: $yellow
+        color: $light
+    .grid_sort
+      select
+        font-family: $main
+        padding: 6px 10px
+        width: 200px
+        background: $lightish
+        color: $less_lightish
+        border-radius: 4px
+        border: 0
+        &:active, &:focus
+          outline: 0
+          border-bottom-left-radius: 0
+          border-bottom-right-radius: 0
+    .grid_filter
+      padding-right: 0
+      button
+        font-size: 14px
+        line-height: 12px
+        border-radius: 4px
+
+#tools
+  display: none
+  .tool_options
+    margin-bottom: 25px
+    width: 100%
+    .search
+      margin: 50px auto
+      display: flex
+      justify-content: space-around
+      width: 100%
+      input
+        border: 1px solid $lightish
+        padding: 5px 10px
+        width: 100%
+        height: 40px
+        line-height: 40px
+        vertical-align: top
+    .tool_filter
+      border-radius: 4px
+      background: $lightish
+      box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.1)
+      form
+        display: flex
+        padding: 30px 40px
+        input
+          border: 0
+          color: $less_darkish
+          background: 0
+          font-family: $accent
+          font-size: 20pt
+          margin-left: 25px
+          text-align: left
+        .slider_filter
+          width: 50%
+          display: flex
+          align-items: center
+          .flat-slider
+            width: 50%
+        .options
+          ul
+            display: flex
+            justify-content: space-between
+            list-style-type: none
+            padding: 0
+            .option_title
+              color: $less_darkish
+              margin-right: 20px
+              h4
+                white-space: nowrap
+            li
+              display: inline
+            .option_content
+              li
+                font-size: 10pt
+                padding: 2px 8px
+                cursor: pointer
+              .active
+                background: $yellow
+                color: $light
+                font-weight: bold
+                border-radius: 4px
+
+//#####################RANGE SLIDERS##########################//
+
+.flat-slider.ui-corner-all
+  border-radius: 0
+
+.flat-slider
+  .ui-corner-all
+    border-radius: 0
+
+.flat-slider.ui-slider
+  border: 0
+  background: $less_lightish
+  border-radius: 7px
+
+.flat-slider.ui-slider-horizontal
+  height: 8px
+
+.flat-slider.ui-slider-vertical
+  height: 15em
+  width: 6px
+
+.flat-slider
+  .ui-slider-handle
+    width: 20px
+    height: 20px
+    background: $light
+    box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.4)
+    border-radius: 50%
+    border: none
+    cursor: pointer
+
+.flat-slider.ui-slider-horizontal
+  .ui-slider-handle
+    top: 50%
+    margin-top: -10px
+
+.flat-slider.ui-slider-vertical
+  .ui-slider-handle
+    left: 50%
+    margin-left: -10px
+
+.flat-slider
+  .ui-slider-handle
+  &:hover
+    color: $lightish !important
+  &:active
+    color: $less_dark !important
+
+.flat-slider
+  .ui-slider-range
+    border: 0
+    border-radius: 7px
+    background: $yellow
+
+.flat-slider.ui-slider-horizontal
+  .ui-slider-range
+    top: 0
+    height: 8px
+
+.flat-slider.ui-slider-vertical
+  .ui-slider-range
+    left: 0
+    width: 6px
+
+.ui-state-focus
+  outline: 0 !important
+
+.ui-state-active
+  color: $less_dark
+
+.ui-state-hover
+  color: $lightish
+
+//////////////////////////////////////DETAILS///////////////////////////////////////
+.detail_pictures
+  .carousel
+    width: 90%
+    img
+      width: 100%
+
+.detail_wrapper
+  margin-bottom: 50px !important
+
+.detail_information
+  width: 100%
+  border-bottom: 1px solid $lightish
+  .detail_user
+    padding-bottom: 15px
+    border-bottom: 1px solid $lightish
+    display: flex
+    justify-content: space-between
+    align-items: center
+    img
+      display: inline
+      vertical-align: middle !important
+      width: 40px
+      border-radius: 50%
+    h4
+      display: inline
+      vertical-align: middle
+      margin-left: 10px
+      color: $less_darkish
+    a
+      font-size: 10pt
+      border-radius: 4px
+      margin: 0
+  .detail_content
+    h3
+      font-weight: bold
+    .rating
+      margin: 10px 0
+  .detail_pricing
+    border-radius: 4px
+    margin-top: 15px
+    .input-group
+      margin: 25px 0
+      div
+        display: inline-block
+        &:first-child
+          margin-right: 15px
+        &:last-child
+          margin-left: 15px
+      label
+        display: block
+        color: $less_darkish
+      input
+        border-radius: 4px
+        height: 20px
+        width: 100px
+        line-height: 14px
+        font-size: 14px
+        background: $less_light
+        border: 1px solid $less_lightish
+        padding: 10px 15px
+        color: $less_dark
+
+
+/////////////////////////////////////DATEPICKERS/////////////////////////////////////
+
+.ui-datepicker
+  box-shadow: 1px 1px 5px rgba(27,28,27,0.5)
+  overflow: hidden
+  font-family: $main
+  padding: 0
+  border: 0
+  .ui-datepicker-header
+    font-family: $accent
+    border-radius: 0
+    border: 0
+    background: $light
+    padding: 10px 0
+    a
+      margin-top: 9px
+      cursor: pointer
+    a.ui-state-hover
+      top: 2px
+      right: 2px
+      margin: 9px 0 0 0 !important
+      padding: 0 !important
+      background: 0 !important
+      border: 0 !important
+    .ui-datepicker-prev
+      .ui-icon
+        background-image: url('/img/icons/chevron-left.svg') !important
+        background-position: 0px 0px !important
+    .ui-datepicker-next
+      .ui-icon
+        background-image: url('/img/icons/chevron-right.svg') !important
+        background-position: 0px 0px !important
+    .ui-datepicker-title
+      color: $less_dark
+  table
+    margin: 0 -1px 0 0
+    thead
+      th
+        padding-bottom: 0
+        color: $less_darkish
+    tbody
+      td
+        padding: 0
+        height: 25px !important
+        width: 25px !important
+        border: 1px solid #E8E8E8
+        &:hover a
+          background: $yellow !important
+          color: $light !important
+        a, span
+          color: $less_dark
+          font-weight: bold !important
+          border: 0 !important
+          line-height: 25px
+          height: 100% !important
+          width: 89% !important
+          background: 0 !important
+          text-align: center
+        .ui-state-highlight
+          color: $less_dark
+        .ui-state-active
+          background: $yellow !important
+          color: $light !important
+
 //////////////////////////////////////Profile///////////////////////////////////////
 
-#divider
+.divider
   border-bottom: 1px solid $lightish
   position: relative
   z-index: 1
 
 .profile_header
   width: 75%
-  margin: 100px auto 50px auto
+  margin: auto auto 50px auto
   #picture
     width: 40%
     display: inline-block
@@ -336,7 +750,7 @@ button
     display: inline-block
     vertical-align: middle
     h1
-      margin: 0 0 5px 0
+      margin: 0 0 5px -2px
       color: $less_dark
       font-weight: 600
     p
@@ -353,6 +767,7 @@ button
 .profile_action_buttons
   margin: 25px auto
   button
+    border-radius: 8px
     width: 150px
     padding: 15px 0
     &:first-child
@@ -363,7 +778,7 @@ button
       &:active
         background: $dark
 
-.profile_stats
+.sub_menu
   display: block
   margin: 50px auto auto auto
   ul
@@ -375,9 +790,10 @@ button
       border-left: 1px solid $lightish
       float: left
       padding: 30px 75px
-      width: 75px
+      width: 100px
       text-align: center
       h4
+        width: 100%
         margin: 0
         font-weight: 400
         color: $less_lightish
@@ -400,7 +816,7 @@ button
       p
         color: $yellow
 
-.profile_tabs
+.sub_menu_tabs
   background: $light
   height: 800px
   section
@@ -412,6 +828,8 @@ button
 //////////////////////////////////////Stars/////////////////////////////////////////
 
 .rating
+  z-index: 1
+  margin: 5px 0
   span
     display: inline-block
     position: relative
@@ -436,12 +854,24 @@ button
   width: 25%
   float: left
 
+.col-35
+  width: 35%
+  float: left
+
 .col-50
   width: 50%
   float: left
 
 .col-65
   width: 65%
+  float: left
+
+.col-75
+  width: 75%
+  float: left
+
+.col-80
+  width: 80%
   float: left
 
 .centered

@@ -14,11 +14,19 @@
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UserController');
 Route::resource('users.tools', 'ToolController');
-Route::get('/tools', 'ToolController@index');
+Route::get('/tools', function(){
+
+    return view('tools/index');
+
+});
 Route::get('/profile', function() {
     
     return view('profile/index');
     
+});
+
+Route::get('/tools/detail/{product}', function(){
+   return view('tools/detail');
 });
     
 // Authentication routes...

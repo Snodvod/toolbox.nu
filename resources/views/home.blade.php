@@ -8,10 +8,15 @@
 </div>
 <div id="nav_auth">
     @if (Auth::check())
-    <a href="/auth/logout">Logout</a> @else
-    <a href="/auth/register">Registreren</a>
-    <div id="showlogin">Login</div>
-    @endif
+        <div class="nav_item">
+            <a href="/auth/getLogout">Logout</a>
+        </div>@else
+        <div id="register" class="nav_item">
+            <a href="/auth/register">Registreren</a>
+        </div>
+        <div class="nav_item" id="showlogin">
+            <a href="#">Login</a>
+        </div>@endif
     <div id="login_box">
         <form method="POST" action="/auth/login">
             {!! csrf_field() !!}

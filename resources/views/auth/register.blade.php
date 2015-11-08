@@ -4,20 +4,20 @@
 </div>
 <div id="nav_main">
     <div class="nav_item">
-        <a href="/tools">Tools</a>
+        <a href="/tools/index">Tools</a>
     </div>
 </div>
 <div id="nav_auth">
     @if (Auth::check())
-    <div class="nav_item">
-        <a href="/auth/getLogout">Logout</a>
-    </div>@else
-    <div id="register" class="active nav_item">
-        <a href="/auth/register">Registreren</a>
-    </div>
-    <div class="nav_item">
-        <div id="showlogin">Login</div>
-    </div>@endif
+        <div class="nav_item">
+            <a href="/auth/getLogout">Logout</a>
+        </div>@else
+        <div id="register" class="nav_item active">
+            <a href="/auth/register">Registreren</a>
+        </div>
+        <div class="nav_item" id="showlogin">
+            <a href="#">Login</a>
+        </div>@endif
     <div id="login_box">
         <form method="POST" action="/auth/login">
             {!! csrf_field() !!}
