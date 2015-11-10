@@ -54,7 +54,7 @@
 
                         <div class="rating">
                             <span class="profile_location">
-                                <i class="fa fa-map-marker"></i>Boom
+                                <i class="fa fa-map-marker"></i>Boom (<span>3.6 km</span>)
                             </span>
                             <span id="separator">//</span>
                             <span><i class="fa fa-star"></i></span>
@@ -79,7 +79,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col centered" id="divider">
+            <div class="col centered divider">
                 <div class="sub_menu">
                     <ul>
                         <li class="active_tab">
@@ -106,12 +106,6 @@
                                 <h4>Rating</h4>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                <p>3.6 <span>KM</span></p>
-                                <h4>Afstand</h4>
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -120,6 +114,7 @@
                     <div class="col col-80 centered">
                         <div class="grid">
                             <div class="item">
+                                <a href="#" class="overlay"></a>
                                 <img src="/img/landing.jpeg">
 
                                 <div class="item_info">
@@ -137,6 +132,7 @@
                                 </div>
                             </div>
                             <div class="item">
+                                <a href="tools/detail/werkbank" class="overlay"></a>
                                 <img src="/img/landing.jpeg">
 
                                 <div class="item_info">
@@ -154,6 +150,7 @@
                                 </div>
                             </div>
                             <div class="item">
+                                <a href="#" class="overlay"></a>
                                 <img src="/img/landing.jpeg">
 
                                 <div class="not_available">
@@ -175,6 +172,7 @@
                                 </div>
                             </div>
                             <div class="item">
+                                <a href="#" class="overlay"></a>
                                 <img src="/img/landing.jpeg">
 
                                 <div class="item_info">
@@ -192,6 +190,7 @@
                                 </div>
                             </div>
                             <div class="item">
+                                <a href="#" class="overlay"></a>
                                 <img src="/img/landing.jpeg">
 
                                 <div class="item_info">
@@ -211,17 +210,149 @@
                         </div>
                     </div>
                 </section>
-                <section class="sub_menu_tab" id="tab_contacten">
-                    Contacten
-                </section>
                 <section class="sub_menu_tab" id="tab_reviews">
-                    Reviews
+                    <div class="col col-35 centered">
+                        <ul class="messages">
+                            <li>
+                                <div class="message">
+                                    <div class="message_header">
+                                        <div class="message_author">
+                                            <div class="author_pic">
+                                                <img src="/img/sample_profile.jpg">
+                                            </div>
+                                            <div class="author_info">
+                                                <div class="info_top">
+                                                    <h3>Kristof Sweerts</h3>
+
+                                                    <div class="rating">
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                        <span><i class="fa fa-star"></i></span>
+                                                    </div>
+                                                </div>
+                                                <p class="message_date">11/11/'11</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="message_content">
+                                        <p>
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                            Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                            rum.
+                                        </p>
+                                    </div>
+                                    <div class="message_actions">
+                                        <div class="message_likes">
+                                            <i class="fa fa-heart fa-2x fa-fw"></i>
+                                            <h5>10</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="sub_menu_tab" id="tab_contacten">
+                    <div class="col col-80 centered">
+                        <div class="contact_grid">
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact_item">
+                                <div class="contact">
+                                    <div class="contact_pic">
+                                        <img src="/img/sample_profile.jpg">
+                                    </div>
+                                    <div class="contact_name">
+                                        <h4>Kristof Sweerts</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 <section class="sub_menu_tab" id="tab_rating">
                     Rating
-                </section>
-                <section class="sub_menu_tab" id="tab_afstand">
-                    Afstand
                 </section>
             </div>
         </div>

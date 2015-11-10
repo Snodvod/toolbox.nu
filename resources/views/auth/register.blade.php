@@ -4,13 +4,16 @@
 </div>
 <div id="nav_main">
     <div class="nav_item">
-        <a href="/tools/index">Tools</a>
+        <a href="/tools">Tools</a>
     </div>
 </div>
 <div id="nav_auth">
     @if (Auth::check())
         <div class="nav_item">
-            <a href="/auth/getLogout">Logout</a>
+            <a href="/auth/logout">Logout</a>
+        </div>
+        <div class="nav_item">
+            <a href="/auth/logout">Logout</a>
         </div>@else
         <div id="register" class="nav_item active">
             <a href="/auth/register">Registreren</a>
