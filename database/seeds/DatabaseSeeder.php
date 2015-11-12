@@ -28,25 +28,7 @@ class DatabaseSeeder extends Seeder
 
         $tools = Tool::All();
         $users = User::All();
-
-        for($i=1; $i<=50; $i++)
-        {
-            $rnd = rand(1,50);
-            $rnd2 = rand(1,50);
-            $users->find($i)->tools()->save($tools->find($rnd));
-            $tools->find($i)->users()->save($users->find($rnd));
-        }
-
-        //random relationships Jobs - Tools
-        $jobs = Job::All();
-
-        //double for loop just to add some more tools to the jobs
-        for ($y=1; $y<=2 ; $y++) { 
-            for ($i=1; $i<=20; $i++) { 
-                $rnd = rand(1,50);
-                $jobs->find($i)->tools()->save($tools->find($rnd));
-            }
-        }
+        $jobs = Jobs::All();
 
         //random relationships Users-Expertise
 

@@ -17,6 +17,7 @@ class CreateJobsTable extends Migration
             $table->string('name');
             $table->integer('difficulty'); // Tussen 1 en 5 => controller validation?
             $table->string('description');
+            $table->timestamps();
         });
     }
 

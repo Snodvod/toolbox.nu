@@ -10,13 +10,19 @@ class Tool extends Model
 
     protected $fillable = ['name', 'brand', 'type', 'bought_at', 'about'];
 
-    public function users()
+    public function user()
     {
-    	return $this->belongsToMany('App\User');
+    	return $this->belongsTo('App\User');
     }
 
-    public function jobs()
+    public function category()
     {
-    	return $this->belongsToMany('App\Job');
+    	return $this->belongsTo('App\Category');
     }
+
+    public function loans()
+    {
+        return $this->belongsToMany('App\User', 'user_loans_tool')->withPivot('active', 'start', 'stop');
+    }
+
 }

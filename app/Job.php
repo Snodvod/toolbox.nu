@@ -10,9 +10,9 @@ class Job extends Model
 
     protected $fillable = ['name', 'difficulty', 'description'];
 
-    public function tools() 
+    public function categories() 
     {
-    	return $this->belongsToMany('App\Tool');
+    	return $this->belongsToMany('App\Category');
     }
 
     public function expertises()

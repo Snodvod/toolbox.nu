@@ -39,7 +39,7 @@ class User extends Model implements AuthenticatableContract,
 
     public function tools()
     {
-        return $this->belongsToMany('App\Tool');
+        return $this->hasMany('App\Tool');
     }
 
     public function expertises()
@@ -50,5 +50,12 @@ class User extends Model implements AuthenticatableContract,
     public function accesslevel()
     {
         return $this->belongsTo('App\Accesslevel');
+    }
+
+    // many to many tools for loans
+
+    public function loans()
+    {
+        return $this->belongsToMany('App\Tool', 'user_loans_tool')->withPivot('active', 'start', 'stop');
     }
 }
