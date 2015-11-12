@@ -8,7 +8,7 @@ class Tool extends Model
 {
     protected $table = 'tools';
 
-    protected $fillable = ['name', 'brand', 'type', 'bought_at', 'about'];
+    protected $fillable = ['name', 'brand', 'bought_at', 'about'];
 
     public function user()
     {

@@ -19,15 +19,16 @@ Route::get('/tools', function(){
     return view('tools/index');
 
 });
-Route::get('/profile', function() {
+Route::get('profile',[
+	'middleware' => 'auth',
+	'uses' => 'ProfileController@index'
     
-    return view('profile/index');
-    
-});
+]);
 
-Route::get('/tools/detail/{product}', function(){
+Route::get('tools/detail/{product}', function(){
    return view('tools/detail');
 });
+
     
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

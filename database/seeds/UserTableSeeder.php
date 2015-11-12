@@ -15,7 +15,7 @@ class UserTableSeeder extends Seeder
     	{
 	        DB::table('users')->insert([
 	            'name' => str_random(10),
-	            'adress' => str_random(30),
+	            'address' => str_random(30),
 	            'email' => str_random(10).'@gmail.com',
 	            'password' => bcrypt('secret')
 	        ]);

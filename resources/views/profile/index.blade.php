@@ -10,7 +10,7 @@
     <div id="nav_auth">
         @if (Auth::check())
             <div class="nav_item">
-                <a href="/auth/getLogout">Logout</a>
+                <a href="/auth/logout">Logout</a>
             </div>@else
             <div id="register" class="nav_item">
                 <a href="/auth/register">Registreren</a>
@@ -50,7 +50,7 @@
                         <img src="/img/sample_profile.jpg">
                     </div>
                     <div class="info">
-                        <h1>Kristof Sweerts</h1>
+                        <h1>{{$user->name}}</h1>
 
                         <div class="rating">
                             <span class="profile_location">

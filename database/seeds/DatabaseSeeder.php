@@ -51,6 +51,9 @@ class DatabaseSeeder extends Seeder
         $ino->address = 'Arthur Boelstraat 38 2990 Wuustwezel';
         $ino->email = 'inovanwinckel@hotmail.com';
         $ino->password = bcrypt('wachtwoord');
-        $accesslevels->find(2)->save($ino);
+        
+        $admin = Accesslevel::find(2);
+
+        $admin->users()->save($ino);
     }
 }
