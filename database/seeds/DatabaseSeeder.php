@@ -6,6 +6,7 @@ use App\User;
 use App\Tool;
 use App\Job;
 use App\Expertise;
+use App\Accesslevel;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +29,8 @@ class DatabaseSeeder extends Seeder
 
         $tools = Tool::All();
         $users = User::All();
-        $jobs = Jobs::All();
+        $jobs = Job::All();
+        $accesslevels = Accesslevel::All();
 
         //random relationships Users-Expertise
 
@@ -43,5 +45,12 @@ class DatabaseSeeder extends Seeder
             $expertise->save();
 
         }
+
+        $ino = new User();
+        $ino->name = 'Ino Van Winckel';
+        $ino->address = 'Arthur Boelstraat 38 2990 Wuustwezel';
+        $ino->email = 'inovanwinckel@hotmail.com';
+        $ino->password = bcrypt('wachtwoord');
+        $accesslevels->find(2)->save($ino);
     }
 }

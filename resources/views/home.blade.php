@@ -13,7 +13,7 @@
             <div id="nav_auth">
                 @if (Auth::check())
                     <div class="nav_item user">
-                        <a href="/{{Auth::User()->name}}">{{ Auth::User()->name }}</a>
+                        <a href="/profile">{{ Auth::User()->name }}</a>
                     </div>
                     <div class="nav_item">
                         <a href="/auth/logout">Logout</a>
