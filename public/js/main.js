@@ -7,6 +7,7 @@ $(document).ready(function () {
     toggleFilter();
     toggleLikes();
     toggleMainNavMenu();
+    toggleNotifications();
     $('#picture_carousel').carousel();
 
     //DATEPICKERS
@@ -143,6 +144,7 @@ function toggleMainNavMenu(){
 function toggleNotifications()
 {
     $('.notifications a').click(function(){
-        
+        $('.notifications_dropdown').toggle();
+        $('.notifications_amount').toggle();
     });
 }
