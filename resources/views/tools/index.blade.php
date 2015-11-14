@@ -76,8 +76,8 @@
                 <div class="item">
                     <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
                     <img src="/img/landing.jpeg">
-                    @foreach($tool->loans as $loan)
-                    @if($loan->pivot->active)
+                    @foreach($tool->reservations as $reservation)
+                    @if($reservation->active)
                     <div class="not_available">
                         <span>BEZET</span>
                     </div>
