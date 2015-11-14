@@ -139,3 +139,10 @@ function toggleMainNavMenu(){
         $('.small_device .dropdown').slideToggle();
     });
 }
+
+function toggleNotifications()
+{
+    $('.notifications a').click(function(){
+        
+    });
+}

@@ -9,8 +9,25 @@
     </div>
     <div id="nav_auth">
         @if (Auth::check())
+            <div class="nav_item notifications">
+                <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
+
+                <div class="notifications_amount">3</div>
+
+                <div class="notifications_dropdown">
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Notification</a></li>
+                        <li><a href="#">Notification</a></li>
+                        <li><a href="#">Notification</a></li>
+                    </ul>
+                    <div class="arrow"></div>
+                </div>
+            </div>
+            <div class="nav_item user">
+                <a href="/profile">{{ Auth::User()->name }}</a>
+            </div>
             <div class="nav_item">
-                <a href="/auth/logout">Logout</a>
+                <a href="/auth/logout">Uitloggen</a>
             </div>@else
             <div id="register" class="nav_item">
                 <a href="/auth/register">Registreren</a>

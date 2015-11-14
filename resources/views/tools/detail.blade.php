@@ -1,0 +1,229 @@
+@extends('app') @section('navigation')
+    <div id="nav_logo">
+        <a href="/"><img src="/img/logo.svg"></a>
+    </div>
+    <div class="nav_links">
+        <div class="standard_device">
+            <div id="nav_main">
+                <div class="active nav_item">
+                    <a href="/tools">Tools</a>
+                </div>
+            </div>
+            <div id="nav_auth">
+                @if (Auth::check())
+                    <div class="nav_item">
+                        <a href="/auth/logout">Logout</a>
+                    </div>@else
+                    <div id="register" class="nav_item">
+                        <a href="/auth/register">Registreren</a>
+                    </div>
+                    <div class="nav_item" id="showlogin">
+                        <a href="#">Login</a>
+                    </div>@endif
+                <div id="login_box">
+                    <form method="POST" action="/auth/login">
+                        {!! csrf_field() !!}
+                        <div>
+                            Email
+                            <input type="email" name="email" value="{{ old('email') }}">
+                        </div>
+
+                        <div>
+                            Password
+                            <input type="password" name="password" id="password">
+                        </div>
+
+                        <div class="checkbox">
+                            <input type="checkbox" name="remember"> Remember Me
+                        </div>
+
+                        <div>
+                            <button type="submit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="small_device">
+            <div class="hamburger">
+                <i class="fa fa-bars fa-2x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+@stop
+@section('content')
+    <div class="main_content">
+        <div class="col col-80 centered detail_wrapper">
+            <div class="col col-65">
+                <div class="detail_pictures">
+                    <div id="picture_carousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <img src="/img/landing.jpeg">
+                            </div>
+                            <div class="item">
+                                <img src="/img/landing.jpeg">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-35 detail_information">
+                <div>
+                    <div class="detail_user">
+                        <div>
+                            <img src="/img/sample_profile.jpg">
+                            <h4>Kristof Sweerts</h4>
+                        </div>
+                        <div>
+                            <a href="/profile" class="button">Bekijk profiel</a>
+                        </div>
+                    </div>
+                    <div class="detail_content">
+                        <h3>Werkbank</h3>
+
+                        <div class="rating">
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                            <span><i class="fa fa-star"></i></span>
+                        </div>
+                        <div class="detail_desc">
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                        </div>
+                        <div class="detail_pricing">
+                            <h4 class="item_price">&euro; 5</h4>
+
+                            <div class="input-group">
+                                <div>
+                                    <label>Begindatum</label>
+                                    <input class="datepicker" placeholder="Start">
+                                </div>
+                                <div>
+                                    Tot
+                                </div>
+                                <div>
+                                    <label>Einddatum</label>
+                                    <input class="datepicker" placeholder="Einde">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col centered divider">
+            <div class="sub_menu">
+                <ul>
+                    <li class="active_tab">
+                        <a href="#">
+                            <p>11</p>
+                            <h4>Reviews</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>12</p>
+                            <h4>Tips en tricks</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <p>3</p>
+                            <h4>Jobs</h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="sub_menu_tabs">
+            <section class="sub_menu_tab" id="tab_reviews">
+                <div class="col col-35 centered">
+                    <ul class="messages">
+                        <li>
+                            <div class="message">
+                                <div class="message_header">
+                                    <div class="message_author">
+                                        <div class="author_pic">
+                                            <img src="/img/sample_profile.jpg">
+                                        </div>
+                                        <div class="author_info">
+                                            <div class="info_top">
+                                                <h3>Kristof Sweerts</h3>
+
+                                                <div class="rating">
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                    <span><i class="fa fa-star"></i></span>
+                                                </div>
+                                            </div>
+                                            <p class="message_date">11/11/'11</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="message_content">
+                                    <p>
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                        Everyone loves the sweetness of pumpkin seeds paste decorated with ground
+                                        rum.
+                                    </p>
+                                </div>
+                                <div class="message_actions">
+                                    <div class="message_likes">
+                                        <i class="fa fa-heart fa-2x fa-fw"></i>
+                                        <h5>10</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="sub_menu_tab" id="tab_tipsentricks">
+                Tips en tricks
+            </section>
+            <section class="sub_menu_tab" id="tab_jobs">
+                Jobs
+            </section>
+        </div>
+    </div>
+@stop
