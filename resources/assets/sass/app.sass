@@ -43,7 +43,6 @@ textarea
   padding: 8px 14px
   background: $yellow
   color: $light
-  font-weight: bold
   &:hover
     color: $light
     background: #E8A430
@@ -106,13 +105,12 @@ button
   font-family: $accent
   color: $light
   border-radius: 4px
-  font-weight: bold
   font-size: 11pt
   padding: 10px 20px
   &:hover
     background: #E8A430
   &:active
-    background: #A86C00
+    box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.4)
 
 .amount
   line-height: 13px
@@ -846,11 +844,47 @@ button
 
 ///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
 .manage_tool
+  width: 100%
+  padding: 50px 0
   .tool_title
     border-bottom: 1px solid $lightish
-    padding-bottom: 5px
-    margin-bottom: 25px
-
+    padding-bottom: 8px
+    padding-top: 15px
+  form
+    margin: 0
+    .input-group
+      display: flex
+      .tool_label
+        width: 50%
+      .values
+        width: 50%
+        textarea
+          width: 100%
+          border: 1px solid $less_lightish
+          background: 0
+          border-radius: 4px
+        img
+          width: 50%
+        button
+          padding: 5px 10px
+          font-size: 13px
+          vertical-align: top
+      .price
+        input
+          width: 10px
+          margin-right: 10px
+    button
+      font-weight: 400
+      background: $less_darkish
+      margin-left: 15px
+      &:hover
+        background: $less_lightish
+    #btn-default
+      margin-left: 0
+      margin-top: 25px
+      background: $bright_green
+      &:hover
+        background: #9DBA87
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 

@@ -64,7 +64,7 @@
                                 <div class="dropdown">
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li>
-                                            <a href="/profile" class="dropdown_profile">
+                                            <a href="/user/{{ Auth::User()->id }}/profile" class="dropdown_profile">
                                                 <div id="user_pic">
                                                     <img src="/img/sample_profile.jpg">
                                                 </div>
