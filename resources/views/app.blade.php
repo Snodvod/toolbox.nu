@@ -51,7 +51,10 @@
 
                                 <div class="dropdown">
                                     <ul class="dropdown-menu">
-                                        <li>
+                                        @foreach(Auth::user()->tools as $usertool)
+                                        @foreach($usertool->reservations as $userreservation)
+                                        @if(!$userreservation->status->accepted && !$userreservation->status->denied)
+                                        <li id="{{$userreservation->id}}">
                                             <div class="notification">
                                                 <div class="notification_content">
                                                     <div class="notification_pic">
@@ -59,17 +62,17 @@
                                                     </div>
                                                     <div class="notification_message">
                                                         <p>
-                                                            <span>Kristof Sweerts</span>
+                                                            <span>{{Auth::user()->name}}</span>
                                                             wilt uw
-                                                            <span>tool</span>
+                                                            <span>{{$usertool->name}}</span>
                                                             lenen van
-                                                            <span>01/01/1994</span>
+                                                            <span>{{$userreservation->start}}</span>
                                                             Tot
-                                                            <span>01/01/1994</span>
+                                                            <span>{{$userreservation->stop}}</span>
                                                         </p>
 
                                                         <p class="notification_date">
-                                                            14 Nov. 2015
+                                                            {{$userreservation->created_at}}
                                                         </p>
                                                     </div>
                                                     <div class="notification_tool">
@@ -77,54 +80,20 @@
                                                     </div>
                                                 </div>
                                                 <div class="notification_actions">
-                                                    <div class="action">
+                                                    <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="accepted">
                                                         <h5>Accepteren</h5>
                                                         <i class="fa fa-check fa-fw"></i>
                                                     </div>
-                                                    <div class="action">
+                                                    <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="denied">
                                                         <h5>Negeren</h5>
                                                         <i class="fa fa-close fa-fw"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="notification">
-                                                <div class="notification_content">
-                                                    <div class="notification_pic">
-                                                        <img src="/img/sample_profile.png">
-                                                    </div>
-                                                    <div class="notification_message">
-                                                        <p>
-                                                            <span>Kristof Sweerts</span>
-                                                            wilt uw
-                                                            <span>tool</span>
-                                                            lenen van
-                                                            <span>01/01/1994</span>
-                                                            Tot
-                                                            <span>01/01/1994</span>
-                                                        </p>
-
-                                                        <p class="notification_date">
-                                                            14 Nov. 2015
-                                                        </p>
-                                                    </div>
-                                                    <div class="notification_tool">
-                                                        <img src="/img/sample_tool.png">
-                                                    </div>
-                                                </div>
-                                                <div class="notification_actions">
-                                                    <div class="action">
-                                                        <h5>Accepteren</h5>
-                                                        <i class="fa fa-check fa-fw"></i>
-                                                    </div>
-                                                    <div class="action">
-                                                        <h5>Negeren</h5>
-                                                        <i class="fa fa-close fa-fw"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        @endif
+                                        @endforeach
+                                        @endforeach
                                     </ul>
                                     <div class="arrow"></div>
                                 </div>
