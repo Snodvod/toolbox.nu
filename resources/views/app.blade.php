@@ -115,12 +115,8 @@
                                                 </div>
                                                 <div class="notification_actions">
                                                     <div class="action">
-                                                        <h5>Accepteren</h5>
+                                                        <h5>OK</h5>
                                                         <i class="fa fa-check fa-fw"></i>
-                                                    </div>
-                                                    <div class="action">
-                                                        <h5>Negeren</h5>
-                                                        <i class="fa fa-close fa-fw"></i>
                                                     </div>
                                                 </div>
                                             </div>

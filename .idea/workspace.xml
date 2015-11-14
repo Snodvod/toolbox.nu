@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3673ac17-0a4d-4060-aea0-a99a3a1e9f3e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/img/sample_profile.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css.map" afterPath="$PROJECT_DIR$/public/css/app.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/sass/app.sass" afterPath="$PROJECT_DIR$/resources/assets/sass/app.sass" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/profile/managetools.blade.php" afterPath="$PROJECT_DIR$/resources/views/profile/managetools.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tools/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/tools/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tools/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/tools/index.blade.php" />
     </list>
     <ignored path="toolbox.nu.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,8 +42,8 @@
           <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.0261905">
-                  <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+                <state vertical-scroll-proportion="0.5547619">
+                  <caret line="117" column="62" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
                   <folding />
                 </state>
               </provider>
@@ -102,8 +96,8 @@
           <file leaf-file-name="app.sass" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/assets/sass/app.sass">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.1">
-                  <caret line="369" column="12" selection-start-line="369" selection-start-column="12" selection-end-line="369" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.47619048">
+                  <caret line="355" column="17" selection-start-line="355" selection-start-column="17" selection-end-line="355" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -134,8 +128,8 @@
         <option value="$PROJECT_DIR$/resources/views/tools/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tools/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/assets/sass/app.sass" />
+        <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
       </list>
     </option>
   </component>
@@ -1126,18 +1120,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/assets/sass/app.sass">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0261905">
-          <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.47619048">
+          <caret line="355" column="17" selection-start-line="355" selection-start-column="17" selection-end-line="355" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/assets/sass/app.sass">
+    <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.1">
-          <caret line="369" column="12" selection-start-line="369" selection-start-column="12" selection-end-line="369" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.5547619">
+          <caret line="117" column="62" selection-start-line="117" selection-start-column="62" selection-end-line="117" selection-end-column="62" />
           <folding />
         </state>
       </provider>
