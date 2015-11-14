@@ -13,11 +13,16 @@
 
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UserController');
+
 Route::get('/tools', function(){
 
     return view('tools/index');
 
 });
+
+Route::resource('users.tools', 'ToolController');
+Route::get('/tools', 'SearchController@index');
+
 Route::get('user/{id}/profile/edit',[
 	'middleware' => 'auth',
 	'uses' => 'ProfileController@edit'
