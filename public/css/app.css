@@ -309,21 +309,17 @@ button {
     text-align: center;
     font-size: 9px;
     color: #FCFCFC; }
-  .notifications .notifications_dropdown {
+  .notifications .dropdown {
     display: none;
     position: relative;
     margin-top: -10px; }
-    .notifications .notifications_dropdown .dropdown-menu {
-      display: block;
+    .notifications .dropdown .dropdown-menu {
       left: 50%;
       right: auto;
-      border: 0;
       -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
       box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5); }
-      .notifications .notifications_dropdown .dropdown-menu li {
-        padding: 10px; }
-    .notifications .notifications_dropdown .arrow {
+    .notifications .dropdown .arrow {
       z-index: 9999;
       height: 15px;
       width: 15px;
@@ -335,6 +331,38 @@ button {
       box-shadow: -2px -2px 1px rgba(25, 25, 25, 0.1);
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg); }
+
+.dropdown-menu {
+  display: block;
+  border: 0; }
+  .dropdown-menu li a {
+    padding: 10px 20px !important; }
+  .dropdown-menu .divider {
+    padding: 0;
+    border: 0; }
+
+.user .dropdown_profile {
+  margin: auto;
+  text-align: center; }
+  .user .dropdown_profile p {
+    display: inline;
+    padding: 5px 0 0 5px; }
+  .user .dropdown_profile #user_pic {
+    display: inline-block;
+    vertical-align: middle;
+    height: 30px; }
+    .user .dropdown_profile #user_pic img {
+      width: 30px;
+      border-radius: 50%; }
+
+.user i {
+  font-size: 14px;
+  padding: 0 5px; }
+
+.user .dropdown-menu {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin: 0; }
 
 #login_box {
   display: none;
