@@ -17,8 +17,9 @@
                 <div class="grid_sort">
                     <h4>Sorteer op</h4>
                     <select>
-                        <option value="afstand">Afstand</option>
-                        <option value="prijs">Prijs</option>
+                        <option value="name">Naam</option>
+                        <option value="price">Prijs</option>
+                        <option value="afstand" disabled>Afstand</option>
                     </select>
                 </div>
                 <div class="grid_filter">
@@ -28,10 +29,13 @@
         </div>
         <div class="col col-80 centered" id="tools">
             <div class="tool_options">
-                <!--<form class="search">
-                    <input type="search" placeholder="Wat hebt u nodig?">
+<!--
+                Moet ne link worden met die ?search=*searchvalue hier* append en uitvoerd
+                <form class="search">
+                    <input name="searchvalue" type="search" placeholder="Wat hebt u nodig?">
                     <button type="submit">Zoek</button>
-                </form>-->
+                </form>
+-->
                 <div class="tool_filter">
                     <form>
                         <div class="slider_filter">
@@ -68,66 +72,25 @@
         </div>
         <div class="col col-80 centered">
             <div class="grid">
+                @foreach($tools as $tool)
                 <div class="item">
                     <a href="#" class="overlay"></a>
                     <img src="/img/landing.jpeg">
-
-                    <div class="item_info">
-                        <div class="info_header">
-                            <h4>Schroevedraaier Set</h4>
-                            <h4 class="item_price">&euro; 1</h4>
-                        </div>
-                        <div class="item_author">
-                            <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
-                        </div>
-                        <div class="rating">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="tools/detail/werkbank" class="overlay"></a>
-                    <img src="/img/landing.jpeg">
-
-                    <div class="item_info">
-                        <div class="info_header">
-                            <h4>Werkbank</h4>
-                            <h4 class="item_price">&euro; 3</h4>
-                        </div>
-                        <div class="item_author">
-                            <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
-                        </div>
-                        <div class="rating">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay"></a>
-                    <img src="/img/landing.jpeg">
-
+                    @foreach($tool->loans as $loan)
+                    @if($loan->pivot->active)
                     <div class="not_available">
                         <span>BEZET</span>
                     </div>
-
+                    @endif
+                    @endforeach
                     <div class="item_info">
                         <div class="info_header">
-                            <h4>Meetinstrument</h4>
-                            <h4 class="item_price">&euro; 1.5</h4>
+                            <h4>{{$tool->name}}</h4>
+                            <h4 class="item_price">&euro; {{$tool->price}}</h4>
                         </div>
                         <div class="item_author">
                             <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
+                            <h4>{{$tool->user->name}}</h4>
                         </div>
                         <div class="rating">
                             <span><i class="fa fa-star"></i></span>
@@ -138,50 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <a href="#" class="overlay"></a>
-                    <img src="/img/landing.jpeg">
-
-                    <div class="item_info">
-                        <div class="info_header">
-                            <h4>Kettingzaag</h4>
-                            <h4 class="item_price">&euro; 5</h4>
-                        </div>
-                        <div class="item_author">
-                            <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
-                        </div>
-                        <div class="rating">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <a href="#" class="overlay"></a>
-                    <img src="/img/landing.jpeg">
-
-                    <div class="item_info">
-                        <div class="info_header">
-                            <h4>Hamer</h4>
-                            <h4 class="item_price">&euro; 0.5</h4>
-                        </div>
-                        <div class="item_author">
-                            <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
-                        </div>
-                        <div class="rating">
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
