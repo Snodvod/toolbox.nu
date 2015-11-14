@@ -13,7 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UserController');
-Route::resource('users.tools', 'ToolController');
 Route::get('/tools', function(){
 
     return view('tools/index');
@@ -33,6 +32,7 @@ Route::get('tools/detail/{product}', function(){
    return view('tools/detail');
 });
 
+Route::get('user/{id}/managetools', 'ToolController@index');
     
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

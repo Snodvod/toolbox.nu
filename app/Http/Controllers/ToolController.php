@@ -15,7 +15,7 @@ class ToolController extends Controller
      */
     public function index($userId)
     {
-        return view('tools');
+        return view('profile/managetools');
     }
 
     /**

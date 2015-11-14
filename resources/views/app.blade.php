@@ -47,7 +47,7 @@
                             <div class="nav_item notifications">
                                 <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
 
-                                <div class="notifications_amount">3</div>
+                                <div class="amount notifications_amount">3</div>
 
                                 <div class="dropdown">
                                     <ul class="dropdown-menu dropdown-menu-right">
@@ -71,6 +71,13 @@
                                                 <p>
                                                     {{ Auth::User()->name }}
                                                 </p>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/managetools">
+                                                <strong>Uw tools</strong>
+                                                <div class="amount tool_amount">1</div>
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>

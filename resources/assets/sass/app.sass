@@ -114,6 +114,17 @@ button
   &:active
     background: #A86C00
 
+.amount
+  line-height: 13px
+  font-weight: bold
+  position: absolute
+  text-align: center
+  font-size: 9px
+  color: $light
+  background: $yellow
+  border-radius: 4px
+  padding: 1px 4px
+
 //GRID SYSTEM
 
 .grid
@@ -133,6 +144,20 @@ button
       height: 100%
       width: 100%
       background: rgba(245, 245, 245, 0)
+    .overlay_edit
+      .edit_item
+        display: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        h4
+          font-size: 24pt
+        i
+          font-size: 50pt
+          &:hover
+            color: $yellow
     .item_author
       position: absolute
       width: 100%
@@ -154,6 +179,8 @@ button
         vertical-align: middle
     &:hover .overlay
       background: rgba(245, 245, 245, 0.4)
+      .edit_item
+        display: block
     img
       width: 100%
     .item_info
@@ -313,22 +340,13 @@ button
     padding: 0 10px
 
 .notifications
+  padding: 0 20px
   position: relative
   i
     font-size: 14pt
   .notifications_amount
-    line-height: 13px
-    position: absolute
     top: 25px
-    right: 7px
-    font-weight: bold
-    width: 13px
-    height: 13px
-    background: $yellow
-    border-radius: 50%
-    text-align: center
-    font-size: 9px
-    color: $light
+    right: 27px
   .dropdown
     position: relative
     margin-top: -10px
@@ -336,7 +354,7 @@ button
       left: 50%
       right: auto
       transform: translate(-50%, 0)
-      box-shadow: 1px 1px 5px rgba(27,28,27,0.5)
+      box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
     .arrow
       z-index: 9999
       height: 15px
@@ -346,7 +364,7 @@ button
       top: -5px
       left: 50%
       margin-left: -7.5px
-      box-shadow: -2px -2px 1px rgba(25,25,25,0.1)
+      box-shadow: -2px -2px 1px rgba(25, 25, 25, 0.1)
       transform: rotate(45deg)
 
 .dropdown
@@ -375,6 +393,12 @@ button
       img
         width: 30px
         border-radius: 50%
+  #managetools
+    position: relative
+    .tool_amount
+      right: 20px
+      top: 50%
+      transform: translateY(-50%)
   i
     font-size: 14px
     padding: 0 5px
@@ -383,13 +407,12 @@ button
     border-top-right-radius: 0
     margin: 0
 
-
 #login_box
   //border-top: 2px solid $yellow
   display: none
   top: 80px
   position: absolute
-  background: $less_light
+  background: $light
   box-shadow: 0px 5px 11px -1px rgba(27, 28, 27, 0.2)
   border-bottom-left-radius: 4px
   border-bottom-right-radius: 4px
@@ -820,6 +843,14 @@ button
   .detail_pricing
     border-radius: 4px
     margin-top: 15px
+
+///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
+.manage_tool
+  .tool_title
+    border-bottom: 1px solid $lightish
+    padding-bottom: 5px
+    margin-bottom: 25px
+
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 
