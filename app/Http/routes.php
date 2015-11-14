@@ -19,11 +19,15 @@ Route::get('/tools', function(){
     return view('tools/index');
 
 });
-Route::get('profile',[
+Route::get('user/{id}/profile/edit',[
 	'middleware' => 'auth',
-	'uses' => 'ProfileController@index'
-    
+	'uses' => 'ProfileController@edit'
 ]);
+Route::get('user/{id}/profile/contact',[
+	'middleware' => 'auth',
+	'uses' => 'ProfileController@contact'
+]);
+Route::get('user/{id}/profile', 'ProfileController@index');
 
 Route::get('tools/detail/{product}', function(){
    return view('tools/detail');

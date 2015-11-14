@@ -22,7 +22,7 @@ class Tool extends Model
 
     public function loans()
     {
-        return $this->belongsToMany('App\User', 'user_loans_tool')->withPivot('active', 'start', 'stop');
+        return $this->belongsToMany('App\User', 'user_loans_tool')->withPivot('accepted', 'active', 'start', 'stop');
     }
 
 }

@@ -16,9 +16,11 @@ class CreateUserLoansToolTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('tool_id');
+            $table->boolean('accepted');
             $table->boolean('active');
             $table->dateTime('start');
             $table->dateTime('stop');
+            $table->timestamps();
         });
     }
 

@@ -56,6 +56,6 @@ class User extends Model implements AuthenticatableContract,
 
     public function loans()
     {
-        return $this->belongsToMany('App\Tool', 'user_loans_tool')->withPivot('active', 'start', 'stop');
+        return $this->belongsToMany('App\Tool', 'user_loans_tool')->withPivot('accepted', 'active', 'start', 'stop');
     }
 }

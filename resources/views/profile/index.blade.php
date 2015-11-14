@@ -31,7 +31,7 @@
             <div class="col col-25 centered">
                 <div class="profile_action_buttons">
                     <form>
-                        <button>Contacteer</button>
+                        <a class="btn btn-default" href="/user/{{$user->id}}/profile/contact">Contacteer</a>
                         <button>Volgen</button>
                     </form>
                 </div>
@@ -41,7 +41,7 @@
                     <ul>
                         <li class="active_tab">
                             <a href="#">
-                                <p>5</p>
+                                <p>{{count($user->tools)}}</p>
                                 <h4>Tools</h4>
                             </a>
                         </li>
@@ -70,14 +70,16 @@
                 <section class="sub_menu_tab" id="tab_tools">
                     <div class="col col-80 centered">
                         <div class="grid">
+                            @foreach($user->tools as $tool)
                             <div class="item">
-                                <a href="#" class="overlay"></a>
+                                <a href="/user/{{$tool->user_id}}/tool/{{$tool->id}}" class="overlay"></a>
+                                <!--<img src="/img/tools/{{$tool->image}}">-->
                                 <img src="/img/landing.jpeg">
 
                                 <div class="item_info">
                                     <div class="info_header">
-                                        <h4>Schroevedraaier Set</h4>
-                                        <h4 class="item_price">&euro; 1</h4>
+                                        <h4>{{$tool->name}}</h4>
+                                        <h4 class="item_price">&euro; {{$tool->price}}</h4>
                                     </div>
                                     <div class="rating">
                                         <span><i class="fa fa-star"></i></span>
@@ -88,82 +90,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <a href="tools/detail/werkbank" class="overlay"></a>
-                                <img src="/img/landing.jpeg">
-
-                                <div class="item_info">
-                                    <div class="info_header">
-                                        <h4>Werkbank</h4>
-                                        <h4 class="item_price">&euro; 3</h4>
-                                    </div>
-                                    <div class="rating">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <a href="#" class="overlay"></a>
-                                <img src="/img/landing.jpeg">
-
-                                <div class="not_available">
-                                    <span>BEZET</span>
-                                </div>
-
-                                <div class="item_info">
-                                    <div class="info_header">
-                                        <h4>Meetinstrument</h4>
-                                        <h4 class="item_price">&euro; 1.5</h4>
-                                    </div>
-                                    <div class="rating">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <a href="#" class="overlay"></a>
-                                <img src="/img/landing.jpeg">
-
-                                <div class="item_info">
-                                    <div class="info_header">
-                                        <h4>Kettingzaag</h4>
-                                        <h4 class="item_price">&euro; 5</h4>
-                                    </div>
-                                    <div class="rating">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <a href="#" class="overlay"></a>
-                                <img src="/img/landing.jpeg">
-
-                                <div class="item_info">
-                                    <div class="info_header">
-                                        <h4>Hamer</h4>
-                                        <h4 class="item_price">&euro; 0.5</h4>
-                                    </div>
-                                    <div class="rating">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
