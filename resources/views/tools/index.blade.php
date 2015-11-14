@@ -74,7 +74,7 @@
             <div class="grid">
                 @foreach($tools as $tool)
                 <div class="item">
-                    <a href="#" class="overlay"></a>
+                    <a href="/user/{{$tool->user_id}}/tool/{{$tool->id}}" class="overlay"></a>
                     <img src="/img/landing.jpeg">
                     @foreach($tool->loans as $loan)
                     @if($loan->pivot->active)
