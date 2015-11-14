@@ -333,7 +333,7 @@ button {
     top: 25px;
     right: 27px; }
   .notifications .dropdown {
-    display: block !important;
+    display: none;
     position: relative;
     margin-top: -10px; }
     .notifications .dropdown .dropdown-menu {
