@@ -2,37 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use App\Tool;
+use App\Reservation;
+use Redirect;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ToolController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($userId)
+    public function index()
     {
-        return view('profile/managetools');
+        //
     }
-    public function detail($toolId)
-    {
-        return view('tools/detail', ['tool' => Tool::findOrFail($toolId)]);
-    }
-    
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($userId)
+    public function create()
     {
-        //
+        
     }
 
     /**
@@ -41,9 +37,16 @@ class ToolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $userId)
+    public function store(Request $request)
     {
-        //
+        $reservation = new Reservation;
+        $reservation->tool_id = $request->tool_id;
+        $reservation->user_id = $request->user_id;
+        $reservation->start = Carbon::parse($request->start);
+        $reservation->stop = Carbon::parse($request->stop);
+        $reservation->save();
+        
+        return redirect('tools/' . $request->tool_id . '/detail');
     }
 
     /**
@@ -52,7 +55,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($userId, $id)
+    public function show($id)
     {
         //
     }
@@ -63,7 +66,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($userId, $id)
+    public function edit($id)
     {
         //
     }
@@ -75,7 +78,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $userId, $id)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -86,7 +89,7 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($userId, $id)
+    public function destroy($id)
     {
         //
     }

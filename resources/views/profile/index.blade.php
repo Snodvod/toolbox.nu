@@ -72,7 +72,7 @@
                         <div class="grid">
                             @foreach($user->tools as $tool)
                             <div class="item">
-                                <a href="/user/{{$tool->user_id}}/tool/{{$tool->id}}" class="overlay"></a>
+                                <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
                                 <!--<img src="/img/tools/{{$tool->image}}">-->
                                 <img src="/img/landing.jpeg">
 

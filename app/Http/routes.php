@@ -32,10 +32,9 @@ Route::get('user/{id}/profile/contact',[
 	'uses' => 'ProfileController@contact'
 ]);
 Route::get('user/{id}/profile', 'ProfileController@index');
+Route::get('tools/{toolId}/detail', 'ToolController@detail');
 
-Route::get('tools/detail/{product}', function(){
-   return view('tools/detail');
-});
+Route::post('reservation/store', 'ReservationController@store');
 
 Route::get('user/{id}/managetools', 'ToolController@index');
     

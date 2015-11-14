@@ -41,14 +41,14 @@
                     <div class="detail_user">
                         <div>
                             <img src="/img/sample_profile.jpg">
-                            <h4>Kristof Sweerts</h4>
+                            <h4>{{$tool->user->name}}</h4>
                         </div>
                         <div>
                             <a href="/profile" class="button">Bekijk profiel</a>
                         </div>
                     </div>
                     <div class="detail_content">
-                        <h3>Werkbank</h3>
+                        <h3>{{$tool->name}}</h3>
 
                         <div class="rating">
                             <span><i class="fa fa-star"></i></span>
@@ -58,16 +58,23 @@
                             <span><i class="fa fa-star"></i></span>
                         </div>
                         <div class="detail_desc">
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
-                            Puréed strawberries can be made sliced by varnishing with salad cream.
+                            {{$tool->about}}
                         </div>
                         <div class="detail_pricing">
-                            <h4 class="item_price">&euro; 5</h4>
-
+                            <h4 class="item_price">&euro;{{$tool->price}}</h4>
+                            <div class="input-group">
+                            {!! Form::open(array('url' => 'reservation/store')) !!}
+                                {!! Form::hidden('user_id', Auth::User()->id) !!}
+                                {!! Form::hidden('tool_id', $tool->id) !!}
+                                {!! Form::label('start', 'Begindatum') !!}
+                                {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
+                                Tot
+                                {!! Form::label('stop', 'Einddatum') !!}
+                                {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
+                                {!! Form::submit('Stuur Aanvraag', array('class' => 'subreservation')) !!}
+                            {!! Form::close() !!}
+                            </div>
+<!--
                             <div class="input-group">
                                 <div>
                                     <label>Begindatum</label>
@@ -81,6 +88,7 @@
                                     <input class="datepicker" placeholder="Einde">
                                 </div>
                             </div>
+-->
                         </div>
                     </div>
                 </div>
