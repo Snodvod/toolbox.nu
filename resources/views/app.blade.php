@@ -35,75 +35,86 @@
             <div id="nav_logo">
                 <a href="/"><img src="/img/logo.svg"></a>
             </div>
-            <div id="nav_main">
-                <div class="nav_item">
-                    <a href="/tools">Tools</a>
+            <div class="nav_links">
+                <div class="standard_device">
+                    <div id="nav_main">
+                        <div class="nav_item">
+                            <a href="/tools">Tools</a>
+                        </div>
+                    </div>
+                    <div id="nav_auth">
+                        @if (Auth::check())
+                            <div class="nav_item notifications">
+                                <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
+
+                                <div class="notifications_amount">3</div>
+
+                                <div class="dropdown">
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="#">Notification</a></li>
+                                        <li><a href="#">Notification</a></li>
+                                        <li><a href="#">Notification</a></li>
+                                    </ul>
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                            <div class="nav_item user">
+                                <a href="#">Mijn profiel <i class="fa fa-chevron-down"></i></a>
+
+                                <div class="dropdown">
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <a href="/profile" class="dropdown_profile">
+                                                <div id="user_pic">
+                                                    <img src="/img/sample_profile.jpg">
+                                                </div>
+                                                <p>
+                                                    {{ Auth::User()->name }}
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Instellingen</a></li>
+                                        <li><a href="/auth/logout">Uitloggen</a></li>
+                                    </ul>
+                                </div>
+                            </div>@else
+                            <div id="register" class="nav_item">
+                                <a href="/auth/register">Registreren</a>
+                            </div>
+                            <div class="nav_item" id="showlogin">
+                                <a href="#">Login</a>
+                            </div>@endif
+                        <div id="login_box">
+                            <form method="POST" action="/auth/login">
+                                {!! csrf_field() !!}
+                                <div class="input-group">
+                                    <div>
+                                        <label>Email</label>
+                                        <input type="email" name="email" value="{{ old('email') }}">
+                                    </div>
+
+                                    <div>
+                                        <label>Wachtwoord</label>
+                                        <input type="password" name="password" id="password">
+                                    </div>
+
+                                    <div>
+                                        <button type="submit">Login</button>
+                                    </div>
+                                </div>
+
+                                <div class="checkbox">
+                                    <input type="checkbox" name="remember"> Remember Me
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="nav_auth">
-                @if (Auth::check())
-                    <div class="nav_item notifications">
-                        <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
-
-                        <div class="notifications_amount">3</div>
-
-                        <div class="dropdown">
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a href="#">Notification</a></li>
-                                <li><a href="#">Notification</a></li>
-                                <li><a href="#">Notification</a></li>
-                            </ul>
-                            <div class="arrow"></div>
-                        </div>
-                    </div>
-                    <div class="nav_item user">
-                        <a href="#">Mijn profiel <i class="fa fa-chevron-down"></i></a>
-
-                        <div class="dropdown">
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li>
-                                    <a href="/profile" class="dropdown_profile">
-                                        <div id="user_pic">
-                                            <img src="/img/sample_profile.jpg">
-                                        </div>
-                                        <p>
-                                            {{ Auth::User()->name }}
-                                        </p>
-                                    </a>
-                                </li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Instellingen</a></li>
-                                <li><a href="/auth/logout">Uitloggen</a></li>
-                            </ul>
-                        </div>
-                    </div>@else
-                    <div id="register" class="nav_item">
-                        <a href="/auth/register">Registreren</a>
-                    </div>
-                    <div class="nav_item" id="showlogin">
-                        <a href="#">Login</a>
-                    </div>@endif
-                <div id="login_box">
-                    <form method="POST" action="/auth/login">
-                        {!! csrf_field() !!}
-                        <div>
-                            Email
-                            <input type="email" name="email" value="{{ old('email') }}">
-                        </div>
-
-                        <div>
-                            Password
-                            <input type="password" name="password" id="password">
-                        </div>
-
-                        <div class="checkbox">
-                            <input type="checkbox" name="remember"> Remember Me
-                        </div>
-
-                        <div>
-                            <button type="submit">Login</button>
-                        </div>
-                    </form>
+            <div class="small_device">
+                <div class="hamburger">
+                    <i class="fa fa-bars fa-2x fa-fw"></i>
                 </div>
             </div>
         </div>

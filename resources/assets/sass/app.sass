@@ -330,7 +330,6 @@ button
     font-size: 9px
     color: $light
   .dropdown
-    display: none
     position: relative
     margin-top: -10px
     .dropdown-menu
@@ -350,15 +349,17 @@ button
       box-shadow: -2px -2px 1px rgba(25,25,25,0.1)
       transform: rotate(45deg)
 
-.dropdown-menu
-  display: block
-  border: 0
-  li
-    a
-      padding: 10px 20px !important
-  .divider
-    padding: 0
+.dropdown
+  display: none
+  .dropdown-menu
+    display: block
     border: 0
+    li
+      a
+        padding: 10px 20px !important
+    .divider
+      padding: 0
+      border: 0
 
 .user
   .dropdown_profile
@@ -390,16 +391,31 @@ button
   position: absolute
   background: $less_light
   box-shadow: 0px 5px 11px -1px rgba(27, 28, 27, 0.2)
+  border-bottom-left-radius: 4px
+  border-bottom-right-radius: 4px
   font-family: $main
   line-height: 25px
   right: 0
   color: $less_dark
   form
-    margin: 25px 35px
+    margin: 15px 25px
     .input-group
-      width: 500px
+      display: flex
+      margin: 0
+      label
+        font-size: 12px
+      input
+        background: $light
+        font-size: 12px
+        padding: 5px 10px
+      button
+        margin-top: 30px
+        font-size: 12px
+        height: auto
+        padding: 3px 10px
     .checkbox
-      margin-bottom: 5px
+      margin: 5px 0 0 20px
+      font-size: 11px
 
 #landing_content
   width: 100%
@@ -893,6 +909,8 @@ button
     max-height: 200px
     display: inline-block
     vertical-align: middle
+    .rating
+      padding: 5px 0
     h1
       margin: 0 0 5px -2px
       color: $less_dark
@@ -1067,6 +1085,12 @@ button
       .detail_user
         padding-top: 25px
 
+  .profile
+    .col-65
+      width: 100%
+    .col-25
+      width: 100%
+
 @media only screen and (max-width: 992px)
   #tools_heading
     .grid_options
@@ -1113,6 +1137,18 @@ button
           &:last-child
             border-bottom: 0
 
+  .profile
+    width: 100%
+    .profile_header
+      display: block
+      #picture
+        display: block
+        width: 100%
+        text-align: center
+      .info
+        margin-top: 50px
+        display: block
+        width: 100%
 
 @media only screen and (max-width: 768px)
   .detail_information
