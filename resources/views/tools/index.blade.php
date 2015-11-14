@@ -75,7 +75,7 @@
                 @foreach($tools as $tool)
                 <div class="item">
                     <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
-                    <img src="/img/landing.jpeg">
+                    <img src="/img/sample_tool.png">
                     @foreach($tool->reservations as $reservation)
                     @if($reservation->active)
                     <div class="not_available">
@@ -83,14 +83,14 @@
                     </div>
                     @endif
                     @endforeach
+                    <div class="item_author">
+                        <img src="/img/sample_profile.png">
+                        <h4>{{$tool->user->name}}</h4>
+                    </div>
                     <div class="item_info">
                         <div class="info_header">
                             <h4>{{$tool->name}}</h4>
                             <h4 class="item_price">&euro; {{$tool->price}}</h4>
-                        </div>
-                        <div class="item_author">
-                            <img src="/img/sample_profile.jpg">
-                            <h4>{{$tool->user->name}}</h4>
                         </div>
                         <div class="rating">
                             <span><i class="fa fa-star"></i></span>

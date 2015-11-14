@@ -165,6 +165,7 @@ button
       img
         display: inline
         width: 35px
+        height: 35px
         border-radius: 50%
         vertical-align: middle !important
         box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
@@ -182,15 +183,21 @@ button
     img
       width: 100%
     .item_info
-      padding: 0px 25px
+      position: absolute
+      bottom: 0
+      background: $less_light
+      width: 100%
+      z-index: 5
       .info_header
-        margin-top: 10px
+        padding: 10px 25px 0px 25px
         display: flex
         justify-content: space-between
         h4
           margin-bottom: 2px
         h5
           margin-bottom: 0
+      .rating
+        padding: 0px 25px 10px 25px
 
 .item_price
   background: $bright-green
@@ -346,13 +353,66 @@ button
     top: 25px
     right: 27px
   .dropdown
+    display: block !important
     position: relative
     margin-top: -10px
     .dropdown-menu
-      left: 50%
-      right: auto
-      transform: translate(-50%, 0)
+      width: 400px
+      left: 0
+      transform: translateX(-80%)
       box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
+      li
+        border-bottom: 1px solid $lightish
+        .notification
+          line-height: 1.42857143
+          padding: 15px
+          &:hover .notification_actions
+            display: flex
+          .notification_content
+            display: flex
+            .notification_pic
+              img
+                width: 60px
+                border-radius: 50%
+            .notification_message
+              vertical-align: top
+              width: 80%
+              margin: 0px 10px
+              p
+                white-space: normal
+                margin-bottom: 0
+                span
+                  font-weight: 500
+                  color: $less_dark
+              .notification_date
+                font-size: 12px
+                color: $less_lightish
+            .notification_tool
+              img
+                width: 60px
+                border-radius: 4px
+          .notification_actions
+            display: none
+            justify-content: space-around
+            .action
+              text-align: center
+              display: flex
+              align-items: center
+              margin: 15px 0px 5px 0px
+              &:hover h5
+                color: $less_dark
+              h5
+                cursor: pointer
+                margin: 0
+                font-weight: bold
+                color: $less_darkish
+              i
+                padding-left: 5px
+                color: $less_light
+              .fa-check
+                color: $bright-green
+              .fa-close
+                color: $red
     .arrow
       z-index: 9999
       height: 15px
@@ -846,6 +906,8 @@ button
 .manage_tool
   width: 100%
   padding: 50px 0
+  h1
+    font-weight: bold !important
   .tool_title
     border-bottom: 1px solid $lightish
     padding-bottom: 8px
@@ -858,13 +920,15 @@ button
         width: 50%
       .values
         width: 50%
+        input
+          background: $less_light
         textarea
           width: 100%
           border: 1px solid $less_lightish
-          background: 0
+          background: $less_light
           border-radius: 4px
         img
-          width: 50%
+          width: 30%
         button
           padding: 5px 10px
           font-size: 13px
@@ -873,6 +937,7 @@ button
         input
           width: 10px
           margin-right: 10px
+          background: $less_light
     button
       font-weight: 400
       background: $less_darkish

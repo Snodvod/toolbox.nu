@@ -4,7 +4,7 @@
             <div class="col col-65 centered">
                 <div class="profile_header">
                     <div id="picture">
-                        <img src="/img/sample_profile.jpg">
+                        <img src="/img/sample_profile.png">
                     </div>
                     <div class="info">
                         <h1>{{$user->name}}</h1>
@@ -74,7 +74,7 @@
                             <div class="item">
                                 <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
                                 <!--<img src="/img/tools/{{$tool->image}}">-->
-                                <img src="/img/landing.jpeg">
+                                <img src="/img/sample_tool.png">
 
                                 <div class="item_info">
                                     <div class="info_header">
@@ -102,7 +102,7 @@
                                     <div class="message_header">
                                         <div class="message_author">
                                             <div class="author_pic">
-                                                <img src="/img/sample_profile.jpg">
+                                                <img src="/img/sample_profile.png">
                                             </div>
                                             <div class="author_info">
                                                 <div class="info_top">
@@ -155,7 +155,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -165,7 +165,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -175,7 +175,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -185,7 +185,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -195,7 +195,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -205,7 +205,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -215,7 +215,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>
@@ -225,7 +225,7 @@
                             <div class="contact_item">
                                 <div class="contact">
                                     <div class="contact_pic">
-                                        <img src="/img/sample_profile.jpg">
+                                        <img src="/img/sample_profile.png">
                                     </div>
                                     <div class="contact_name">
                                         <h4>Kristof Sweerts</h4>

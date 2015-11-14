@@ -50,10 +50,81 @@
                                 <div class="amount notifications_amount">3</div>
 
                                 <div class="dropdown">
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="#">Notification</a></li>
-                                        <li><a href="#">Notification</a></li>
-                                        <li><a href="#">Notification</a></li>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <div class="notification">
+                                                <div class="notification_content">
+                                                    <div class="notification_pic">
+                                                        <img src="/img/sample_profile.png">
+                                                    </div>
+                                                    <div class="notification_message">
+                                                        <p>
+                                                            <span>Kristof Sweerts</span>
+                                                            wilt uw
+                                                            <span>tool</span>
+                                                            lenen van
+                                                            <span>01/01/1994</span>
+                                                            Tot
+                                                            <span>01/01/1994</span>
+                                                        </p>
+
+                                                        <p class="notification_date">
+                                                            14 Nov. 2015
+                                                        </p>
+                                                    </div>
+                                                    <div class="notification_tool">
+                                                        <img src="/img/sample_tool.png">
+                                                    </div>
+                                                </div>
+                                                <div class="notification_actions">
+                                                    <div class="action">
+                                                        <h5>Accepteren</h5>
+                                                        <i class="fa fa-check fa-fw"></i>
+                                                    </div>
+                                                    <div class="action">
+                                                        <h5>Negeren</h5>
+                                                        <i class="fa fa-close fa-fw"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notification">
+                                                <div class="notification_content">
+                                                    <div class="notification_pic">
+                                                        <img src="/img/sample_profile.png">
+                                                    </div>
+                                                    <div class="notification_message">
+                                                        <p>
+                                                            <span>Kristof Sweerts</span>
+                                                            wilt uw
+                                                            <span>tool</span>
+                                                            lenen van
+                                                            <span>01/01/1994</span>
+                                                            Tot
+                                                            <span>01/01/1994</span>
+                                                        </p>
+
+                                                        <p class="notification_date">
+                                                            14 Nov. 2015
+                                                        </p>
+                                                    </div>
+                                                    <div class="notification_tool">
+                                                        <img src="/img/sample_tool.png">
+                                                    </div>
+                                                </div>
+                                                <div class="notification_actions">
+                                                    <div class="action">
+                                                        <h5>Accepteren</h5>
+                                                        <i class="fa fa-check fa-fw"></i>
+                                                    </div>
+                                                    <div class="action">
+                                                        <h5>Negeren</h5>
+                                                        <i class="fa fa-close fa-fw"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
                                     </ul>
                                     <div class="arrow"></div>
                                 </div>
@@ -66,7 +137,7 @@
                                         <li>
                                             <a href="/user/{{ Auth::User()->id }}/profile" class="dropdown_profile">
                                                 <div id="user_pic">
-                                                    <img src="/img/sample_profile.jpg">
+                                                    <img src="/img/sample_profile.png">
                                                 </div>
                                                 <p>
                                                     {{ Auth::User()->name }}
@@ -77,6 +148,7 @@
                                         <li>
                                             <a id="managetools" href="/user/{{ Auth::User()->id }}/managetools">
                                                 <strong>Uw tools</strong>
+
                                                 <div class="amount tool_amount">1</div>
                                             </a>
                                         </li>
@@ -93,28 +165,24 @@
                                 <a href="#">Login</a>
                             </div>@endif
                         <div id="login_box">
-                            <form method="POST" action="/auth/login">
-                                {!! csrf_field() !!}
-                                <div class="input-group">
-                                    <div>
-                                        <label>Email</label>
-                                        <input type="email" name="email" value="{{ old('email') }}">
-                                    </div>
-
-                                    <div>
-                                        <label>Wachtwoord</label>
-                                        <input type="password" name="password" id="password">
-                                    </div>
-
-                                    <div>
-                                        <button type="submit">Login</button>
-                                    </div>
+                            {!! Form::open(array('url' => '/auth/login')) !!}
+                            {!! csrf_field() !!}
+                            <div class="input-group">
+                                <div>
+                                    {!! Form::label('email', 'Email') !!}
+                                    {!! Form::text('email') !!}
                                 </div>
 
-                                <div class="checkbox">
-                                    <input type="checkbox" name="remember"> Remember Me
+                                <div>
+                                    {!! Form::label('wachtwoord', 'Wachtwoord') !!}
+                                    {!! Form::password('password') !!}
                                 </div>
-                            </form>
+
+                                <div>
+                                    <button type="submit">Login</button>
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
