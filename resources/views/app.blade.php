@@ -205,5 +205,6 @@
 <script src="/js/backstretch.js" type=text/javascript></script>
 <script src="/js/jquery-ui.js" type=text/javascript></script>
 <script src="/js/main.js" type=text/javascript></script>
+<script src="/js/script.js" type=text/javascript></script>
 
 </html>

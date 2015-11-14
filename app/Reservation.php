@@ -12,6 +12,10 @@ class Reservation extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function status() 
+    {
+        return $this->hasOne('App\Status');
+    }
     public function tool() 
     {
         return $this->belongsTo('App\Tool');

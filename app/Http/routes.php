@@ -31,10 +31,12 @@ Route::get('user/{id}/profile/contact',[
 	'middleware' => 'auth',
 	'uses' => 'ProfileController@contact'
 ]);
+
 Route::get('user/{id}/profile', 'ProfileController@index');
 Route::get('tools/{toolId}/detail', 'ToolController@detail');
 
 Route::post('reservation/store', 'ReservationController@store');
+Route::get('reservation/{id}/status/{status}/update', 'ReservationController@updateStatus');
 
 Route::get('user/{id}/managetools', 'ToolController@index');
     

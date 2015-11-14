@@ -56,9 +56,4 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Reservation');
     }
-//    // many to many tools for loans
-//    public function loans()
-//    {
-//        return $this->belongsToMany('App\Tool', 'user_loans_tool')->withPivot('accepted', 'active', 'start', 'stop');
-//    }
 }

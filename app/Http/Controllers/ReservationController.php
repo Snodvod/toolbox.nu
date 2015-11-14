@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+use App\Status;
 use Redirect;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -45,6 +46,7 @@ class ReservationController extends Controller
         $reservation->start = Carbon::parse($request->start);
         $reservation->stop = Carbon::parse($request->stop);
         $reservation->save();
+        $reservation->status()->create(['read' => 0]);
         
         return redirect('tools/' . $request->tool_id . '/detail');
     }
@@ -69,6 +71,21 @@ class ReservationController extends Controller
     public function edit($id)
     {
         //
+    }
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateStatus(Request $request, $id, $status)
+    {
+        $stat = Reservation::findOrFail($id)->status;
+        $stat->$status = 1;
+        $stat->save();
+        
+        return 'yes';
     }
 
     /**
