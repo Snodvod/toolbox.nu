@@ -85,7 +85,7 @@ class ReservationController extends Controller
         $stat->$status = 1;
         $stat->save();
         
-        return 'yes';
+        return redirect('/');
     }
 
     /**
