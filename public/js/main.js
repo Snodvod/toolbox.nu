@@ -49,9 +49,9 @@ $(document).ready(function () {
     $('#flat_slider_amount').slider({
         orientation: 'horizontal',
         range: true,
-        min: 1,
-        max: 10,
-        values: [2, 6],
+        min: 0,
+        max: 20,
+        values: [0, 20],
         slide: function (event, ui) {
             $("#amount").val("\u20ac" + ui.values[0] + "  -  \u20ac" + ui.values[1]);
         }
