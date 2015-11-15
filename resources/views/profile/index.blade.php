@@ -99,7 +99,7 @@
                                     @if(Auth::Check())
                                         @if($user->id == Auth::User()->id)
                                             <div class="item_edit">
-                                                <a href="/tools/{{ $tool->id }}/detail/edit">
+                                                <a href="/tools/{{ $tool->id }}/edit">
                                                     <p>Bewerken</p>
                                                     <i class="fa fa-edit fa-2x"></i>
                                                 </a>
