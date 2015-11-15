@@ -11,7 +11,7 @@ class AddressesTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('accesslevels')->insert([
+        DB::table('addresses')->insert([
         	'user_id' => 1,
         	'country' => 'Belgium',
         	'place' => 'Wuustwezel',
