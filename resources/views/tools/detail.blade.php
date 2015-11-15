@@ -35,7 +35,6 @@
                             <h4 class="item_price">&euro; {{$tool->price}}</h4>
                             <div class="input-group">
                             {!! Form::open(array('url' => 'reservation/store')) !!}
-                                {!! Form::hidden('user_id', Auth::User()->id) !!}
                                 {!! Form::hidden('tool_id', $tool->id) !!}
                                 {!! Form::label('start', 'Begindatum') !!}
                                 {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}

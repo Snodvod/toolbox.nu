@@ -70,7 +70,7 @@
                 <section class="sub_menu_tab" id="tab_tools">
                     <div class="col col-80 centered">
                         <div class="grid">
-                            @foreach($user->tools as $tool)
+                            @foreach($tools as $tool)
                                 <div class="item">
                                     <a href="/tools/{{$tool->id}}/detail" class="overlay"></a>
                                     <!--<img src="/img/tools/{{$tool->image}}">-->
