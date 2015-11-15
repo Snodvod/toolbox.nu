@@ -23,7 +23,9 @@ class ToolController extends Controller
         if ($tool->user()->get()->first() == $request->user())
         {
             return view('tools/manage', ['tool' => $tool]);
-        } else return redirect('/');
+        } else {
+            return redirect('/'); 
+        }
         
     }
 

@@ -30,12 +30,12 @@ class SearchController extends Controller
         if ($request->start) {
             $start = Carbon::parse($request->start);
         } else {
-            $start = '';
+            $start = Carbon::now();
         }
         if ($request->stop) {
             $stop = Carbon::parse($request->stop);
         } else {
-            $stop = '';
+            $stop = Carbon::now();
         }
         if ($request->column) {
             $column = $request->column;
@@ -58,7 +58,15 @@ class SearchController extends Controller
             $maxprice = '20';
         }
         
-        $tools = Tool::where('name', 'LIKE', $search)->whereBetween('price', [$minprice, $maxprice])->orderBy($column, $order)->get();
+        $tools = Tool::where('name', 'LIKE', $search)
+            ->whereBetween('price', [$minprice, $maxprice])
+            ->has('reservations', '=', 0)
+            ->orWhereHas('reservations', function($query) use ($start, $stop){
+                $query->whereNotBetween('start', [Carbon::parse($start), Carbon::parse($stop)])
+                    ->whereNotBetween('stop', [Carbon::parse($start), Carbon::parse($stop)]);
+            })
+            ->orderBy($column, $order)
+            ->get();
         
         return view('tools.index', ['tools' => $tools]);
     }
