@@ -11,14 +11,15 @@
 
                         <div class="rating">
                             <span class="profile_location">
-                                <i class="fa fa-map-marker"></i>Boom (<span>3.6 km</span>)
+                                <i class="fa fa-map-marker"></i>
+                                <p class="distance">Boom (<span>3.6 km</span>)</p>
                             </span>
                             <span id="separator">//</span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
-                            <span><i class="fa fa-star"></i></span>
+                            <span class="star"><i class="fa fa-star"></i></span>
+                            <span class="star"><i class="fa fa-star"></i></span>
+                            <span class="star"><i class="fa fa-star"></i></span>
+                            <span class="star"><i class="fa fa-star"></i></span>
+                            <span class="star"><i class="fa fa-star"></i></span>
                         </div>
                         <p>
                             Aususs sunt hippotoxotas de azureus adiurator.
@@ -34,7 +35,7 @@
                         <a class="btn btn-default" href="/user/{{$user->id}}/profile/contact">Contacteer</a>
                     </div>
                 </div>
-                @else
+            @else
                 <div class="col col-25 centered">
                     <div class="profile_action_buttons">
                         <a class="btn btn-default" id="success" href="/tools/add">

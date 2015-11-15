@@ -162,7 +162,7 @@
                                             <a id="managetools" href="/user/{{ Auth::User()->id }}/profile">
                                                 <strong>Uw tools</strong>
 
-                                                <div class="amount tool_amount">1</div>
+                                                <div class="amount tool_amount">{{ Auth::User()->tools->count() }}</div>
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>
@@ -196,9 +196,9 @@
 <script src="https://jquery-ui.googlecode.com/svn-history/r3982/trunk/ui/i18n/jquery.ui.datepicker-nl.js"></script>
 <script src="/js/freewall.js" type="text/javascript"></script>
 <script src="/js/bootstrap.js" type="text/javascript"></script>
-<script src="/js/backstretch.js" type=text/javascript></script>
-<script src="/js/jquery-ui.js" type=text/javascript></script>
-<script src="/js/main.js" type=text/javascript></script>
-<script src="/js/script.js" type=text/javascript></script>
-
+<script src="/js/backstretch.js" type="text/javascript"></script>
+<script src="/js/jquery-ui.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<script src="/js/script.js" type="text/javascript"></script>
+@yield('scripts')
 </html>

@@ -17,7 +17,7 @@
                         <input type="password" name="password" id="password">
                     </div>
                 </div>
-                <div><a href="/password/email" class="btn btn-danger">Wachtwoord vergeten? Onvoorstelbaar maar ja...</a></div> 
+                <div><a href="/password/email"><u>Wachtwoord vergeten? Onvoorstelbaar maar ja...</u></a></div>
 
 
                 <button type="submit">Login</button>

@@ -22,7 +22,7 @@
                             <div>
                                 <a href="/user/{{ $tool->user->id }}/profile" class="button">Bekijk profiel</a>
                             </div>
-                            @else
+                        @else
                             <div>
                                 <img src="/img/sample_profile.png">
                                 <h4>Dit is uw tool</h4>
@@ -48,17 +48,22 @@
                         <div class="detail_pricing">
                             <h4 class="item_price">&euro; {{$tool->price}}</h4>
 
+                            {!! Form::open(array('url' => 'reservation/store')) !!}
                             <div class="input-group">
-                                {!! Form::open(array('url' => 'reservation/store')) !!}
-                                {!! Form::hidden('tool_id', $tool->id) !!}
-                                {!! Form::label('start', 'Begindatum') !!}
-                                {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
+                                <div>
+
+                                    {!! Form::hidden('tool_id', $tool->id) !!}
+                                    {!! Form::label('start', 'Begindatum') !!}
+                                    {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
+                                </div>
                                 Tot
-                                {!! Form::label('stop', 'Einddatum') !!}
-                                {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
+                                <div>
+                                    {!! Form::label('stop', 'Einddatum') !!}
+                                    {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
+                                </div>
                                 {!! Form::submit('Stuur Aanvraag', array('class' => 'subreservation')) !!}
-                                {!! Form::close() !!}
                             </div>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
