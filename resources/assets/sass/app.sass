@@ -111,6 +111,8 @@ button
     background: #E8A430
   &:active
     box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.4)
+  &:focus, &:active
+    outline: 0
 
 .amount
   line-height: 13px
@@ -932,7 +934,6 @@ button
 
 ///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
 .manage_tool
-  width: 100%
   padding: 50px 0
   h1
     font-weight: bold !important
@@ -940,54 +941,61 @@ button
     border-bottom: 1px solid $lightish
     padding-bottom: 8px
     padding-top: 15px
-  form
-    margin: 0
-    .input-group
-      display: flex
-      .tool_label
-        width: 50%
-      .values
-        width: 50%
+  .wrapper
+    width: 60%
+    form
+      width: 100%
+      margin: 0
+      .input-group
+        display: flex
+        .tool_label
+          width: 50%
+        .values
+          width: 50%
+          input
+            background: $less_light
+          textarea
+            width: 100%
+            border: 1px solid $less_lightish
+            background: $less_light
+            border-radius: 4px
+          img
+            width: 30%
+          button
+            padding: 5px 10px
+            font-size: 13px
+            vertical-align: top
+        .price
+          input
+            width: 50px
+            margin-right: 10px
+            background: $less_light
+      #image_upload
         input
-          background: $less_light
-        textarea
-          width: 100%
-          border: 1px solid $less_lightish
-          background: $less_light
-          border-radius: 4px
-        img
-          width: 30%
-        button
-          padding: 5px 10px
-          font-size: 13px
+          border: 0
+          display: inline-block
           vertical-align: top
-      .price
-        input
-          width: 10px
-          margin-right: 10px
-          background: $less_light
-    #choose_pic
-      background: $less_darkish
-      margin-left: 15px
-    #btn-default, a
-      font-family: $accent
-      border: 0
-      font-size: 14px
-      color: $light
-      text-shadow: 0 0
-      font-weight: 400
-      background: $less_darkish
-      border-radius: 4px
-      padding: 10px 15px
-      margin-left: 15px
-      &:hover
-        background: $less_lightish
-    #btn-default
-      margin-left: 0
-      margin-top: 25px
-      background: $bright_green
-      &:hover
-        background: #9DBA87
+          padding: 0
+          width: 300px
+      #btn-default, a
+        font-family: $accent
+        border: 0
+        font-size: 14px
+        color: $light
+        text-shadow: 0 0
+        font-weight: 400
+        background: $less_darkish
+        border-radius: 4px
+        padding: 10px 15px
+        margin-left: 15px
+        &:hover
+          background: $less_lightish
+      #btn-default
+        margin-left: 0
+        margin-top: 25px
+        background: $bright_green
+        &:hover
+          background: #9DBA87
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 
@@ -1113,6 +1121,16 @@ button
     line-height: 1.5
     padding: 15px 0
     border: 0
+  #success
+    width: 100%
+    font-weight: bold
+    padding: 15px 10px
+    i
+      color: $light
+    background: $bright_green
+    &:hover
+      background: #8BBA6B
+
 
 .sub_menu
   display: block

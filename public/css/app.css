@@ -90,6 +90,8 @@ button {
     background: #E8A430; }
   button:active {
     box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.4); }
+  button:focus, button:active {
+    outline: 0; }
 
 .amount {
   line-height: 13px;
@@ -955,7 +957,6 @@ button {
     margin-top: 15px; }
 
 .manage_tool {
-  width: 100%;
   padding: 50px 0; }
   .manage_tool h1 {
     font-weight: bold !important; }
@@ -963,55 +964,61 @@ button {
     border-bottom: 1px solid #DBDBDB;
     padding-bottom: 8px;
     padding-top: 15px; }
-  .manage_tool form {
-    margin: 0; }
-    .manage_tool form .input-group {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex; }
-      .manage_tool form .input-group .tool_label {
-        width: 50%; }
-      .manage_tool form .input-group .values {
-        width: 50%; }
-        .manage_tool form .input-group .values input {
+  .manage_tool .wrapper {
+    width: 60%; }
+    .manage_tool .wrapper form {
+      width: 100%;
+      margin: 0; }
+      .manage_tool .wrapper form .input-group {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex; }
+        .manage_tool .wrapper form .input-group .tool_label {
+          width: 50%; }
+        .manage_tool .wrapper form .input-group .values {
+          width: 50%; }
+          .manage_tool .wrapper form .input-group .values input {
+            background: #F5F5F5; }
+          .manage_tool .wrapper form .input-group .values textarea {
+            width: 100%;
+            border: 1px solid #A5ABA3;
+            background: #F5F5F5;
+            border-radius: 4px; }
+          .manage_tool .wrapper form .input-group .values img {
+            width: 30%; }
+          .manage_tool .wrapper form .input-group .values button {
+            padding: 5px 10px;
+            font-size: 13px;
+            vertical-align: top; }
+        .manage_tool .wrapper form .input-group .price input {
+          width: 50px;
+          margin-right: 10px;
           background: #F5F5F5; }
-        .manage_tool form .input-group .values textarea {
-          width: 100%;
-          border: 1px solid #A5ABA3;
-          background: #F5F5F5;
-          border-radius: 4px; }
-        .manage_tool form .input-group .values img {
-          width: 30%; }
-        .manage_tool form .input-group .values button {
-          padding: 5px 10px;
-          font-size: 13px;
-          vertical-align: top; }
-      .manage_tool form .input-group .price input {
-        width: 10px;
-        margin-right: 10px;
-        background: #F5F5F5; }
-    .manage_tool form #choose_pic {
-      background: #676C66;
-      margin-left: 15px; }
-    .manage_tool form #btn-default, .manage_tool form a {
-      font-family: "Open Sans", sans-serif;
-      border: 0;
-      font-size: 14px;
-      color: #FCFCFC;
-      text-shadow: 0 0;
-      font-weight: 400;
-      background: #676C66;
-      border-radius: 4px;
-      padding: 10px 15px;
-      margin-left: 15px; }
-      .manage_tool form #btn-default:hover, .manage_tool form a:hover {
-        background: #A5ABA3; }
-    .manage_tool form #btn-default {
-      margin-left: 0;
-      margin-top: 25px;
-      background: #7CBA53; }
-      .manage_tool form #btn-default:hover {
-        background: #9DBA87; }
+      .manage_tool .wrapper form #image_upload input {
+        border: 0;
+        display: inline-block;
+        vertical-align: top;
+        padding: 0;
+        width: 300px; }
+      .manage_tool .wrapper form #btn-default, .manage_tool .wrapper form a {
+        font-family: "Open Sans", sans-serif;
+        border: 0;
+        font-size: 14px;
+        color: #FCFCFC;
+        text-shadow: 0 0;
+        font-weight: 400;
+        background: #676C66;
+        border-radius: 4px;
+        padding: 10px 15px;
+        margin-left: 15px; }
+        .manage_tool .wrapper form #btn-default:hover, .manage_tool .wrapper form a:hover {
+          background: #A5ABA3; }
+      .manage_tool .wrapper form #btn-default {
+        margin-left: 0;
+        margin-top: 25px;
+        background: #7CBA53; }
+        .manage_tool .wrapper form #btn-default:hover {
+          background: #9DBA87; }
 
 .ui-datepicker {
   box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5);
@@ -1130,6 +1137,15 @@ button {
     line-height: 1.5;
     padding: 15px 0;
     border: 0; }
+  .profile_action_buttons #success {
+    width: 100%;
+    font-weight: bold;
+    padding: 15px 10px;
+    background: #7CBA53; }
+    .profile_action_buttons #success i {
+      color: #FCFCFC; }
+    .profile_action_buttons #success:hover {
+      background: #8BBA6B; }
 
 .sub_menu {
   display: block;

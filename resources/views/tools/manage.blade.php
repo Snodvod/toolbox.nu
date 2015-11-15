@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="col col-80 centered manage_tool">
-            <div>
+            <div class="wrapper">
                 <div class="tool_title">
                     <h3>{{ $tool->name }}</h3>
                 </div>
@@ -43,9 +43,9 @@
                         <div class="tool_label">
                             <label>Afbeelding</label>
                         </div>
-                        <div class="values">
-                            <img src="/img/sample_profile.png">
-                            <button id="choose_pic">Kies afbeelding</button>
+                        <div class="values" id="image_upload">
+                            <img src="/img/catalog/ {{ $tool->image }}">
+                            {!! Form::file('image') !!}
                         </div>
                     </div>
                     {!! Form::Submit('Bewaren', array('id' => 'btn-default')) !!}

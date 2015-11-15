@@ -28,14 +28,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-25 centered">
-                <div class="profile_action_buttons">
-                    <form>
+            @if(!Auth::Check() || $user->id != Auth::User()->id)
+                <div class="col col-25 centered">
+                    <div class="profile_action_buttons">
                         <a class="btn btn-default" href="/user/{{$user->id}}/profile/contact">Contacteer</a>
-                        <button>Volgen</button>
-                    </form>
+                    </div>
                 </div>
-            </div>
+                @else
+                <div class="col col-25 centered">
+                    <div class="profile_action_buttons">
+                        <a class="btn btn-default" id="success" href="/tools/add">
+                            <i class="fa fa-plus fa-fw"></i>
+                            Voeg tools toe
+                        </a>
+                    </div>
+                </div>
+            @endif
             <div class="col centered divider">
                 <div class="sub_menu">
                     <ul>
@@ -70,7 +78,7 @@
                 <section class="sub_menu_tab" id="tab_tools">
                     <div class="col col-80 centered">
                         <div class="grid">
-                            @foreach($tools as $tool)
+                            @foreach($user->tools as $tool)
                                 <div class="item">
                                     <a href="/tools/{{$tool->id}}/detail" class="overlay"></a>
                                     <!--<img src="/img/tools/{{$tool->image}}">-->
@@ -89,12 +97,16 @@
                                             <span><i class="fa fa-star"></i></span>
                                         </div>
                                     </div>
-                                    <div class="item_edit">
-                                        <a href="/tools/{{ $tool->id }}/detail/edit">
-                                            <p>Bewerken</p>
-                                            <i class="fa fa-edit fa-2x"></i>
-                                        </a>
-                                    </div>
+                                    @if(Auth::Check())
+                                        @if($user->id == Auth::User()->id)
+                                            <div class="item_edit">
+                                                <a href="/tools/{{ $tool->id }}/detail/edit">
+                                                    <p>Bewerken</p>
+                                                    <i class="fa fa-edit fa-2x"></i>
+                                                </a>
+                                            </div>
+                                        @endif
+                                    @endif
                                 </div>
                             @endforeach
                         </div>

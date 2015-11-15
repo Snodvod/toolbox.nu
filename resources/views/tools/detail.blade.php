@@ -4,19 +4,29 @@
         <div class="col col-80 centered detail_wrapper">
             <div class="col col-65">
                 <div class="detail_pictures">
-                    <img src="/img/sample_tool.png">
+                    <img src="/img/catalog/{{ $tool->image }}">
                 </div>
             </div>
             <div class="col-35 detail_information">
                 <div>
                     <div class="detail_user">
-                        <div>
-                            <img src="/img/sample_profile.png">
-                            <h4>{{$tool->user->name}}</h4>
-                        </div>
-                        <div>
-                            <a href="/user/{{ $tool->user->id }}/profile" class="button">Bekijk profiel</a>
-                        </div>
+                        @if(!Auth::Check() || $tool->user->id != Auth::User()->id)
+                            <div>
+                                <img src="/img/sample_profile.png">
+                                <h4>{{$tool->user->name}}</h4>
+                            </div>
+                            <div>
+                                <a href="/user/{{ $tool->user->id }}/profile" class="button">Bekijk profiel</a>
+                            </div>
+                            @else
+                            <div>
+                                <img src="/img/sample_profile.png">
+                                <h4>Dit is uw tool</h4>
+                            </div>
+                            <div>
+                                <a href="/tools/{{ $tool->id }}/detail/edit" class="button">Bewerk tool</a>
+                            </div>
+                        @endif
                     </div>
                     <div class="detail_content">
                         <h3>{{$tool->name}}</h3>
@@ -33,8 +43,9 @@
                         </div>
                         <div class="detail_pricing">
                             <h4 class="item_price">&euro; {{$tool->price}}</h4>
+
                             <div class="input-group">
-                            {!! Form::open(array('url' => 'reservation/store')) !!}
+                                {!! Form::open(array('url' => 'reservation/store')) !!}
                                 {!! Form::hidden('tool_id', $tool->id) !!}
                                 {!! Form::label('start', 'Begindatum') !!}
                                 {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
@@ -42,23 +53,23 @@
                                 {!! Form::label('stop', 'Einddatum') !!}
                                 {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
                                 {!! Form::submit('Stuur Aanvraag', array('class' => 'subreservation')) !!}
-                            {!! Form::close() !!}
+                                {!! Form::close() !!}
                             </div>
-<!--
-                            <div class="input-group">
-                                <div>
-                                    <label>Begindatum</label>
-                                    <input class="datepicker" placeholder="Start">
-                                </div>
-                                <div>
-                                    Tot
-                                </div>
-                                <div>
-                                    <label>Einddatum</label>
-                                    <input class="datepicker" placeholder="Einde">
-                                </div>
-                            </div>
--->
+                            <!--
+                                                        <div class="input-group">
+                                                            <div>
+                                                                <label>Begindatum</label>
+                                                                <input class="datepicker" placeholder="Start">
+                                                            </div>
+                                                            <div>
+                                                                Tot
+                                                            </div>
+                                                            <div>
+                                                                <label>Einddatum</label>
+                                                                <input class="datepicker" placeholder="Einde">
+                                                            </div>
+                                                        </div>
+                            -->
                         </div>
                     </div>
                 </div>
