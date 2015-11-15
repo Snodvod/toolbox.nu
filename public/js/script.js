@@ -16,6 +16,7 @@ $(document).ready(function () {
     if($.urlParam('maxprice')) {
         $("#flat_slider_amount").slider("values", 1, $.urlParam('maxprice'));
     }
+    $("#amount").val("\u20ac " + $("#flat_slider_amount").slider("values", 0) + "  -  \u20ac " + $("#flat_slider_amount").slider("values", 1));
     $('#flat_slider_amount').on( "slidechange", function( event, ui ) {
         $("#flat_slider_amount").slider("values", 0);
         $("#flat_slider_amount").slider("values", 1);
