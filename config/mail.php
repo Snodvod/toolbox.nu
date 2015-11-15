@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => 'admin@toolbox.com',
+    'from' => 'inovanwinckel@hotmail.com',
 
     /*
     |--------------------------------------------------------------------------
