@@ -115,6 +115,9 @@ button {
   border-radius: 4px;
   padding: 1px 4px; }
 
+.section {
+  margin-bottom: 100px; }
+
 .grid {
   width: 100%;
   margin-top: 15px; }
@@ -659,7 +662,7 @@ button {
       border-radius: 4px;
       padding: 10px 15px; }
 
-#tools_heading {
+#tools_heading, .manage_reservation {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -670,18 +673,24 @@ button {
   -ms-flex-align: center;
   align-items: center;
   margin-bottom: 50px; }
-  #tools_heading .grid_options {
+  #tools_heading .reservation_link, .manage_reservation .reservation_link {
+    vertical-align: top;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px); }
+    #tools_heading .reservation_link a, .manage_reservation .reservation_link a {
+      width: 100%; }
+  #tools_heading .grid_options, .manage_reservation .grid_options {
     height: 32px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
-    #tools_heading .grid_options h4 {
+    #tools_heading .grid_options h4, .manage_reservation .grid_options h4 {
       font-size: 16px;
       color: #676C66;
       font-weight: 400;
       padding: 0 10px 0 0;
       margin: 0; }
-    #tools_heading .grid_options .grid_view, #tools_heading .grid_options .grid_sort, #tools_heading .grid_options .grid_filter {
+    #tools_heading .grid_options .grid_view, #tools_heading .grid_options .grid_sort, #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_view, .manage_reservation .grid_options .grid_sort, .manage_reservation .grid_options .grid_filter {
       height: 32px;
       padding: 0 25px;
       display: -webkit-flex;
@@ -690,7 +699,7 @@ button {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-    #tools_heading .grid_options .grid_view li {
+    #tools_heading .grid_options .grid_view li, .manage_reservation .grid_options .grid_view li {
       display: inline;
       font-size: 10pt;
       padding: 5px 8px;
@@ -699,11 +708,11 @@ button {
       color: #A5ABA3;
       background: #DBDBDB;
       border-radius: 4px; }
-    #tools_heading .grid_options .grid_view .active {
+    #tools_heading .grid_options .grid_view .active, .manage_reservation .grid_options .grid_view .active {
       font-weight: bold;
       background: #E89500;
       color: #FCFCFC; }
-    #tools_heading .grid_options .grid_sort select {
+    #tools_heading .grid_options .grid_sort select, .manage_reservation .grid_options .grid_sort select {
       font-family: "Roboto", serif;
       padding: 6px 10px;
       width: 200px;
@@ -711,13 +720,13 @@ button {
       color: #A5ABA3;
       border-radius: 4px;
       border: 0; }
-      #tools_heading .grid_options .grid_sort select:active, #tools_heading .grid_options .grid_sort select:focus {
+      #tools_heading .grid_options .grid_sort select:active, #tools_heading .grid_options .grid_sort select:focus, .manage_reservation .grid_options .grid_sort select:active, .manage_reservation .grid_options .grid_sort select:focus {
         outline: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; }
-    #tools_heading .grid_options .grid_filter {
+    #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_filter {
       padding-right: 0; }
-      #tools_heading .grid_options .grid_filter button {
+      #tools_heading .grid_options .grid_filter button, .manage_reservation .grid_options .grid_filter button {
         font-size: 14px;
         line-height: 12px;
         border-radius: 4px; }
@@ -1058,7 +1067,7 @@ button {
       background: #E89500;
       margin: 0; }
 
-#manage_reservation .title {
+.manage_reservation .title {
   margin-bottom: 50px; }
 
 .ui-datepicker {

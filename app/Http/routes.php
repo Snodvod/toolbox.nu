@@ -40,6 +40,7 @@ Route::get('user/{id}/profile', 'ProfileController@index');
 Route::get('user/{id}/account', 'ProfileController@show');
 Route::get('user/{id}/account/edit', 'ProfileController@edit');
 Route::get('user/{id}/reservations', 'ProfileController@reservation');
+Route::get('user/{id}/yourtoolreservations', 'ProfileController@yourToolReservation');
 Route::get('tools/{toolId}/detail', 'ToolController@detail');
 
 Route::post('reservation/store', 'ReservationController@store');

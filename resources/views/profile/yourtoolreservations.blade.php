@@ -2,12 +2,10 @@
     <div class="main_content">
         <div class="col col-80 centered manage_reservation">
             <div class="title">
-                <h1>Mijn reservaties</h1>
+                <h1>Reservaties voor uw tools</h1>
             </div>
             <div class="reservation_link">
-                <a class="button" href="/user/{{ Auth::User()->id }}/yourtoolreservations">
-                    Reservaties voor uw tools
-                </a>
+                <a class="button" href="/user/{{ Auth::User()->id }}/reservations">Uw reservaties</a>
             </div>
         </div>
         <div class="col col-80 centered">
@@ -44,7 +42,7 @@
                         </div>
                     @endforeach
                 @else
-                    <h4>U hebt nog geen reservaties gemaakt!</h4>
+                    <h4>Niemand wil u lelijke tools!</h4>
                 @endif
             </div>
         </div>

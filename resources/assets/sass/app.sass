@@ -139,7 +139,8 @@ button
   padding: 1px 4px
 
 //GRID SYSTEM
-
+.section
+  margin-bottom: 100px
 .grid
   width: 100%
   margin-top: 15px
@@ -664,11 +665,16 @@ button
       padding: 10px 15px
 
 //////////////////////////////////////TOOLS//////////////////////////////////////////
-#tools_heading
+#tools_heading, .manage_reservation
   display: flex
   justify-content: space-between
   align-items: center
   margin-bottom: 50px
+  .reservation_link
+    vertical-align: top
+    transform: translateY(-20px)
+    a
+      width: 100%
   .grid_options
     height: 32px
     display: flex
@@ -1035,7 +1041,7 @@ button
       background: $yellow
       margin: 0
 
-#manage_reservation
+.manage_reservation
   .title
     margin-bottom: 50px
 

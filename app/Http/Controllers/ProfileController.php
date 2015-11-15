@@ -71,6 +71,13 @@ class ProfileController extends Controller
         return view('/profile/reservations', compact('reservations'));
     }
 
+    public function yourToolReservation($id)
+    {
+        $reservations = Reservation::where('user_id', '=', $id)->get();
+
+        return view('/profile/yourtoolreservations', compact('reservations'));
+    }
+
     /**
      * Update the specified resource in storage.
      *
