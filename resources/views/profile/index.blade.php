@@ -29,22 +29,20 @@
                     </div>
                 </div>
             </div>
-            @if(!Auth::Check() || $user->id != Auth::User()->id)
-                <div class="col col-25 centered">
-                    <div class="profile_action_buttons">
-                        <a class="btn btn-default" href="/user/{{$user->id}}/profile/contact">Contacteer</a>
-                    </div>
+            <div class="col col-25 centered">
+                <div class="profile_action_buttons">
+                    <form>
+                        @if(!Auth::Check() || $user->id != Auth::User()->id)
+                            <a class="btn btn-default" href="/user/{{$user->id}}/profile/contact">Contacteer</a>
+                        @else
+                            <a class="btn btn-default" id="success" href="/tools/add">
+                                <i class="fa fa-plus fa-fw"></i>
+                                Voeg tools toe
+                            </a>
+                        @endif
+                    </form>
                 </div>
-            @else
-                <div class="col col-25 centered">
-                    <div class="profile_action_buttons">
-                        <a class="btn btn-default" id="success" href="/tools/add">
-                            <i class="fa fa-plus fa-fw"></i>
-                            Voeg tools toe
-                        </a>
-                    </div>
-                </div>
-            @endif
+            </div>
             <div class="col centered divider">
                 <div class="sub_menu">
                     <ul>

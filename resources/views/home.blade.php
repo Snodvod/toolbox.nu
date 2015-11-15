@@ -7,18 +7,18 @@
             <div id="landing_search">
                 <form>
                     <div class="col col-65 centered" id="search_box">
-                        <div class="input-group">
+                        <div class="input-group" id="homesearchgroup">
                             <div>
-                                <input placeholder="Ik zoek naar..">
+                                <input id="homesearch" placeholder="Ik zoek naar..">
                             </div>
                             <div>
-                                <input class="datepicker" placeholder="Begindatum">
+                                <input id="homestart" class="datepicker" placeholder="Begindatum">
                             </div>
                             <div>
-                                <input class="datepicker" placeholder="Einddatum">
+                                <input id="homestop" class="datepicker" placeholder="Einddatum">
                             </div>
                             <div class="search_button">
-                                <button type="submit">Zoeken</button>
+                                <button>Zoeken</button>
                             </div>
                         </div>
                     </div>
