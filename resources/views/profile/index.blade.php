@@ -12,7 +12,7 @@
                         <div class="rating">
                             <span class="profile_location">
                                 <i class="fa fa-map-marker"></i>
-                                <p class="distance">Boom (<span>3.6 km</span>)</p>
+                                <p class="distance">{{ $user->address->place }}</p>
                             </span>
                             <span id="separator">//</span>
                             <span class="star"><i class="fa fa-star"></i></span>

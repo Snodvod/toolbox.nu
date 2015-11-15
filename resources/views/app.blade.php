@@ -99,7 +99,7 @@
                                             @endforeach
                                         @endforeach
                                         @if(Auth::user()->reservations->count() == 0)
-                                            <li>
+                                            <li id="noborder">
                                                 <div class="notification">
                                                     U hebt geen notificaties
                                                 </div>
@@ -167,15 +167,15 @@
                                         </li>
                                         <li role="separator" class="divider"></li>
                                         <li>
-                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/profile">
+                                            <a class="manage" href="/user/{{ Auth::User()->id }}/profile">
                                                 <strong>Tools</strong>
 
-                                                <div class="amount tool_amount">{{ Auth::User()->tools->count() }}</div>
+                                                <div class="amount profile_amount">{{ Auth::User()->tools->count() }}</div>
                                             </a>
-                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/reservations">
+                                            <a class="manage" href="/user/{{ Auth::User()->id }}/reservations">
                                                 <strong>Reservaties</strong>
 
-                                                <div class="amount tool_amount">{{ Auth::User()->tools->count() }}</div>
+                                                <div class="amount profile_amount">{{ Auth::User()->tools->count() }}</div>
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>

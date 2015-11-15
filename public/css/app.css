@@ -32,6 +32,21 @@ textarea:focus {
     color: #FCFCFC;
     background: #A86C00 !important; }
 
+.red {
+  background: #D42B37 !important;
+  margin-left: 0 !important; }
+  .red:hover {
+    background: #D4646E !important; }
+  .red:active {
+    background: #7F3C42 !important; }
+
+.dark {
+  background: #676C66 !important; }
+  .dark:hover {
+    background: #A5ABA3 !important; }
+  .dark:active {
+    background: #313331 !important; }
+
 .input-group {
   margin: 25px 0; }
   .input-group div {
@@ -388,6 +403,9 @@ button {
       -webkit-transform: translateX(-80%);
       transform: translateX(-80%);
       box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5); }
+      .notifications .dropdown .dropdown-menu #noborder {
+        border: 0;
+        text-align: center; }
       .notifications .dropdown .dropdown-menu li {
         border-bottom: 1px solid #DBDBDB; }
         .notifications .dropdown .dropdown-menu li .notification {
@@ -487,9 +505,9 @@ button {
       width: 30px;
       border-radius: 50%; }
 
-.user #managetools {
+.user .manage {
   position: relative; }
-  .user #managetools .tool_amount {
+  .user .manage .profile_amount {
     right: 20px;
     top: 50%;
     -webkit-transform: translateY(-50%);
@@ -662,7 +680,7 @@ button {
       border-radius: 4px;
       padding: 10px 15px; }
 
-#tools_heading, .manage_reservation {
+#tools_heading, .manage_reservation, .manage_account_info, #manage_tools_heading {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -672,25 +690,23 @@ button {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-bottom: 50px; }
-  #tools_heading .reservation_link, .manage_reservation .reservation_link {
-    vertical-align: top;
-    -webkit-transform: translateY(-20px);
-    transform: translateY(-20px); }
-    #tools_heading .reservation_link a, .manage_reservation .reservation_link a {
+  margin-bottom: 50px !important; }
+  #tools_heading .link, .manage_reservation .link, .manage_account_info .link, #manage_tools_heading .link {
+    vertical-align: top; }
+    #tools_heading .link a, .manage_reservation .link a, .manage_account_info .link a, #manage_tools_heading .link a {
       width: 100%; }
-  #tools_heading .grid_options, .manage_reservation .grid_options {
+  #tools_heading .grid_options, .manage_reservation .grid_options, .manage_account_info .grid_options, #manage_tools_heading .grid_options {
     height: 32px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
-    #tools_heading .grid_options h4, .manage_reservation .grid_options h4 {
+    #tools_heading .grid_options h4, .manage_reservation .grid_options h4, .manage_account_info .grid_options h4, #manage_tools_heading .grid_options h4 {
       font-size: 16px;
       color: #676C66;
       font-weight: 400;
       padding: 0 10px 0 0;
       margin: 0; }
-    #tools_heading .grid_options .grid_view, #tools_heading .grid_options .grid_sort, #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_view, .manage_reservation .grid_options .grid_sort, .manage_reservation .grid_options .grid_filter {
+    #tools_heading .grid_options .grid_view, #tools_heading .grid_options .grid_sort, #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_view, .manage_reservation .grid_options .grid_sort, .manage_reservation .grid_options .grid_filter, .manage_account_info .grid_options .grid_view, .manage_account_info .grid_options .grid_sort, .manage_account_info .grid_options .grid_filter, #manage_tools_heading .grid_options .grid_view, #manage_tools_heading .grid_options .grid_sort, #manage_tools_heading .grid_options .grid_filter {
       height: 32px;
       padding: 0 25px;
       display: -webkit-flex;
@@ -699,7 +715,7 @@ button {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center; }
-    #tools_heading .grid_options .grid_view li, .manage_reservation .grid_options .grid_view li {
+    #tools_heading .grid_options .grid_view li, .manage_reservation .grid_options .grid_view li, .manage_account_info .grid_options .grid_view li, #manage_tools_heading .grid_options .grid_view li {
       display: inline;
       font-size: 10pt;
       padding: 5px 8px;
@@ -708,11 +724,11 @@ button {
       color: #A5ABA3;
       background: #DBDBDB;
       border-radius: 4px; }
-    #tools_heading .grid_options .grid_view .active, .manage_reservation .grid_options .grid_view .active {
+    #tools_heading .grid_options .grid_view .active, .manage_reservation .grid_options .grid_view .active, .manage_account_info .grid_options .grid_view .active, #manage_tools_heading .grid_options .grid_view .active {
       font-weight: bold;
       background: #E89500;
       color: #FCFCFC; }
-    #tools_heading .grid_options .grid_sort select, .manage_reservation .grid_options .grid_sort select {
+    #tools_heading .grid_options .grid_sort select, .manage_reservation .grid_options .grid_sort select, .manage_account_info .grid_options .grid_sort select, #manage_tools_heading .grid_options .grid_sort select {
       font-family: "Roboto", serif;
       padding: 6px 10px;
       width: 200px;
@@ -720,13 +736,13 @@ button {
       color: #A5ABA3;
       border-radius: 4px;
       border: 0; }
-      #tools_heading .grid_options .grid_sort select:active, #tools_heading .grid_options .grid_sort select:focus, .manage_reservation .grid_options .grid_sort select:active, .manage_reservation .grid_options .grid_sort select:focus {
+      #tools_heading .grid_options .grid_sort select:active, #tools_heading .grid_options .grid_sort select:focus, .manage_reservation .grid_options .grid_sort select:active, .manage_reservation .grid_options .grid_sort select:focus, .manage_account_info .grid_options .grid_sort select:active, .manage_account_info .grid_options .grid_sort select:focus, #manage_tools_heading .grid_options .grid_sort select:active, #manage_tools_heading .grid_options .grid_sort select:focus {
         outline: 0;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0; }
-    #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_filter {
+    #tools_heading .grid_options .grid_filter, .manage_reservation .grid_options .grid_filter, .manage_account_info .grid_options .grid_filter, #manage_tools_heading .grid_options .grid_filter {
       padding-right: 0; }
-      #tools_heading .grid_options .grid_filter button, .manage_reservation .grid_options .grid_filter button {
+      #tools_heading .grid_options .grid_filter button, .manage_reservation .grid_options .grid_filter button, .manage_account_info .grid_options .grid_filter button, #manage_tools_heading .grid_options .grid_filter button {
         font-size: 14px;
         line-height: 12px;
         border-radius: 4px; }
@@ -996,79 +1012,77 @@ button {
       border-top: 1px solid #DBDBDB;
       padding-top: 25px; }
 
-.manage_tool, .manage_account {
-  padding: 50px 0; }
-  .manage_tool h1, .manage_account h1 {
-    font-weight: bold !important; }
-  .manage_tool .tool_title, .manage_account .tool_title {
-    border-bottom: 1px solid #DBDBDB;
-    padding-bottom: 8px;
-    padding-top: 15px; }
-  .manage_tool .wrapper, .manage_account .wrapper {
-    width: 60%; }
-    .manage_tool .wrapper form, .manage_account .wrapper form {
-      width: 100%;
-      margin: 0; }
-    .manage_tool .wrapper .input-group, .manage_account .wrapper .input-group {
-      width: 100%;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex; }
-      .manage_tool .wrapper .input-group .tool_label, .manage_tool .wrapper .input-group .account_label, .manage_account .wrapper .input-group .tool_label, .manage_account .wrapper .input-group .account_label {
-        width: 50%; }
-      .manage_tool .wrapper .input-group .values, .manage_account .wrapper .input-group .values {
-        width: 50%; }
-        .manage_tool .wrapper .input-group .values p, .manage_account .wrapper .input-group .values p {
-          color: #434542;
-          font-size: 16px; }
-        .manage_tool .wrapper .input-group .values input, .manage_account .wrapper .input-group .values input {
-          background: #F5F5F5; }
-        .manage_tool .wrapper .input-group .values textarea, .manage_account .wrapper .input-group .values textarea {
-          width: 100%;
-          border: 1px solid #A5ABA3;
-          background: #F5F5F5;
-          border-radius: 4px; }
-        .manage_tool .wrapper .input-group .values img, .manage_account .wrapper .input-group .values img {
-          width: 30%; }
-        .manage_tool .wrapper .input-group .values button, .manage_account .wrapper .input-group .values button {
-          padding: 5px 10px;
-          font-size: 13px;
-          vertical-align: top; }
-      .manage_tool .wrapper .input-group .price input, .manage_account .wrapper .input-group .price input {
-        width: 50px;
-        margin-right: 10px;
-        background: #F5F5F5; }
-    .manage_tool .wrapper #image_upload input, .manage_account .wrapper #image_upload input {
-      border: 0;
-      display: inline-block;
-      vertical-align: top;
-      padding: 0;
-      width: 300px; }
-    .manage_tool .wrapper #btn-default, .manage_tool .wrapper a, .manage_account .wrapper #btn-default, .manage_account .wrapper a {
-      font-family: "Open Sans", sans-serif;
-      border: 0;
-      font-size: 14px;
-      color: #FCFCFC;
-      text-shadow: 0 0;
-      font-weight: 400;
-      background: #676C66;
-      border-radius: 4px;
-      padding: 10px 15px;
-      margin-left: 15px; }
-      .manage_tool .wrapper #btn-default:hover, .manage_tool .wrapper a:hover, .manage_account .wrapper #btn-default:hover, .manage_account .wrapper a:hover {
-        background: #A5ABA3; }
-    .manage_tool .wrapper #btn-default, .manage_account .wrapper #btn-default {
-      margin-left: 0;
-      margin-top: 25px;
-      background: #7CBA53; }
-      .manage_tool .wrapper #btn-default:hover, .manage_account .wrapper #btn-default:hover {
-        background: #9DBA87; }
-    .manage_tool .wrapper #change_password, .manage_account .wrapper #change_password {
-      background: #E89500;
-      margin: 0; }
+.manage_tool h1, .manage_account h1 {
+  font-weight: bold !important; }
 
-.manage_reservation .title {
-  margin-bottom: 50px; }
+.manage_tool .tool_title, .manage_account .tool_title {
+  border-bottom: 1px solid #DBDBDB;
+  padding-bottom: 8px; }
+
+.manage_tool .wrapper, .manage_account .wrapper {
+  width: 60%; }
+  .manage_tool .wrapper h3, .manage_account .wrapper h3 {
+    margin: 0; }
+  .manage_tool .wrapper form, .manage_account .wrapper form {
+    width: 100%;
+    margin: 0; }
+  .manage_tool .wrapper .input-group, .manage_account .wrapper .input-group {
+    width: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+    .manage_tool .wrapper .input-group .tool_label, .manage_tool .wrapper .input-group .account_label, .manage_account .wrapper .input-group .tool_label, .manage_account .wrapper .input-group .account_label {
+      width: 50%; }
+    .manage_tool .wrapper .input-group .values, .manage_account .wrapper .input-group .values {
+      width: 50%; }
+      .manage_tool .wrapper .input-group .values p, .manage_account .wrapper .input-group .values p {
+        color: #434542;
+        font-size: 16px; }
+      .manage_tool .wrapper .input-group .values input, .manage_account .wrapper .input-group .values input {
+        background: #F5F5F5; }
+      .manage_tool .wrapper .input-group .values textarea, .manage_account .wrapper .input-group .values textarea {
+        width: 100%;
+        border: 1px solid #A5ABA3;
+        background: #F5F5F5;
+        border-radius: 4px; }
+      .manage_tool .wrapper .input-group .values img, .manage_account .wrapper .input-group .values img {
+        width: 30%; }
+      .manage_tool .wrapper .input-group .values button, .manage_account .wrapper .input-group .values button {
+        padding: 5px 10px;
+        font-size: 13px;
+        vertical-align: top; }
+    .manage_tool .wrapper .input-group .price input, .manage_account .wrapper .input-group .price input {
+      width: 50px;
+      margin-right: 10px;
+      background: #F5F5F5; }
+  .manage_tool .wrapper #image_upload input, .manage_account .wrapper #image_upload input {
+    border: 0;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0;
+    width: 300px; }
+  .manage_tool .wrapper #btn-default, .manage_tool .wrapper a, .manage_account .wrapper #btn-default, .manage_account .wrapper a {
+    font-family: "Open Sans", sans-serif;
+    border: 0;
+    font-size: 14px;
+    color: #FCFCFC;
+    text-shadow: 0 0;
+    font-weight: 400;
+    background: #676C66;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-left: 15px; }
+    .manage_tool .wrapper #btn-default:hover, .manage_tool .wrapper a:hover, .manage_account .wrapper #btn-default:hover, .manage_account .wrapper a:hover {
+      background: #A5ABA3; }
+  .manage_tool .wrapper #btn-default, .manage_account .wrapper #btn-default {
+    margin-left: 0;
+    margin-top: 25px;
+    background: #7CBA53; }
+    .manage_tool .wrapper #btn-default:hover, .manage_account .wrapper #btn-default:hover {
+      background: #9DBA87; }
+  .manage_tool .wrapper #change_password, .manage_account .wrapper #change_password {
+    background: #E89500;
+    margin: 0; }
 
 .ui-datepicker {
   box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5);

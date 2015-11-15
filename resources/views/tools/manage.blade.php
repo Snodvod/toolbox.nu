@@ -44,12 +44,12 @@
                             <label>Afbeelding</label>
                         </div>
                         <div class="values" id="image_upload">
-                            <img src="/img/catalog/ {{ $tool->image }}">
+                            <img src="/img/catalog/{{ $tool->image }}">
                             {!! Form::file('image') !!}
                         </div>
                     </div>
                     {!! Form::Submit('Bewaren', array('id' => 'btn-default')) !!}
-                    <a class="button" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
+                    <a class="button dark" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
                 {!! Form::Close() !!}
             </div>
         </div>

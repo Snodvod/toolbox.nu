@@ -4,7 +4,7 @@
             <div class="title">
                 <h1>Reservaties voor uw tools</h1>
             </div>
-            <div class="reservation_link">
+            <div class="link">
                 <a class="button" href="/user/{{ Auth::User()->id }}/reservations">Uw reservaties</a>
             </div>
         </div>

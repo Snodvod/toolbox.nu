@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 {!! Form::Submit('Bewaren', array('id' => 'btn-default')) !!}
-                <a class="button" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
+                <a class="button dark" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
                 {!! Form::Close() !!}
             </div>
         </div>

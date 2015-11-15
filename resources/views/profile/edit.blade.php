@@ -1,51 +1,67 @@
 @extends('app') @section('content')
     <div class="main_content">
-        <div class="col col-80 centered" id="manage_tools_heading">
+        <div class="col col-80 centered manage_account_info">
             <div class="title">
                 <h1>Account</h1>
             </div>
         </div>
-        <div class="col col-80 centered manage_tool">
+        <div class="col col-80 centered manage_account">
             <div class="wrapper">
-                {!! Form::Open(array('url' => '/tools/create', 'method' => 'post', 'files' => 'true')) !!}
+                <div class="tool_title">
+                    <h3>Bewerk informatie</h3>
+                </div>
+                {!! Form::Open(array('url' => '/user/' . Auth::User()->id . '/account/update', 'method' => 'put')) !!}
                 <div class="input-group">
-
-                    <div class="tool_label">
-                        {!! Form::label('name', 'Naam van de tool') !!}
+                    <div class="account_label">
+                        <label>Naam</label>
                     </div>
                     <div class="values">
-                        {!! Form::text('name') !!}
+                        {!! Form::text('name', Auth::User()->name) !!}
                     </div>
-
                 </div>
                 <div class="input-group">
-
-                    <div class="tool_label">
-                        {!! Form::label('desc', 'Beschrijving') !!}
+                    <div class="account_label">
+                        <label>Email</label>
                     </div>
                     <div class="values">
-                        {!! Form::textarea('desc') !!}
-                    </div>
-                </div>
-
-                <div class="input-group">
-                    <div class="tool_label">
-                        {!! Form::label('price', 'Prijs per dag') !!}
-                    </div>
-                    <div class="values price">
-                        {!! Form::number('price', '0', array('min' => '0')) !!} Euro
+                        {!! Form::text('email', Auth::User()->email) !!}
                     </div>
                 </div>
                 <div class="input-group">
-                    <div class="tool_label">
-                        <label>Afbeelding</label>
+                    <div class="account_label">
+                        <label>Straat en nummer</label>
                     </div>
-                    <div class="values" id="image_upload">
-                        {!! Form::file('image') !!}
+                    <div class="values">
+                        {!! Form::text('street', Auth::User()->address->street) !!}
+                        {!! Form::text('number', Auth::User()->address->number) !!}
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="account_label">
+                        <label>Postcode</label>
+                    </div>
+                    <div class="values">
+                        {!! Form::text('code', Auth::User()->address->code) !!}
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="account_label">
+                        <label>Plaats</label>
+                    </div>
+                    <div class="values">
+                        {!! Form::text('place', Auth::User()->address->place) !!}
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="account_label">
+                        <label>Land</label>
+                    </div>
+                    <div class="values">
+                        {!! Form::text('country',  Auth::User()->address->country) !!}
                     </div>
                 </div>
                 {!! Form::Submit('Bewaren', array('id' => 'btn-default')) !!}
-                <a class="button" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
+                <a class="button dark" href="/user/{{ Auth::User()->id }}/account">Annuleren</a>
                 {!! Form::Close() !!}
             </div>
         </div>

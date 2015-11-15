@@ -52,6 +52,19 @@ textarea
   &:active
     color: $light
     background: #A86C00 !important
+.red
+  background: $red !important
+  margin-left: 0 !important
+  &:hover
+    background: #D4646E !important
+  &:active
+    background: #7F3C42 !important
+.dark
+  background: $less_darkish !important
+  &:hover
+    background: $less_lightish !important
+  &:active
+    background: $darkish !important
 
 .input-group
   margin: 25px 0
@@ -407,6 +420,9 @@ button
       left: 0
       transform: translateX(-80%)
       box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
+      #noborder
+        border: 0
+        text-align: center
       li
         border-bottom: 1px solid $lightish
         .notification
@@ -498,9 +514,9 @@ button
       img
         width: 30px
         border-radius: 50%
-  #managetools
+  .manage
     position: relative
-    .tool_amount
+    .profile_amount
       right: 20px
       top: 50%
       transform: translateY(-50%)
@@ -665,14 +681,13 @@ button
       padding: 10px 15px
 
 //////////////////////////////////////TOOLS//////////////////////////////////////////
-#tools_heading, .manage_reservation
+#tools_heading, .manage_reservation, .manage_account_info, #manage_tools_heading
   display: flex
   justify-content: space-between
   align-items: center
-  margin-bottom: 50px
-  .reservation_link
+  margin-bottom: 50px !important
+  .link
     vertical-align: top
-    transform: translateY(-20px)
     a
       width: 100%
   .grid_options
@@ -971,15 +986,15 @@ button
 
 ///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
 .manage_tool, .manage_account
-  padding: 50px 0
   h1
     font-weight: bold !important
   .tool_title
     border-bottom: 1px solid $lightish
     padding-bottom: 8px
-    padding-top: 15px
   .wrapper
     width: 60%
+    h3
+      margin: 0
     form
       width: 100%
       margin: 0
@@ -1040,10 +1055,6 @@ button
     #change_password
       background: $yellow
       margin: 0
-
-.manage_reservation
-  .title
-    margin-bottom: 50px
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 

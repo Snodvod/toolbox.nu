@@ -87,7 +87,18 @@ class ProfileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->address->street = $request->street;
+        $user->address->number = $request->number;
+        $user->address->code = $request->code;
+        $user->address->place = $request->place;
+        $user->address->country = $request->country;
+        $user->save();
+        $user->address->save();
+
+        return redirect('/user/' . Auth::User()->id . '/account');
     }
 
     /**
@@ -98,6 +109,9 @@ class ProfileController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect('home');
     }
 }
