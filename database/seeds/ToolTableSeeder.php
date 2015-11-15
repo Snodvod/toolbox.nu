@@ -13,6 +13,7 @@ class ToolTableSeeder extends Seeder
     {
         DB::table('tools')->insert([
 	        'user_id' => 1,
+            'price' => 4,
 	        'name' => 'Handzaag',
 	        'brand' => 'Stanley',
 	        'bought_at' => date('Y-m-d H:i:s'),
@@ -21,6 +22,7 @@ class ToolTableSeeder extends Seeder
 
         DB::table('tools')->insert([
             'user_id' => 1,
+            'price' => 3,
             'name' => 'Metaalzaag',
             'brand' => 'Stanley',
             'bought_at' => date('Y-m-d H:i:s'),
@@ -29,7 +31,7 @@ class ToolTableSeeder extends Seeder
 
         DB::table('tools')->insert([
             'user_id' => 2,
-            'price' => 14,
+            'price' => 5,
             'name' => 'Multibit met ratel',
             'brand' => 'Stanley',
             'bought_at' => date('Y-m-d H:i:s'),
@@ -37,6 +39,7 @@ class ToolTableSeeder extends Seeder
         ]);
         DB::table('tools')->insert([
             'user_id' => 2,
+            'price' => 4,
             'name' => 'Schroevendraaierset Cushiongrip 6-delig',
             'brand' => 'Stanley',
             'bought_at' => date('Y-m-d H:i:s'),
@@ -44,6 +47,7 @@ class ToolTableSeeder extends Seeder
         ]);
         DB::table('tools')->insert([
             'user_id' => 1,
+            'price' => 1,
             'name' => 'Klauwhamer Steelmaster 450gr',
             'brand' => 'Stanley',
             'bought_at' => date('Y-m-d H:i:s'),
@@ -51,6 +55,7 @@ class ToolTableSeeder extends Seeder
         ]);
         DB::table('tools')->insert([
             'user_id' => 2,
+            'price' => 3,
             'name' => 'Voorhamer 4kg',
             'brand' => 'Polet',
             'bought_at' => date('Y-m-d H:i:s'),
