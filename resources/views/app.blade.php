@@ -72,7 +72,7 @@
                                                                     </p>
 
                                                                     <p class="notification_date">
-                                                                        {{$userreservation->created_at}}
+                                                                        {{$userreservation->created_at->diffForHumans()}}
                                                                     </p>
                                                                 </div>
                                                                 <div class="notification_tool">
@@ -127,7 +127,7 @@
                                                                     </p>
 
                                                                     <p class="notification_date">
-                                                                        {{$userreservation->status->updated_at}}
+                                                                        {{$userreservation->status->updated_at->diffForHumans()}}
                                                                     </p>
                                                                 </div>
                                                                 <div class="notification_tool">
