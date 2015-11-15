@@ -52,51 +52,55 @@
                                 <div class="dropdown">
                                     <ul class="dropdown-menu">
                                         @foreach(Auth::user()->tools as $usertool)
-                                        @foreach($usertool->reservations as $userreservation)
-                                        @if(!$userreservation->status->accepted && !$userreservation->status->denied)
-                                        <li id="{{$userreservation->id}}">
-                                            <div class="notification">
-                                                <div class="notification_content">
-                                                    <div class="notification_pic">
-                                                        <img src="/img/sample_profile.png">
-                                                    </div>
-                                                    <div class="notification_message">
-                                                        <p>
-                                                            <span>{{Auth::user()->name}}</span>
-                                                            wilt uw
-                                                            <span>{{$usertool->name}}</span>
-                                                            lenen van
-                                                            <span>{{$userreservation->start}}</span>
-                                                            Tot
-                                                            <span>{{$userreservation->stop}}</span>
-                                                        </p>
+                                            @foreach($usertool->reservations as $userreservation)
+                                                @if(!$userreservation->status->accepted && !$userreservation->status->denied)
+                                                    <li id="{{$userreservation->id}}">
+                                                        <div class="notification">
+                                                            <div class="notification_content">
+                                                                <div class="notification_pic">
+                                                                    <img src="/img/sample_profile.png">
+                                                                </div>
+                                                                <div class="notification_message">
+                                                                    <p>
+                                                                        <span>{{Auth::user()->name}}</span>
+                                                                        wilt uw
+                                                                        <span>{{$usertool->name}}</span>
+                                                                        lenen van
+                                                                        <span>{{$userreservation->start}}</span>
+                                                                        Tot
+                                                                        <span>{{$userreservation->stop}}</span>
+                                                                    </p>
 
-                                                        <p class="notification_date">
-                                                            {{$userreservation->created_at}}
-                                                        </p>
-                                                    </div>
-                                                    <div class="notification_tool">
-                                                        <img src="/img/sample_tool.png">
-                                                    </div>
-                                                </div>
-                                                <div class="notification_actions">
-                                                    <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="accepted">
-                                                        <h5>Accepteren</h5>
-                                                        <i class="fa fa-check fa-fw"></i>
-                                                    </div>
-                                                    <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="denied">
-                                                        <h5>Negeren</h5>
-                                                        <i class="fa fa-close fa-fw"></i>
-                                                    </div>
-                                                    <div class="action">
-                                                        <h5>OK</h5>
-                                                        <i class="fa fa-check fa-fw"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        @endif
-                                        @endforeach
+                                                                    <p class="notification_date">
+                                                                        {{$userreservation->created_at}}
+                                                                    </p>
+                                                                </div>
+                                                                <div class="notification_tool">
+                                                                    <img src="/img/sample_tool.png">
+                                                                </div>
+                                                            </div>
+                                                            <div class="notification_actions">
+                                                                <div class="action notstatus"
+                                                                     data-id="{{$userreservation->id}}"
+                                                                     data-val="accepted">
+                                                                    <h5>Accepteren</h5>
+                                                                    <i class="fa fa-check fa-fw"></i>
+                                                                </div>
+                                                                <div class="action notstatus"
+                                                                     data-id="{{$userreservation->id}}"
+                                                                     data-val="denied">
+                                                                    <h5>Negeren</h5>
+                                                                    <i class="fa fa-close fa-fw"></i>
+                                                                </div>
+                                                                <div class="action">
+                                                                    <h5>OK</h5>
+                                                                    <i class="fa fa-check fa-fw"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                            @endforeach
                                         @endforeach
                                     </ul>
                                     <div class="arrow"></div>
@@ -135,28 +139,9 @@
                                 <a href="/auth/register">Registreren</a>
                             </div>
                             <div class="nav_item" id="showlogin">
-                                <a href="#">Login</a>
-                            </div>@endif
-                        <div id="login_box">
-                            {!! Form::open(array('url' => '/auth/login')) !!}
-                            {!! csrf_field() !!}
-                            <div class="input-group">
-                                <div>
-                                    {!! Form::label('email', 'Email') !!}
-                                    {!! Form::text('email') !!}
-                                </div>
-
-                                <div>
-                                    {!! Form::label('wachtwoord', 'Wachtwoord') !!}
-                                    {!! Form::password('password') !!}
-                                </div>
-
-                                <div>
-                                    <button type="submit">Login</button>
-                                </div>
+                                <a href="/auth/login">Login</a>
                             </div>
-                            {!! Form::close() !!}
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

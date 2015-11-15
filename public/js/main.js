@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    showLogin();
     changeActiveClassProfile();
     changeActiveClass('.grid_view');
     changeActiveClass('#duration_ratio');
@@ -9,7 +8,6 @@ $(document).ready(function () {
     toggleMainNavMenu();
     toggleNotifications();
     toggleProfileMenu();
-    $('#picture_carousel').carousel();
 
     //DATEPICKERS
     $.datepicker.setDefaults($.datepicker.regional['nl']);
@@ -64,19 +62,6 @@ $(document).ready(function () {
     ////////////////////////////////////////
 
 });
-
-function showLogin() {
-
-    var $active = $('.nav_item.active');
-    console.log($active)
-    $('#showlogin').click(function () {
-
-        $($active).toggleClass('active');
-
-        $('#login_box').toggle();
-        $('#showlogin').toggleClass("active");
-    });
-}
 
 function changeActiveClass($parent) {
     $($parent + ' ul li').click(function (e) {

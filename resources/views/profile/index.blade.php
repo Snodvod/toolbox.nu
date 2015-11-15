@@ -72,7 +72,7 @@
                         <div class="grid">
                             @foreach($user->tools as $tool)
                             <div class="item">
-                                <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
+                                <a href="/tools/{{$tool->id}}/detail" class="overlay"></a>
                                 <!--<img src="/img/tools/{{$tool->image}}">-->
                                 <img src="/img/sample_tool.png">
 
@@ -88,6 +88,10 @@
                                         <span><i class="fa fa-star"></i></span>
                                         <span><i class="fa fa-star"></i></span>
                                     </div>
+                                </div>
+                                <div class="item_edit">
+                                    <p>Bewerk deze tool</p>
+                                    <i class="fa fa-edit fa-2x"></i>
                                 </div>
                             </div>
                             @endforeach
