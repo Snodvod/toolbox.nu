@@ -40,8 +40,9 @@ Route::get('tools/{toolId}/detail', 'ToolController@detail');
 Route::post('reservation/store', 'ReservationController@store');
 Route::get('reservation/{id}/status/{status}/update', 'ReservationController@updateStatus');
 
-Route::get('tools/{toolId}/detail/edit', 'ToolController@index');
+Route::get('tools/{toolId}/edit', 'ToolController@index');
 Route::put('tools/{id}/update', 'ToolController@update');
+
 Route::get('tools/add', 'ToolController@add');
 Route::post('tools/create', 'ToolController@create');
 
