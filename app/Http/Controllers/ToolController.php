@@ -17,13 +17,15 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($toolId)
+    public function index($toolId, Request $request)
     {
         $tool = Tool::findOrFail($toolId);
-        if ($tool->user()->get() == Auth::user())
+        if ($tool->user()->get()->first() == $request->user())
         {
             return view('tools/manage', ['tool' => $tool]);
-        } else return redirect('/');
+        } else {
+            return redirect('/'); 
+        }
         
     }
 
