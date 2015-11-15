@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(JobTableSeeder::class);
         $this->call(ExpertiseTableSeeder::class);
         $this->call(AccesslevelTableSeeder::class);
+        $this->call(AddressesTableSeeder::class);
     }
 }
