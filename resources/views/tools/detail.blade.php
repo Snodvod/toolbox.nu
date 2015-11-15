@@ -28,7 +28,7 @@
                                 <h4>Dit is uw tool</h4>
                             </div>
                             <div>
-                                <a href="/tools/{{ $tool->id }}/detail/edit" class="button">Bewerk tool</a>
+                                <a href="/tools/{{ $tool->id }}/edit" class="button">Bewerk tool</a>
                             </div>
                         @endif
                     </div>
