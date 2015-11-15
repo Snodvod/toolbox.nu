@@ -43,7 +43,6 @@ textarea
   padding: 8px 14px
   background: $yellow
   color: $light
-  font-weight: bold
   &:hover
     color: $light
     background: #E8A430
@@ -106,13 +105,23 @@ button
   font-family: $accent
   color: $light
   border-radius: 4px
-  font-weight: bold
   font-size: 11pt
   padding: 10px 20px
   &:hover
     background: #E8A430
   &:active
-    background: #A86C00
+    box-shadow: inset 2px 2px 5px 0px rgba(0, 0, 0, 0.4)
+
+.amount
+  line-height: 13px
+  font-weight: bold
+  position: absolute
+  text-align: center
+  font-size: 9px
+  color: $light
+  background: $yellow
+  border-radius: 4px
+  padding: 1px 4px
 
 //GRID SYSTEM
 
@@ -133,6 +142,20 @@ button
       height: 100%
       width: 100%
       background: rgba(245, 245, 245, 0)
+    .overlay_edit
+      .edit_item
+        display: none
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%)
+        text-align: center
+        h4
+          font-size: 24pt
+        i
+          font-size: 50pt
+          &:hover
+            color: $yellow
     .item_author
       position: absolute
       width: 100%
@@ -142,6 +165,7 @@ button
       img
         display: inline
         width: 35px
+        height: 35px
         border-radius: 50%
         vertical-align: middle !important
         box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
@@ -154,18 +178,55 @@ button
         vertical-align: middle
     &:hover .overlay
       background: rgba(245, 245, 245, 0.4)
+      .edit_item
+        display: block
+    &:hover .item_edit
+      display: block
     img
       width: 100%
     .item_info
-      padding: 0px 25px
+      position: absolute
+      bottom: 0
+      background: $less_light
+      width: 100%
+      z-index: 5
       .info_header
-        margin-top: 10px
-        display: flex
-        justify-content: space-between
+        padding: 10px 25px 0px 25px
         h4
+          &:first-child
+            display: inline-block
+            white-space: nowrap
+            overflow: hidden
+            text-overflow: ellipsis
+            width: 70%
+            line-height: 24px
+          &:last-child
+            display: inline-block
+            float: right
           margin-bottom: 2px
         h5
           margin-bottom: 0
+      .rating
+        padding: 0px 25px 10px 25px
+    .item_edit
+      display: none
+      position: absolute
+      top: 0
+      right: 0
+      padding: 15px
+      z-index: 16
+      color: $lightish
+      &:hover i, &:hover p
+        color: $yellow
+      a
+        display: flex
+        align-items: center
+      p
+        font-weight: bold
+        padding: 8px 10px 0 0
+        color: $lightish
+      i
+        color: $lightish
 
 .item_price
   background: $bright-green
@@ -312,23 +373,156 @@ button
   a
     padding: 0 10px
 
-#login_box
-  //border-top: 2px solid $yellow
+.notifications
+  padding: 0 20px
+  position: relative
+  i
+    font-size: 14pt
+  .notifications_amount
+    top: 25px
+    right: 27px
+  .dropdown
+    display: none
+    position: relative
+    margin-top: -10px
+    .dropdown-menu
+      width: 400px
+      left: 0
+      transform: translateX(-80%)
+      box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5)
+      li
+        border-bottom: 1px solid $lightish
+        .notification
+          line-height: 1.42857143
+          padding: 15px
+          &:hover .notification_actions
+            display: flex
+          .notification_content
+            display: flex
+            .notification_pic
+              img
+                width: 60px
+                border-radius: 50%
+            .notification_message
+              vertical-align: top
+              width: 80%
+              margin: 0px 10px
+              p
+                white-space: normal
+                margin-bottom: 0
+                span
+                  font-weight: 500
+                  color: $less_dark
+              .notification_date
+                font-size: 12px
+                color: $less_lightish
+            .notification_tool
+              img
+                width: 60px
+                border-radius: 4px
+          .notification_actions
+            display: none
+            justify-content: space-around
+            .action
+              text-align: center
+              display: flex
+              align-items: center
+              margin: 15px 0px 5px 0px
+              &:hover h5
+                color: $less_dark
+              h5
+                cursor: pointer
+                margin: 0
+                font-weight: bold
+                color: $less_darkish
+              i
+                padding-left: 5px
+                color: $less_light
+              .fa-check
+                color: $bright-green
+              .fa-close
+                color: $red
+    .arrow
+      z-index: 9999
+      height: 15px
+      width: 15px
+      position: absolute
+      background: $light
+      top: -5px
+      left: 50%
+      margin-left: -7.5px
+      box-shadow: -2px -2px 1px rgba(25, 25, 25, 0.1)
+      transform: rotate(45deg)
+
+.dropdown
   display: none
-  top: 80px
-  position: absolute
+  .dropdown-menu
+    display: block
+    border: 0
+    li
+      a
+        padding: 10px 20px !important
+    .divider
+      padding: 0
+      border: 0
+
+.user
+  .dropdown_profile
+    margin: auto
+    text-align: center
+    width: 150px
+    p
+      display: inline
+      padding: 5px 0 0 5px
+    #user_pic
+      display: inline-block
+      vertical-align: middle
+      height: 30px
+      img
+        width: 30px
+        border-radius: 50%
+  #managetools
+    position: relative
+    .tool_amount
+      right: 20px
+      top: 50%
+      transform: translateY(-50%)
+  i
+    font-size: 14px
+    padding: 0 5px
+  .dropdown-menu
+    border-top-left-radius: 0
+    border-top-right-radius: 0
+    margin: 0
+
+.login
+  //border-top: 2px solid $yellow
+  top: 45%
+  left: 50%
+  transform: translate(-50%,-50%)
   background: $less_light
-  box-shadow: 0px 5px 11px -1px rgba(27, 28, 27, 0.2)
+  border-radius: 4px
+  box-shadow: 1px 1px 5px rgba(27,28,27,0.5)
+  padding: 35px
+  position: absolute
   font-family: $main
   line-height: 25px
-  right: 0
   color: $less_dark
+  h1
+    margin: 0 0 25px
   form
-    margin: 25px 35px
+    width: 100%
     .input-group
-      width: 500px
-    .checkbox
-      margin-bottom: 5px
+      display: flex
+      margin: 10px 0px
+      div
+        margin: 0
+      input
+        width: 300px
+        background: $light
+        padding: 10px 20px
+    button
+      margin-top: 15px
 
 #landing_content
   width: 100%
@@ -395,6 +589,7 @@ button
   .search_button
     margin-left: 0
     button
+      border-radius: 0
       border-top-right-radius: 4px
       border-bottom-right-radius: 4px
       font-weight: 600
@@ -693,13 +888,15 @@ button
 
 //////////////////////////////////////DETAILS///////////////////////////////////////
 .detail_pictures
-  .carousel
-    width: 90%
-    img
-      width: 100%
+  overflow: hidden
+  border: 1px solid $lightish
+  width: 95%
+  img
+    width: 100%
 
 .detail_wrapper
   margin-bottom: 50px !important
+  max-height: 600px
 
 .detail_information
   width: 100%
@@ -732,6 +929,65 @@ button
   .detail_pricing
     border-radius: 4px
     margin-top: 15px
+
+///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
+.manage_tool
+  width: 100%
+  padding: 50px 0
+  h1
+    font-weight: bold !important
+  .tool_title
+    border-bottom: 1px solid $lightish
+    padding-bottom: 8px
+    padding-top: 15px
+  form
+    margin: 0
+    .input-group
+      display: flex
+      .tool_label
+        width: 50%
+      .values
+        width: 50%
+        input
+          background: $less_light
+        textarea
+          width: 100%
+          border: 1px solid $less_lightish
+          background: $less_light
+          border-radius: 4px
+        img
+          width: 30%
+        button
+          padding: 5px 10px
+          font-size: 13px
+          vertical-align: top
+      .price
+        input
+          width: 10px
+          margin-right: 10px
+          background: $less_light
+    #choose_pic
+      background: $less_darkish
+      margin-left: 15px
+    #btn-default, a
+      font-family: $accent
+      border: 0
+      font-size: 14px
+      color: $light
+      text-shadow: 0 0
+      font-weight: 400
+      background: $less_darkish
+      border-radius: 4px
+      padding: 10px 15px
+      margin-left: 15px
+      &:hover
+        background: $less_lightish
+    #btn-default
+      margin-left: 0
+      margin-top: 25px
+      background: $bright_green
+      &:hover
+        background: #9DBA87
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 
@@ -821,6 +1077,8 @@ button
     max-height: 200px
     display: inline-block
     vertical-align: middle
+    .rating
+      padding: 5px 0
     h1
       margin: 0 0 5px -2px
       color: $less_dark
@@ -838,17 +1096,23 @@ button
 
 .profile_action_buttons
   margin: 25px auto
-  button
+  button, .btn-default
     border-radius: 4px
     width: 150px
     padding: 15px 0
     &:first-child
       margin-right: 20px
       background: $darkish
+      color: $light
       &:hover
         background: $less_dark
       &:active
         background: $dark
+  .btn-default
+    transform: translateY(-2px)
+    line-height: 1.5
+    padding: 15px 0
+    border: 0
 
 .sub_menu
   display: block
@@ -995,6 +1259,12 @@ button
       .detail_user
         padding-top: 25px
 
+  .profile
+    .col-65
+      width: 100%
+    .col-25
+      width: 100%
+
 @media only screen and (max-width: 992px)
   #tools_heading
     .grid_options
@@ -1041,6 +1311,18 @@ button
           &:last-child
             border-bottom: 0
 
+  .profile
+    width: 100%
+    .profile_header
+      display: block
+      #picture
+        display: block
+        width: 100%
+        text-align: center
+      .info
+        margin-top: 50px
+        display: block
+        width: 100%
 
 @media only screen and (max-width: 768px)
   .detail_information

@@ -13,22 +13,33 @@
 
 Route::get('/', 'HomeController@index');
 Route::resource('users', 'UserController');
-Route::resource('users.tools', 'ToolController');
+
 Route::get('/tools', function(){
 
     return view('tools/index');
 
 });
-Route::get('profile',[
+
+Route::resource('users.tools', 'ToolController');
+Route::get('/tools', 'SearchController@index');
+
+Route::get('user/{id}/profile/edit',[
 	'middleware' => 'auth',
-	'uses' => 'ProfileController@index'
-    
+	'uses' => 'ProfileController@edit'
+]);
+Route::get('user/{id}/profile/contact',[
+	'middleware' => 'auth',
+	'uses' => 'ProfileController@contact'
 ]);
 
-Route::get('tools/detail/{product}', function(){
-   return view('tools/detail');
-});
+Route::get('user/{id}/profile', 'ProfileController@index');
+Route::get('tools/{toolId}/detail', 'ToolController@detail');
 
+Route::post('reservation/store', 'ReservationController@store');
+Route::get('reservation/{id}/status/{status}/update', 'ReservationController@updateStatus');
+
+Route::get('tools/{toolId}/detail/edit', 'ToolController@index');
+Route::put('tools/{id}/update', 'ToolController@update');
     
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

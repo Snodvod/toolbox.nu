@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserLoansToolTable extends Migration
+class CreateAddressesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,16 @@ class CreateUserLoansToolTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_loans_tool', function(Blueprint $table) {
+        Schema::create('addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('tool_id');
-            $table->boolean('active');
-            $table->dateTime('start');
-            $table->dateTime('stop');
+            $table->string('country');
+            $table->string('place');
+            $table->string('code');
+            $table->string('street');
+            $table->string('number');
+            $table->string('post');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +32,6 @@ class CreateUserLoansToolTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_loans_tool');
+        Schema::drop('addresses');
     }
 }

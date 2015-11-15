@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Address;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -24,6 +25,7 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     protected $redirectPath = '/';
+    protected $loginPath = '/auth/login';
     /**
      * Create a new authentication controller instance.
      *
@@ -45,7 +47,12 @@ class AuthController extends Controller
         return Validator::make($data, [
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'adress' => 'required',
+            'country' => 'required|max:255',
+            'place' => 'required|max:255',
+            'code' => 'required|max:255',
+            'street' => 'required|max:255',
+            'number' => 'required',
+            'post' => 'max:255',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -57,12 +64,20 @@ class AuthController extends Controller
      * @return User
      */
     protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'adress' => $data['adress'],
-            'password' => bcrypt($data['password']),
+    { 
+        $user = User::create([
+        'name' => $data['name'], 
+        'email' => $data['email'],
+        'password' => bcrypt($data['password']),
         ]);
+        $user->address()->create([
+            'country' => $data['country'],
+            'place' => $data['place'],
+            'code' => $data['code'],
+            'street' => $data['street'],
+            'number' => $data['number'],
+            'post' => $data['post'],
+        ]);
+        return $user;
     }
 }

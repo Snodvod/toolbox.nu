@@ -30,9 +30,126 @@
     </div>
 </div>
 <div class="nav">
-    <div class="col col-65 centered">
+    <div class="col col-80 centered">
         <div class="col">
-            @yield('navigation')
+            <div id="nav_logo">
+                <a href="/"><img src="/img/logo.svg"></a>
+            </div>
+            <div class="nav_links">
+                <div class="standard_device">
+                    <div id="nav_main">
+                        <div class="nav_item">
+                            <a href="/tools">Tools</a>
+                        </div>
+                    </div>
+                    <div id="nav_auth">
+                        @if (Auth::check())
+                            <div class="nav_item notifications">
+                                <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
+
+                                <div class="amount notifications_amount">3</div>
+
+                                <div class="dropdown">
+                                    <ul class="dropdown-menu">
+                                        @foreach(Auth::user()->tools as $usertool)
+                                            @foreach($usertool->reservations as $userreservation)
+                                                @if(!$userreservation->status->accepted && !$userreservation->status->denied)
+                                                    <li id="{{$userreservation->id}}">
+                                                        <div class="notification">
+                                                            <div class="notification_content">
+                                                                <div class="notification_pic">
+                                                                    <img src="/img/sample_profile.png">
+                                                                </div>
+                                                                <div class="notification_message">
+                                                                    <p>
+                                                                        <span>{{Auth::user()->name}}</span>
+                                                                        wilt uw
+                                                                        <span>{{$usertool->name}}</span>
+                                                                        lenen van
+                                                                        <span>{{$userreservation->start}}</span>
+                                                                        Tot
+                                                                        <span>{{$userreservation->stop}}</span>
+                                                                    </p>
+
+                                                                    <p class="notification_date">
+                                                                        {{$userreservation->created_at}}
+                                                                    </p>
+                                                                </div>
+                                                                <div class="notification_tool">
+                                                                    <img src="/img/sample_tool.png">
+                                                                </div>
+                                                            </div>
+                                                            <div class="notification_actions">
+                                                                <div class="action notstatus"
+                                                                     data-id="{{$userreservation->id}}"
+                                                                     data-val="accepted">
+                                                                    <h5>Accepteren</h5>
+                                                                    <i class="fa fa-check fa-fw"></i>
+                                                                </div>
+                                                                <div class="action notstatus"
+                                                                     data-id="{{$userreservation->id}}"
+                                                                     data-val="denied">
+                                                                    <h5>Negeren</h5>
+                                                                    <i class="fa fa-close fa-fw"></i>
+                                                                </div>
+                                                                <div class="action">
+                                                                    <h5>OK</h5>
+                                                                    <i class="fa fa-check fa-fw"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                    </ul>
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                            <div class="nav_item user">
+                                <a href="#">Mijn profiel <i class="fa fa-chevron-down"></i></a>
+
+                                <div class="dropdown">
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li>
+                                            <a href="/user/{{ Auth::User()->id }}/profile" class="dropdown_profile">
+                                                <div id="user_pic">
+                                                    <img src="/img/sample_profile.png">
+                                                </div>
+                                                <p>
+                                                    {{ Auth::User()->name }}
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li>
+                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/profile">
+                                                <strong>Uw tools</strong>
+
+                                                <div class="amount tool_amount">1</div>
+                                            </a>
+                                        </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Instellingen</a></li>
+                                        <li><a href="/auth/logout">Uitloggen</a></li>
+                                    </ul>
+                                </div>
+                            </div>@else
+                            <div id="register" class="nav_item">
+                                <a href="/auth/register">Registreren</a>
+                            </div>
+                            <div class="nav_item" id="showlogin">
+                                <a href="/auth/login">Login</a>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="small_device">
+                <div class="hamburger">
+                    <i class="fa fa-bars fa-2x fa-fw"></i>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -46,5 +163,6 @@
 <script src="/js/backstretch.js" type=text/javascript></script>
 <script src="/js/jquery-ui.js" type=text/javascript></script>
 <script src="/js/main.js" type=text/javascript></script>
+<script src="/js/script.js" type=text/javascript></script>
 
 </html>

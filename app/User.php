@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['name', 'email', 'address', 'password'];
+    protected $fillable = ['name', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -37,6 +37,10 @@ class User extends Model implements AuthenticatableContract,
      */
     protected $hidden = ['password', 'remember_token'];
 
+    public function address()
+    {
+        return $this->hasOne('App\Address');
+    }
     public function tools()
     {
         return $this->hasMany('App\Tool');
@@ -51,11 +55,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsTo('App\Accesslevel');
     }
-
-    // many to many tools for loans
-
-    public function loans()
+    
+    public function reservations() 
     {
-        return $this->belongsToMany('App\Tool', 'user_loans_tool')->withPivot('active', 'start', 'stop');
+        return $this->hasMany('App\Reservation');
     }
 }

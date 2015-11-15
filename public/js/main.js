@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
-    showLogin();
     changeActiveClassProfile();
     changeActiveClass('.grid_view');
     changeActiveClass('#duration_ratio');
     toggleFilter();
     toggleLikes();
     toggleMainNavMenu();
-    $('#picture_carousel').carousel();
+    toggleNotifications();
+    toggleProfileMenu();
 
     //DATEPICKERS
     $.datepicker.setDefaults($.datepicker.regional['nl']);
@@ -62,19 +62,6 @@ $(document).ready(function () {
     ////////////////////////////////////////
 
 });
-
-function showLogin() {
-
-    var $active = $('.nav_item.active');
-    console.log($active)
-    $('#showlogin').click(function () {
-
-        $($active).toggleClass('active');
-
-        $('#login_box').toggle();
-        $('#showlogin').toggleClass("active");
-    });
-}
 
 function changeActiveClass($parent) {
     $($parent + ' ul li').click(function (e) {
@@ -137,5 +124,20 @@ function toggleLikes() {
 function toggleMainNavMenu(){
     $('.small_device .hamburger i').click(function(){
         $('.small_device .dropdown').slideToggle();
+    });
+}
+
+function toggleNotifications()
+{
+    $('.notifications a').click(function() {
+        $('.notifications .dropdown').toggle();
+        $('.notifications_amount').toggle();
+    });
+}
+
+function toggleProfileMenu()
+{
+    $('.user a').click(function() {
+        $('.user .dropdown').toggle();
     });
 }

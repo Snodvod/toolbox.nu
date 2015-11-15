@@ -19,10 +19,8 @@ class Tool extends Model
     {
     	return $this->belongsTo('App\Category');
     }
-
-    public function loans()
+    public function reservations() 
     {
-        return $this->belongsToMany('App\User', 'user_loans_tool')->withPivot('active', 'start', 'stop');
+        return $this->hasMany('App\Reservation');
     }
-
 }

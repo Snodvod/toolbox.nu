@@ -14,6 +14,8 @@ class CreateToolsTable extends Migration
     {
         Schema::create('tools', function(Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('price');
             $table->string('name');
             $table->string('brand');
             $table->date('bought_at');
