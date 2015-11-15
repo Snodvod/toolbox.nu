@@ -188,7 +188,7 @@
                                 <a href="/auth/register">Registreren</a>
                             </div>
                             <div class="nav_item" id="showlogin">
-                                <a href="/auth/login">Login</a>
+                                <a href="/login">Login</a>
                             </div>
                         @endif
                     </div>
