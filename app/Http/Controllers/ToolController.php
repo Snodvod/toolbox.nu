@@ -15,10 +15,11 @@ class ToolController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($userId)
+    public function index($toolId)
     {
-        return view('profile/managetools');
+        return view('tools/manage', ['tool' => Tool::findOrFail($toolId)]);
     }
+
     public function detail($toolId)
     {
         return view('tools/detail', ['tool' => Tool::findOrFail($toolId)]);
@@ -75,9 +76,15 @@ class ToolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $userId, $id)
+    public function update(Request $request, $id)
     {
-        //
+        $tool = Tool::findOrFail($id);
+        $tool->name = $request->name;
+        $tool->about = $request->desc;
+        $tool->price = $request->price;
+        $tool->save();
+
+        return redirect('/tools/'. $id .'/detail');
     }
 
     /**

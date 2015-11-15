@@ -71,29 +71,31 @@
                     <div class="col col-80 centered">
                         <div class="grid">
                             @foreach($user->tools as $tool)
-                            <div class="item">
-                                <a href="/tools/{{$tool->id}}/detail" class="overlay"></a>
-                                <!--<img src="/img/tools/{{$tool->image}}">-->
-                                <img src="/img/sample_tool.png">
+                                <div class="item">
+                                    <a href="/tools/{{$tool->id}}/detail" class="overlay"></a>
+                                    <!--<img src="/img/tools/{{$tool->image}}">-->
+                                    <img src="/img/sample_tool.png">
 
-                                <div class="item_info">
-                                    <div class="info_header">
-                                        <h4>{{$tool->name}}</h4>
-                                        <h4 class="item_price">&euro; {{$tool->price}}</h4>
+                                    <div class="item_info">
+                                        <div class="info_header">
+                                            <h4>{{$tool->name}}</h4>
+                                            <h4 class="item_price">&euro; {{$tool->price}}</h4>
+                                        </div>
+                                        <div class="rating">
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                        </div>
                                     </div>
-                                    <div class="rating">
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
+                                    <div class="item_edit">
+                                        <a href="/tools/{{ $tool->id }}/detail/edit">
+                                            <p>Bewerken</p>
+                                            <i class="fa fa-edit fa-2x"></i>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="item_edit">
-                                    <p>Bewerk deze tool</p>
-                                    <i class="fa fa-edit fa-2x"></i>
-                                </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>

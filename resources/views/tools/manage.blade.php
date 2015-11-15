@@ -8,40 +8,35 @@
         <div class="col col-80 centered manage_tool">
             <div>
                 <div class="tool_title">
-                    <h3>Werkbank</h3>
+                    <h3>{{ $tool->name }}</h3>
                 </div>
-                <form methos="post">
+                {!! Form::Open(array('url' => '/tools/' . $tool->id . '/update', 'method' => 'put')) !!}
                     <div class="input-group">
 
                         <div class="tool_label">
-                            <label>Naam van de tool</label>
+                            {!! Form::label('name', 'Naam van de tool') !!}
                         </div>
                         <div class="values">
-                            <input value="Werkbank">
+                            {!! Form::text('name', $tool->name ) !!}
                         </div>
 
                     </div>
                     <div class="input-group">
 
                         <div class="tool_label">
-                            <label>Beschrijving</label>
+                            {!! Form::label('desc', 'Beschrijving') !!}
                         </div>
                         <div class="values">
-                                        <textarea rows="8">Puréed strawberries can be made sliced by varnishing with salad cream.
-                                    Puréed strawberries can be made sliced by varnishing with salad cream.
-                                    Puréed strawberries can be made sliced by varnishing with salad cream.
-                                    Puréed strawberries can be made sliced by varnishing with salad cream.
-                                    Puréed strawberries can be made sliced by varnishing with salad cream.
-                                    Puréed strawberries can be made sliced by varnishing with salad cream.</textarea>
+                            {!! Form::textarea('desc', $tool->about ) !!}
                         </div>
                     </div>
 
                     <div class="input-group">
                         <div class="tool_label">
-                            <label>Prijs per dag</label>
+                            {!! Form::label('price', 'Prijs') !!}
                         </div>
                         <div class="values price">
-                            <input value="3"> Euro
+                            {!! Form::text('price', $tool->price) !!} Euro
                         </div>
                     </div>
                     <div class="input-group">
@@ -53,9 +48,9 @@
                             <button id="choose_pic">Kies afbeelding</button>
                         </div>
                     </div>
-                    <button id="btn-default" type="submit">Bewaren</button>
-                    <button type="submit">Annuleren</button>
-                </form>
+                    {!! Form::Submit('Bewaren', array('id' => 'btn-default')) !!}
+                    <a class="button" href="/user/{{ Auth::User()->id }}/profile">Annuleren</a>
+                {!! Form::Close() !!}
             </div>
         </div>
     </div>

@@ -38,7 +38,8 @@ Route::get('tools/{toolId}/detail', 'ToolController@detail');
 Route::post('reservation/store', 'ReservationController@store');
 Route::get('reservation/{id}/status/{status}/update', 'ReservationController@updateStatus');
 
-Route::get('user/{id}/managetools', 'ToolController@index');
+Route::get('tools/{toolId}/detail/edit', 'ToolController@index');
+Route::put('tools/{id}/update', 'ToolController@update');
     
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

@@ -158,12 +158,7 @@ button {
       .grid .item:hover .overlay .edit_item {
         display: block; }
     .grid .item:hover .item_edit {
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-align-items: center;
-      -ms-flex-align: center;
-      align-items: center; }
+      display: block; }
     .grid .item img {
       width: 100%; }
     .grid .item .item_info {
@@ -195,11 +190,24 @@ button {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 15px; }
+      padding: 15px;
+      z-index: 16;
+      color: #DBDBDB; }
+      .grid .item .item_edit:hover i, .grid .item .item_edit:hover p {
+        color: #E89500; }
+      .grid .item .item_edit a {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center; }
+      .grid .item .item_edit p {
+        font-weight: bold;
+        padding: 8px 10px 0 0;
+        color: #DBDBDB; }
       .grid .item .item_edit i {
         color: #DBDBDB; }
-        .grid .item .item_edit i:hover {
-          color: #E89500; }
 
 .item_price {
   background: #7CBA53;
@@ -982,11 +990,21 @@ button {
         width: 10px;
         margin-right: 10px;
         background: #F5F5F5; }
-    .manage_tool form button {
-      font-weight: 400;
+    .manage_tool form #choose_pic {
       background: #676C66;
       margin-left: 15px; }
-      .manage_tool form button:hover {
+    .manage_tool form #btn-default, .manage_tool form a {
+      font-family: "Open Sans", sans-serif;
+      border: 0;
+      font-size: 14px;
+      color: #FCFCFC;
+      text-shadow: 0 0;
+      font-weight: 400;
+      background: #676C66;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin-left: 15px; }
+      .manage_tool form #btn-default:hover, .manage_tool form a:hover {
         background: #A5ABA3; }
     .manage_tool form #btn-default {
       margin-left: 0;

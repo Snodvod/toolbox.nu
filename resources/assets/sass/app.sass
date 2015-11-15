@@ -181,8 +181,7 @@ button
       .edit_item
         display: block
     &:hover .item_edit
-      display: flex
-      align-items: center
+      display: block
     img
       width: 100%
     .item_info
@@ -215,10 +214,19 @@ button
       top: 0
       right: 0
       padding: 15px
+      z-index: 16
+      color: $lightish
+      &:hover i, &:hover p
+        color: $yellow
+      a
+        display: flex
+        align-items: center
+      p
+        font-weight: bold
+        padding: 8px 10px 0 0
+        color: $lightish
       i
         color: $lightish
-        &:hover
-          color: $yellow
 
 .item_price
   background: $bright-green
@@ -958,9 +966,19 @@ button
           width: 10px
           margin-right: 10px
           background: $less_light
-    button
+    #choose_pic
+      background: $less_darkish
+      margin-left: 15px
+    #btn-default, a
+      font-family: $accent
+      border: 0
+      font-size: 14px
+      color: $light
+      text-shadow: 0 0
       font-weight: 400
       background: $less_darkish
+      border-radius: 4px
+      padding: 10px 15px
       margin-left: 15px
       &:hover
         background: $less_lightish

@@ -123,7 +123,7 @@
                                         </li>
                                         <li role="separator" class="divider"></li>
                                         <li>
-                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/managetools">
+                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/profile">
                                                 <strong>Uw tools</strong>
 
                                                 <div class="amount tool_amount">1</div>
