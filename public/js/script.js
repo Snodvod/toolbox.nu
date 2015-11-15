@@ -146,4 +146,20 @@ $(document).ready(function () {
             success: function () {}
         });
     });
+
+
+    $('.datepicker#stop').change(priceChanger);
 });
+
+function priceChanger() {
+
+    var singularPrice = $('.item_price').data('price');
+    var start = $('.datepicker#start').datepicker('getDate');
+    var stop = $('.datepicker#stop').datepicker('getDate');
+    var days = (stop - start)/1000/60/60/24;
+
+
+    var multiPrice = singularPrice * days;
+
+    $('.item_price').html('€ ' + multiPrice);
+}

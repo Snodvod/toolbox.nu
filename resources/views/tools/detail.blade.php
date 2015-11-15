@@ -46,7 +46,7 @@
                             {{$tool->about}}
                         </div>
                         <div class="detail_pricing">
-                            <h4 class="item_price">&euro; {{$tool->price}}</h4>
+                            <h4 data-price="{{$tool->price}}" class="item_price">&euro; {{$tool->price}}</h4>
 
                             {!! Form::open(array('url' => 'reservation/store')) !!}
                             <div class="input-group">

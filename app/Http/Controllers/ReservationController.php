@@ -49,9 +49,9 @@ class ReservationController extends Controller
         $reservation->save();
         $reservation->status()->create(['read' => 0]);
 
-        Mail::send('emails.reservation.new', $reservation, function($message) {
+        Mail::send('emails.reservations.new', ['reservation' => $reservation], function($message) use ($reservation) {
             $message->from('webmaster@toolbox.nu');
-            $message->to($reservation->tool()->user()->email);
+            $message->to($reservation->tool()->first()->user()->first()->email);
         });
 
         
@@ -93,9 +93,9 @@ class ReservationController extends Controller
         $stat->$status = 1;
         $stat->save();
 
-        Mail::send('emails.reservation.changed', $reservation, function($message) {
+        Mail::send('emails.reservations.changed', ['reservation' => $reservation], function($message) use ($reservation) {
             $message->from('webmaster@toolbox.nu');
-            $message->to($reservation->tool()->user()->email);
+            $message->to($reservation->tool()->first()->user()->first()->email);
         });
         
         return redirect('/');
