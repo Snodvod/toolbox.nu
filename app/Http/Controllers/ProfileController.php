@@ -73,7 +73,12 @@ class ProfileController extends Controller
 
     public function yourToolReservation($id)
     {
-        $reservations = Reservation::where('user_id', '=', $id)->get();
+        $reservations = [];
+
+        foreach(User::find($id)->tools()->get() as $tool)
+        {
+            array_push($reservations, $tool->reservations()->get());
+        }
 
         return view('/profile/yourtoolreservations', compact('reservations'));
     }

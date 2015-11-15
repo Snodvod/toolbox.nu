@@ -10,7 +10,7 @@
         </div>
         <div class="col col-80 centered">
             <div class="grid">
-                @if($reservations->count() != '0')
+                @if(!$reservations)
                     @foreach($reservations as $reservation)
                         <div class="item">
                             <a href="/tools/{{$reservation->tool->id}}/detail" class="overlay"></a>

@@ -60,7 +60,7 @@
                                                                 </div>
                                                                 <div class="notification_message">
                                                                     <p>
-                                                                        <span>{{Auth::user()->name}}</span>
+                                                                        <span>{{$userreservation->user->name}}</span>
                                                                         wilt uw
                                                                         <span>{{$usertool->name}}</span>
                                                                         lenen van
@@ -173,7 +173,7 @@
                                             <a class="manage" href="/user/{{ Auth::User()->id }}/reservations">
                                                 <strong>Reservaties</strong>
 
-                                                <div class="amount profile_amount">{{ Auth::User()->tools->count() }}</div>
+                                                <div class="amount profile_amount">{{ Auth::User()->reservations->count() }}</div>
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>

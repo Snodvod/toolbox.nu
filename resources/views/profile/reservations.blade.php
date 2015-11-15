@@ -26,7 +26,7 @@
                             </div>
                             <div class="item_author">
                                 <img src="/img/sample_profile.png">
-                                <h4>{{$reservation->user->name}}</h4>
+                                <h4>{{$reservation->tool->user->name}}</h4>
                             </div>
                             <div class="item_info">
                                 <div class="info_header">
