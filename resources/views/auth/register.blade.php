@@ -1,39 +1,58 @@
 @extends('app')
 @section('content') 
 <div class="main_content">
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div id="register_box" class="col-50 centered">
         <h1>Join the club!</h1>
-        <form method="POST" action="/auth/register">
-            {!! csrf_field() !!}
+        {!! Form::open(array('url' => '/auth/register')) !!}
+            {!! Form::token() !!}
 
             <div>
-                <label for="name">Naam</label>
-                <input type="text" name="name" value="{{ old('name') }}">
-            </div>
-
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" value="{{ old('email') }}">
-            </div>
-            <div>
-                <label for="adress">Adres</label>
-                <input type="text" name="adress" value="{{ old('adress') }}">
+                {!! Form::label('name', 'Naam') !!}
+                {!! Form::text('name', '', ['placeholder' => 'Uw Naam...']) !!}
             </div>
 
             <div>
-                <label for="password">Wachtwoord</label>
-                <input type="password" name="password">
+                {!! Form::label('email', 'Email') !!}
+                {!! Form::text('email', '', ['placeholder' => 'Uw Email...']) !!}
+            </div>
+            <div>
+                {!! Form::label('country', 'Land') !!}
+                {!! Form::text('country', '', ['placeholder' => 'Uw Naam...']) !!}
+                {!! Form::label('place', 'Plaats') !!}
+                {!! Form::text('place', '', ['placeholder' => 'Uw Naam...']) !!}
+                {!! Form::label('code', 'Postcode') !!}
+                {!! Form::text('code', '', ['placeholder' => 'Uw Naam...']) !!}
+                {!! Form::label('street', 'Straatnaam') !!}
+                {!! Form::text('street', '', ['placeholder' => 'Uw Naam...']) !!}
+                {!! Form::label('number', 'Huisnummer') !!}
+                {!! Form::text('number', '', ['placeholder' => 'Nummer']) !!}
+                {!! Form::label('post', 'Bus') !!}
+                {!! Form::text('post', '', ['placeholder' => 'Bus']) !!}
             </div>
 
             <div>
-                <label for="password_confirmation">Bevestig wachtwoord</label>
-                <input type="password" name="password_confirmation">
+                {!! Form::label('password', 'Wachtwoord') !!}
+                {!! Form::password('password') !!}
             </div>
 
             <div>
-                <button type="submit">Registreer</button>
+                {!! Form::label('password_confirmation', 'Wachtwoord Bevestigen') !!}
+                {!! Form::password('password_confirmation') !!}
             </div>
-        </form>
+
+            <div>
+                {!! Form::submit('Click Me!') !!}
+            </div>
+        {!! Form::close() !!}
     </div>
 </div>
 @stop
