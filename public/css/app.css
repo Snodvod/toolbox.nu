@@ -20,14 +20,17 @@ textarea:focus {
 
 .button {
   padding: 8px 14px;
-  background: #E89500;
-  color: #FCFCFC; }
+  background: #E89500 !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  padding: 10px 15px;
+  color: #FCFCFC !important; }
   .button:hover {
     color: #FCFCFC;
-    background: #E8A430; }
+    background: #E8A430 !important; }
   .button:active {
     color: #FCFCFC;
-    background: #A86C00; }
+    background: #A86C00 !important; }
 
 .input-group {
   margin: 25px 0; }
@@ -36,6 +39,8 @@ textarea:focus {
     margin-right: 15px; }
     .input-group div:last-child {
       margin-right: 0; }
+  .input-group span {
+    padding-right: 15px; }
   .input-group label {
     display: block;
     color: #676C66; }
@@ -51,6 +56,11 @@ textarea:focus {
     color: #434542; }
     .input-group input:focus {
       border: 1px solid #E89500; }
+  .input-group textarea:focus {
+    border: 1px solid #E89500 !important; }
+
+#homesearchgroup div {
+  margin-right: 0; }
 
 input {
   font-family: "Roboto", serif; }
@@ -972,6 +982,10 @@ button {
   .detail_information .detail_pricing {
     border-radius: 4px;
     margin-top: 15px; }
+    .detail_information .detail_pricing .input-group {
+      width: 100%;
+      border-top: 1px solid #DBDBDB;
+      padding-top: 25px; }
 
 .manage_tool, .manage_account {
   padding: 50px 0; }
@@ -1043,6 +1057,9 @@ button {
     .manage_tool .wrapper #change_password, .manage_account .wrapper #change_password {
       background: #E89500;
       margin: 0; }
+
+#manage_reservation .title {
+  margin-bottom: 50px; }
 
 .ui-datepicker {
   box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5);

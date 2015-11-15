@@ -56,12 +56,12 @@
                                     {!! Form::label('start', 'Begindatum') !!}
                                     {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
                                 </div>
-                                Tot
+                                <span>Tot</span>
                                 <div>
                                     {!! Form::label('stop', 'Einddatum') !!}
                                     {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
                                 </div>
-                                {!! Form::submit('Stuur Aanvraag', array('class' => 'subreservation')) !!}
+                                {!! Form::submit('Stuur Aanvraag', array('class' => 'button')) !!}
                             </div>
                             {!! Form::close() !!}
                         </div>

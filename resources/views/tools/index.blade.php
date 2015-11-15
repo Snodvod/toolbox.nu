@@ -3,7 +3,7 @@
     <div class="main_content">
         <div class="col col-80 centered" id="tools_heading">
             <div class="title">
-                <h1><span>Werkbank</span></h1>
+                <h1>Werkbank</h1>
             </div>
             <div class="grid_options">
                 <div class="grid_view">

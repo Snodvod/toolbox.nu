@@ -46,9 +46,9 @@
                         @if (Auth::check())
                             <div class="nav_item notifications">
                                 <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
-
-                                <div class="amount notifications_amount">3</div>
-
+                                @if(Auth::user()->reservations->count() > 0)
+                                    <div class="amount notifications_amount">{{ Auth::user()->reservations->count() }}</div>
+                                @endif
                                 <div class="dropdown">
                                     <ul class="dropdown-menu">
                                         @foreach(Auth::user()->tools as $usertool)
@@ -98,6 +98,13 @@
                                                 @endif
                                             @endforeach
                                         @endforeach
+                                        @if(Auth::user()->reservations->count() == 0)
+                                            <li>
+                                                <div class="notification">
+                                                    U hebt geen notificaties
+                                                </div>
+                                            </li>
+                                        @endif
                                         @foreach(Auth::user()->reservations as $userreservation)
                                             @if($userreservation->status->accepted || $userreservation->status->denied)
                                                 @if(!$userreservation->status->read)
@@ -113,9 +120,9 @@
                                                                         <span>{{$userreservation->tool->name}}</span>
                                                                         is
                                                                         @if($userreservation->status->accepted)
-                                                                        Aanvaard
+                                                                            Aanvaard
                                                                         @else
-                                                                        Niet Aanvaard
+                                                                            Niet Aanvaard
                                                                         @endif
                                                                     </p>
 
@@ -128,7 +135,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="notification_actions">
-                                                                <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="read">
+                                                                <div class="action notstatus"
+                                                                     data-id="{{$userreservation->id}}" data-val="read">
                                                                     <h5>OK</h5>
                                                                     <i class="fa fa-check fa-fw"></i>
                                                                 </div>
@@ -160,7 +168,12 @@
                                         <li role="separator" class="divider"></li>
                                         <li>
                                             <a id="managetools" href="/user/{{ Auth::User()->id }}/profile">
-                                                <strong>Uw tools</strong>
+                                                <strong>Tools</strong>
+
+                                                <div class="amount tool_amount">{{ Auth::User()->tools->count() }}</div>
+                                            </a>
+                                            <a id="managetools" href="/user/{{ Auth::User()->id }}/reservations">
+                                                <strong>Reservaties</strong>
 
                                                 <div class="amount tool_amount">{{ Auth::User()->tools->count() }}</div>
                                             </a>

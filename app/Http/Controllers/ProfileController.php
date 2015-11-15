@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Reservation;
+use App\Tool;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -60,6 +62,13 @@ class ProfileController extends Controller
     public function edit()
     {
         return view('/profile/edit');
+    }
+
+    public function reservation($id)
+    {
+        $reservations = Reservation::where('user_id', '=', $id)->get();
+
+        return view('/profile/reservations', compact('reservations'));
     }
 
     /**

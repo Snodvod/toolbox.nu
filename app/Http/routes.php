@@ -35,6 +35,7 @@ Route::get('user/{id}/profile/contact',[
 Route::get('user/{id}/profile', 'ProfileController@index');
 Route::get('user/{id}/account', 'ProfileController@show');
 Route::get('user/{id}/account/edit', 'ProfileController@edit');
+Route::get('user/{id}/reservations', 'ProfileController@reservation');
 Route::get('tools/{toolId}/detail', 'ToolController@detail');
 
 Route::post('reservation/store', 'ReservationController@store');

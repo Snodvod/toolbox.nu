@@ -41,14 +41,17 @@ textarea
 
 .button
   padding: 8px 14px
-  background: $yellow
-  color: $light
+  background: $yellow !important
+  border: 0 !important
+  border-radius: 4px !important
+  padding: 10px 15px
+  color: $light !important
   &:hover
     color: $light
-    background: #E8A430
+    background: #E8A430 !important
   &:active
     color: $light
-    background: #A86C00
+    background: #A86C00 !important
 
 .input-group
   margin: 25px 0
@@ -57,6 +60,8 @@ textarea
     margin-right: 15px
     &:last-child
       margin-right: 0
+  span
+    padding-right: 15px
   label
     display: block
     color: $less_darkish
@@ -72,6 +77,13 @@ textarea
     color: $less_dark
     &:focus
       border: 1px solid $yellow
+  textarea
+    &:focus
+      border: 1px solid $yellow !important
+
+#homesearchgroup
+  div
+    margin-right: 0
 
 input
   font-family: $main
@@ -946,6 +958,10 @@ button
   .detail_pricing
     border-radius: 4px
     margin-top: 15px
+    .input-group
+      width: 100%
+      border-top: 1px solid $lightish
+      padding-top: 25px
 
 ///////////////////////////////////MANAGE TOOLS//////////////////////////////////////
 .manage_tool, .manage_account
@@ -1018,6 +1034,10 @@ button
     #change_password
       background: $yellow
       margin: 0
+
+#manage_reservation
+  .title
+    margin-bottom: 50px
 
 /////////////////////////////////////DATEPICKERS/////////////////////////////////////
 
