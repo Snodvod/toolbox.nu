@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class ReservationController extends Controller
 {
@@ -47,6 +48,12 @@ class ReservationController extends Controller
         $reservation->stop = Carbon::parse($request->stop);
         $reservation->save();
         $reservation->status()->create(['read' => 0]);
+
+        Mail::send('emails.reservation.new', $reservation, function($message) {
+            $message->from('webmaster@toolbox.nu');
+            $message->to($reservation->tool()->user()->email);
+        });
+
         
         return redirect('tools/' . $request->tool_id . '/detail');
     }
@@ -81,9 +88,15 @@ class ReservationController extends Controller
      */
     public function updateStatus(Request $request, $id, $status)
     {
-        $stat = Reservation::findOrFail($id)->status;
+        $reservation = Reservation::findOrFail($id);
+        $stat = $reservation->status;
         $stat->$status = 1;
         $stat->save();
+
+        Mail::send('emails.reservation.changed', $reservation, function($message) {
+            $message->from('webmaster@toolbox.nu');
+            $message->to($reservation->tool()->user()->email);
+        });
         
         return redirect('/');
     }
