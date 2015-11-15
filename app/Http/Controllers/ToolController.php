@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
 
 class ToolController extends Controller
 {
@@ -18,7 +19,12 @@ class ToolController extends Controller
      */
     public function index($toolId)
     {
-        return view('tools/manage', ['tool' => Tool::findOrFail($toolId)]);
+        $tool = Tool::findOrFail($toolId);
+        if ($tool->user()->get() == Auth::user())
+        {
+            return view('tools/manage', ['tool' => $tool]);
+        } else return redirect('/');
+        
     }
 
     public function detail($toolId)
