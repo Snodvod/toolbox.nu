@@ -92,7 +92,43 @@
                                                                     <h5>Negeren</h5>
                                                                     <i class="fa fa-close fa-fw"></i>
                                                                 </div>
-                                                                <div class="action">
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        @endforeach
+                                        @foreach(Auth::user()->reservations as $userreservation)
+                                            @if($userreservation->status->accepted || $userreservation->status->denied)
+                                                @if(!$userreservation->status->read)
+                                                    <li id="{{$userreservation->id}}">
+                                                        <div class="notification">
+                                                            <div class="notification_content">
+                                                                <div class="notification_pic">
+                                                                    <img src="/img/sample_profile.png">
+                                                                </div>
+                                                                <div class="notification_message">
+                                                                    <p>
+                                                                        Uw reservatie voor de
+                                                                        <span>{{$userreservation->tool->name}}</span>
+                                                                        is
+                                                                        @if($userreservation->status->accepted)
+                                                                        Aanvaard
+                                                                        @else
+                                                                        Niet Aanvaard
+                                                                        @endif
+                                                                    </p>
+
+                                                                    <p class="notification_date">
+                                                                        {{$userreservation->status->updated_at}}
+                                                                    </p>
+                                                                </div>
+                                                                <div class="notification_tool">
+                                                                    <img src="/img/sample_tool.png">
+                                                                </div>
+                                                            </div>
+                                                            <div class="notification_actions">
+                                                                <div class="action notstatus" data-id="{{$userreservation->id}}" data-val="read">
                                                                     <h5>OK</h5>
                                                                     <i class="fa fa-check fa-fw"></i>
                                                                 </div>
@@ -100,7 +136,7 @@
                                                         </div>
                                                     </li>
                                                 @endif
-                                            @endforeach
+                                            @endif
                                         @endforeach
                                     </ul>
                                     <div class="arrow"></div>

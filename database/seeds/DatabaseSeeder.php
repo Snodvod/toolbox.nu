@@ -48,7 +48,6 @@ class DatabaseSeeder extends Seeder
 
         $ino = new User();
         $ino->name = 'Ino Van Winckel';
-        $ino->address = 'Arthur Boelstraat 38 2990 Wuustwezel';
         $ino->email = 'inovanwinckel@hotmail.com';
         $ino->password = bcrypt('wachtwoord');
         
