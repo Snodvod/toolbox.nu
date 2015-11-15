@@ -258,7 +258,8 @@ button {
 .main_content {
   margin-top: 80px;
   padding-top: 120px;
-  background: #F5F5F5; }
+  background: #F5F5F5;
+  min-height: 100vh; }
   .main_content .title h1 {
     font-weight: 100;
     margin: 0; }
@@ -956,69 +957,76 @@ button {
     border-radius: 4px;
     margin-top: 15px; }
 
-.manage_tool {
+.manage_tool, .manage_account {
   padding: 50px 0; }
-  .manage_tool h1 {
+  .manage_tool h1, .manage_account h1 {
     font-weight: bold !important; }
-  .manage_tool .tool_title {
+  .manage_tool .tool_title, .manage_account .tool_title {
     border-bottom: 1px solid #DBDBDB;
     padding-bottom: 8px;
     padding-top: 15px; }
-  .manage_tool .wrapper {
+  .manage_tool .wrapper, .manage_account .wrapper {
     width: 60%; }
-    .manage_tool .wrapper form {
+    .manage_tool .wrapper form, .manage_account .wrapper form {
       width: 100%;
       margin: 0; }
-      .manage_tool .wrapper form .input-group {
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex; }
-        .manage_tool .wrapper form .input-group .tool_label {
-          width: 50%; }
-        .manage_tool .wrapper form .input-group .values {
-          width: 50%; }
-          .manage_tool .wrapper form .input-group .values input {
-            background: #F5F5F5; }
-          .manage_tool .wrapper form .input-group .values textarea {
-            width: 100%;
-            border: 1px solid #A5ABA3;
-            background: #F5F5F5;
-            border-radius: 4px; }
-          .manage_tool .wrapper form .input-group .values img {
-            width: 30%; }
-          .manage_tool .wrapper form .input-group .values button {
-            padding: 5px 10px;
-            font-size: 13px;
-            vertical-align: top; }
-        .manage_tool .wrapper form .input-group .price input {
-          width: 50px;
-          margin-right: 10px;
+    .manage_tool .wrapper .input-group, .manage_account .wrapper .input-group {
+      width: 100%;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex; }
+      .manage_tool .wrapper .input-group .tool_label, .manage_tool .wrapper .input-group .account_label, .manage_account .wrapper .input-group .tool_label, .manage_account .wrapper .input-group .account_label {
+        width: 50%; }
+      .manage_tool .wrapper .input-group .values, .manage_account .wrapper .input-group .values {
+        width: 50%; }
+        .manage_tool .wrapper .input-group .values p, .manage_account .wrapper .input-group .values p {
+          color: #434542;
+          font-size: 16px; }
+        .manage_tool .wrapper .input-group .values input, .manage_account .wrapper .input-group .values input {
           background: #F5F5F5; }
-      .manage_tool .wrapper form #image_upload input {
-        border: 0;
-        display: inline-block;
-        vertical-align: top;
-        padding: 0;
-        width: 300px; }
-      .manage_tool .wrapper form #btn-default, .manage_tool .wrapper form a {
-        font-family: "Open Sans", sans-serif;
-        border: 0;
-        font-size: 14px;
-        color: #FCFCFC;
-        text-shadow: 0 0;
-        font-weight: 400;
-        background: #676C66;
-        border-radius: 4px;
-        padding: 10px 15px;
-        margin-left: 15px; }
-        .manage_tool .wrapper form #btn-default:hover, .manage_tool .wrapper form a:hover {
-          background: #A5ABA3; }
-      .manage_tool .wrapper form #btn-default {
-        margin-left: 0;
-        margin-top: 25px;
-        background: #7CBA53; }
-        .manage_tool .wrapper form #btn-default:hover {
-          background: #9DBA87; }
+        .manage_tool .wrapper .input-group .values textarea, .manage_account .wrapper .input-group .values textarea {
+          width: 100%;
+          border: 1px solid #A5ABA3;
+          background: #F5F5F5;
+          border-radius: 4px; }
+        .manage_tool .wrapper .input-group .values img, .manage_account .wrapper .input-group .values img {
+          width: 30%; }
+        .manage_tool .wrapper .input-group .values button, .manage_account .wrapper .input-group .values button {
+          padding: 5px 10px;
+          font-size: 13px;
+          vertical-align: top; }
+      .manage_tool .wrapper .input-group .price input, .manage_account .wrapper .input-group .price input {
+        width: 50px;
+        margin-right: 10px;
+        background: #F5F5F5; }
+    .manage_tool .wrapper #image_upload input, .manage_account .wrapper #image_upload input {
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0;
+      width: 300px; }
+    .manage_tool .wrapper #btn-default, .manage_tool .wrapper a, .manage_account .wrapper #btn-default, .manage_account .wrapper a {
+      font-family: "Open Sans", sans-serif;
+      border: 0;
+      font-size: 14px;
+      color: #FCFCFC;
+      text-shadow: 0 0;
+      font-weight: 400;
+      background: #676C66;
+      border-radius: 4px;
+      padding: 10px 15px;
+      margin-left: 15px; }
+      .manage_tool .wrapper #btn-default:hover, .manage_tool .wrapper a:hover, .manage_account .wrapper #btn-default:hover, .manage_account .wrapper a:hover {
+        background: #A5ABA3; }
+    .manage_tool .wrapper #btn-default, .manage_account .wrapper #btn-default {
+      margin-left: 0;
+      margin-top: 25px;
+      background: #7CBA53; }
+      .manage_tool .wrapper #btn-default:hover, .manage_account .wrapper #btn-default:hover {
+        background: #9DBA87; }
+    .manage_tool .wrapper #change_password, .manage_account .wrapper #change_password {
+      background: #E89500;
+      margin: 0; }
 
 .ui-datepicker {
   box-shadow: 1px 1px 5px rgba(27, 28, 27, 0.5);
@@ -1285,15 +1293,16 @@ button {
     width: 100%; }
     .detail_wrapper .col-65 {
       width: 100%; }
-      .detail_wrapper .col-65 .carousel {
+      .detail_wrapper .col-65 .detail_pictures {
         overflow: hidden;
         width: 100%;
         height: 400px; }
     .detail_wrapper .detail_information {
       width: 50%;
-      clear: both;
       margin: auto;
-      float: none; }
+      padding: 100px 0;
+      float: none;
+      border-bottom: 0; }
       .detail_wrapper .detail_information .detail_user {
         padding-top: 25px; }
   .profile .col-65 {

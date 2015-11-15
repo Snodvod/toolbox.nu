@@ -4,7 +4,11 @@
         <div class="col col-80 centered detail_wrapper">
             <div class="col col-65">
                 <div class="detail_pictures">
-                    <img src="/img/catalog/{{ $tool->image }}">
+                    @if(!$tool->image)
+                        <img src="/img/sample_tool.png">
+                    @else
+                        <img src="/img/catalog/{{ $tool->image }}">
+                    @endif
                 </div>
             </div>
             <div class="col-35 detail_information">
@@ -55,21 +59,6 @@
                                 {!! Form::submit('Stuur Aanvraag', array('class' => 'subreservation')) !!}
                                 {!! Form::close() !!}
                             </div>
-                            <!--
-                                                        <div class="input-group">
-                                                            <div>
-                                                                <label>Begindatum</label>
-                                                                <input class="datepicker" placeholder="Start">
-                                                            </div>
-                                                            <div>
-                                                                Tot
-                                                            </div>
-                                                            <div>
-                                                                <label>Einddatum</label>
-                                                                <input class="datepicker" placeholder="Einde">
-                                                            </div>
-                                                        </div>
-                            -->
                         </div>
                     </div>
                 </div>

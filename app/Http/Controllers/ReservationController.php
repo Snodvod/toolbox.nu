@@ -42,7 +42,6 @@ class ReservationController extends Controller
     {
         $reservation = new Reservation;
         $reservation->tool_id = $request->tool_id;
-        $reservation->user_id = $request->user->id;
         $reservation->user_id = $request->user()->id;
         $reservation->start = Carbon::parse($request->start);
         $reservation->stop = Carbon::parse($request->stop);

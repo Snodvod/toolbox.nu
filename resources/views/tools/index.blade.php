@@ -75,7 +75,11 @@
                 @foreach($tools as $tool)
                 <div class="item">
                     <a href="tools/{{$tool->id}}/detail" class="overlay"></a>
-                    <img src="/img/sample_tool.png">
+                    @if(!$tool->image)
+                        <img src="/img/sample_tool.png">
+                    @else
+                        <img src="/img/catalog/{{ $tool->image }}">
+                    @endif
                     @foreach($tool->reservations as $reservation)
                     @if($reservation->active)
                     <div class="not_available">

@@ -16,7 +16,6 @@ class ToolTableSeeder extends Seeder
 	        'user_id' => 1,
 	        'name' => 'Handzaag',
 	        'brand' => 'Stanley',
-            'image' => 'handzaag.jpg',
 	        'bought_at' => date('Y-m-d H:i:s', $int),
             'category_id' => 3,
 	    ]);
@@ -26,7 +25,6 @@ class ToolTableSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Metaalzaag',
             'brand' => 'Stanley',
-            'image' => 'metaalzaag.jpg',
             'bought_at' => date('Y-m-d H:i:s', $int),
             'category_id' => 3,
         ]);
@@ -36,7 +34,6 @@ class ToolTableSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Multibit met ratel',
             'brand' => 'Stanley',
-            'image' => 'metaalzaag.jpg',
             'bought_at' => date('Y-m-d H:i:s', $int),
             'category_id' => 7,
         ]);
@@ -45,7 +42,6 @@ class ToolTableSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Schroevendraaierset Cushiongrip 6-delig',
             'brand' => 'Stanley',
-            'image' => 'metaalzaag.jpg',
             'bought_at' => date('Y-m-d H:i:s', $int),
             'category_id' => 7,
         ]);
@@ -54,7 +50,6 @@ class ToolTableSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Klauwhamer Steelmaster 450gr',
             'brand' => 'Stanley',
-            'image' => 'metaalzaag.jpg',
             'bought_at' => date('Y-m-d H:i:s', $int),
             'category_id' => 1,
         ]);
@@ -63,7 +58,6 @@ class ToolTableSeeder extends Seeder
             'user_id' => 1,
             'name' => 'Voorhamer 4kg',
             'brand' => 'Polet',
-            'image' => 'metaalzaag.jpg',
             'bought_at' => date('Y-m-d H:i:s', $int),
             'about' => 'Groten hamer jonge!',
             'category_id' => 1,

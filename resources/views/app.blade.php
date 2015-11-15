@@ -166,7 +166,7 @@
                                             </a>
                                         </li>
                                         <li role="separator" class="divider"></li>
-                                        <li><a href="#">Instellingen</a></li>
+                                        <li><a href="/user/{{ Auth::User()->id }}/account">Instellingen</a></li>
                                         <li><a href="/auth/logout">Uitloggen</a></li>
                                     </ul>
                                 </div>
