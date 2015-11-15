@@ -10,11 +10,11 @@ $(document).ready(function () {
     if($.urlParam('column')) {
         $('.grid_sort select').val($.urlParam('column'));
     }
-    if($.urlParam('min')) {
-        $("#flat_slider_amount").slider("values", 0, $.urlParam('min'));
+    if($.urlParam('minprice')) {
+        $("#flat_slider_amount").slider("values", 0, $.urlParam('minprice'));
     }
-    if($.urlParam('max')) {
-        $("#flat_slider_amount").slider("values", 1, $.urlParam('max'));
+    if($.urlParam('maxprice')) {
+        $("#flat_slider_amount").slider("values", 1, $.urlParam('maxprice'));
     }
     $('#flat_slider_amount').on( "slidechange", function( event, ui ) {
         $("#flat_slider_amount").slider("values", 0);
@@ -24,8 +24,8 @@ $(document).ready(function () {
         var stop;
         var order;
         var column;
-        var min = '&min=' + $("#flat_slider_amount").slider("values", 0);
-        var max = '&max=' + $("#flat_slider_amount").slider("values", 1);
+        var minprice = '&minprice=' + $("#flat_slider_amount").slider("values", 0);
+        var maxprice = '&maxprice=' + $("#flat_slider_amount").slider("values", 1);
         if ($.urlParam('search')) {
             search = 'search=' + $.urlParam('search');
         } else {
@@ -61,7 +61,7 @@ $(document).ready(function () {
         } else {
             column = '';
         }
-        document.location.href = '/tools?' + search + start + stop + order + column + min + max;
+        document.location.href = '/tools?' + search + start + stop + order + column + minprice + maxprice;
     });
     
     $('.grid_sort select').change(function (e) {

@@ -32,6 +32,7 @@ class ToolTableSeeder extends Seeder
         $int = mt_rand(1262055681,1262055681);
         DB::table('tools')->insert([
             'user_id' => 1,
+            'price' => 14,
             'name' => 'Multibit met ratel',
             'brand' => 'Stanley',
             'bought_at' => date('Y-m-d H:i:s', $int),
