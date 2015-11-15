@@ -11,8 +11,10 @@ $(document).ready(function () {
 
     //DATEPICKERS
     $.datepicker.setDefaults($.datepicker.regional['nl']);
-    $('.datepicker').datepicker({ minDate: 0 });
-
+    $('.datepicker').datepicker({
+        minDate: 0
+    });
+    $('.datepicker').datepicker("option", "constrainInput", true);
 
     //GRIDS
     var wall = new freewall('.grid');
@@ -100,43 +102,38 @@ function toggleFilter() {
 }
 
 function toggleLikes() {
-    $('.message_likes i').click(function() {
-        if(!$(this).hasClass('liked'))
-        {
+    $('.message_likes i').click(function () {
+        if (!$(this).hasClass('liked')) {
             $(this).addClass('liked');
 
-            $('.message_likes h5').html(function(i, val){
-                return +val+1;
+            $('.message_likes h5').html(function (i, val) {
+                return +val + 1;
             });
-        }
-        else
-        {
+        } else {
             $(this).removeClass('liked');
 
-            $('.message_likes h5').html(function(i, val){
-                return +val-1;
+            $('.message_likes h5').html(function (i, val) {
+                return +val - 1;
             });
         }
     });
 }
 
-function toggleMainNavMenu(){
-    $('.small_device .hamburger i').click(function(){
+function toggleMainNavMenu() {
+    $('.small_device .hamburger i').click(function () {
         $('.small_device .dropdown').slideToggle();
     });
 }
 
-function toggleNotifications()
-{
-    $('.notifications a').click(function() {
+function toggleNotifications() {
+    $('.notifications a').click(function () {
         $('.notifications .dropdown').toggle();
         $('.notifications_amount').toggle();
     });
 }
 
-function toggleProfileMenu()
-{
-    $('.user a').click(function() {
+function toggleProfileMenu() {
+    $('.user a').click(function () {
         $('.user .dropdown').toggle();
     });
 }

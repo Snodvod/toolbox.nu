@@ -1,4 +1,25 @@
 $(document).ready(function () {
+    if ($('.nav_item.notifications .dropdown ul li').length > 0) {
+        $("div.amount.notifications_amount").show();
+        $("div.amount.notifications_amount").html($('.nav_item.notifications .dropdown ul li').length);
+    } else {
+        $("div.amount.notifications_amount").hide();
+    }
+    var maxA;
+    var minA;
+    var maxB;
+    var minB;
+    $('.datepicker.dateA').change(function () {
+        minB = $(this).datepicker("getDate");
+        console.log(minB);
+        $('.datepicker.dateB').datepicker("option", "minDate", minB)
+    });
+    $('.datepicker.dateB').change(function () {
+        maxA = $(this).datepicker("getDate");
+        console.log(maxA);
+        $('.datepicker.dateA').datepicker("option", "maxDate", maxA)
+    });
+
     $.urlParam = function (name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
@@ -7,17 +28,17 @@ $(document).ready(function () {
             return results[1] || 0;
         }
     }
-    if($.urlParam('column')) {
+    if ($.urlParam('column')) {
         $('.grid_sort select').val($.urlParam('column'));
     }
-    if($.urlParam('minprice')) {
+    if ($.urlParam('minprice')) {
         $("#flat_slider_amount").slider("values", 0, $.urlParam('minprice'));
     }
-    if($.urlParam('maxprice')) {
+    if ($.urlParam('maxprice')) {
         $("#flat_slider_amount").slider("values", 1, $.urlParam('maxprice'));
     }
     $("#amount").val("\u20ac " + $("#flat_slider_amount").slider("values", 0) + "  -  \u20ac " + $("#flat_slider_amount").slider("values", 1));
-    $('#flat_slider_amount').on( "slidechange", function( event, ui ) {
+    $('#flat_slider_amount').on("slidechange", function (event, ui) {
         $("#flat_slider_amount").slider("values", 0);
         $("#flat_slider_amount").slider("values", 1);
         var search;
@@ -47,16 +68,16 @@ $(document).ready(function () {
         } else {
             order = '';
         }
-//        if ($.urlParam('min')) {
-//            min = '&min=' + $.urlParam('min');
-//        } else {
-//            min = '';
-//        }
-//        if ($.urlParam('max')) {
-//            max = '&max=' + $.urlParam('max');
-//        } else {
-//            max = '';
-//        }
+        //        if ($.urlParam('min')) {
+        //            min = '&min=' + $.urlParam('min');
+        //        } else {
+        //            min = '';
+        //        }
+        //        if ($.urlParam('max')) {
+        //            max = '&max=' + $.urlParam('max');
+        //        } else {
+        //            max = '';
+        //        }
         if ($.urlParam('column')) {
             column = '&column=' + $.urlParam('column');
         } else {
@@ -64,7 +85,7 @@ $(document).ready(function () {
         }
         document.location.href = '/tools?' + search + start + stop + order + column + minprice + maxprice;
     });
-    
+
     $('.grid_sort select').change(function (e) {
         e.preventDefault();
         var selector = $(this).val();
@@ -105,11 +126,11 @@ $(document).ready(function () {
         } else {
             max = '';
         }
-//        if ($.urlParam('column')) {
-//            column = '&column=' + $.urlParam('column');
-//        } else {
-//            column = '';
-//        }
+        //        if ($.urlParam('column')) {
+        //            column = '&column=' + $.urlParam('column');
+        //        } else {
+        //            column = '';
+        //        }
         column = '&column=' + selector;
         console.log(search);
         console.log(start);

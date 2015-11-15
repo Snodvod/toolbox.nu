@@ -137,6 +137,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         
+        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
+        
         /*
          * Forms & HTML from http://laravelcollective.com/docs/5.1/html
          */

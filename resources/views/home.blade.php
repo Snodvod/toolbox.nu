@@ -12,10 +12,10 @@
                                 <input id="homesearch" placeholder="Ik zoek naar..">
                             </div>
                             <div>
-                                <input id="homestart" class="datepicker" placeholder="Begindatum">
+                                <input id="homestart" class="datepicker dateA" placeholder="Begindatum">
                             </div>
                             <div>
-                                <input id="homestop" class="datepicker" placeholder="Einddatum">
+                                <input id="homestop" class="datepicker dateB" placeholder="Einddatum">
                             </div>
                             <div class="search_button">
                                 <button>Zoeken</button>

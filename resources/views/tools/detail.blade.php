@@ -54,12 +54,12 @@
 
                                     {!! Form::hidden('tool_id', $tool->id) !!}
                                     {!! Form::label('start', 'Begindatum') !!}
-                                    {!! Form::text('start', 'Start', array('class' => 'datepicker')) !!}
+                                    {!! Form::text('start', 'Start', array('class' => 'datepicker dateA book')) !!}
                                 </div>
                                 <span>Tot</span>
                                 <div>
                                     {!! Form::label('stop', 'Einddatum') !!}
-                                    {!! Form::text('stop', 'Einde', array('class' => 'datepicker')) !!}
+                                    {!! Form::text('stop', 'Einde', array('class' => 'datepicker dateB book')) !!}
                                 </div>
                                 {!! Form::submit('Stuur Aanvraag', array('class' => 'button')) !!}
                             </div>

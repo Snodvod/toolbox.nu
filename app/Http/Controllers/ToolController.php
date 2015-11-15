@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Tool;
+use Carbon\Carbon;
+use JavaScript;
+use DateInterval;
+use DatePeriod;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -31,6 +35,21 @@ class ToolController extends Controller
 
     public function detail($toolId)
     {
+        $reservations = Tool::findOrFail($toolId)->reservations()->get();
+        $dates = [];
+        foreach($reservations as $reservation) {
+            $begin = $reservation->start;
+            $end = $reservation->stop;
+            $interval = new DateInterval('P1D');
+            $range = new DatePeriod(Carbon::parse($begin), $interval, Carbon::parse($end)->modify( '+1 day' ));
+            foreach($range as $date) {
+                array_push($dates, Carbon::parse($date)->format('d-m-Y'));
+            }
+             //return dd($dates);
+        }
+        JavaScript::put([
+            'dates' => $dates
+        ]);
         return view('tools/detail', ['tool' => Tool::findOrFail($toolId)]);
     }
 

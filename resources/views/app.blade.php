@@ -46,9 +46,7 @@
                         @if (Auth::check())
                             <div class="nav_item notifications">
                                 <a href="#notificaties"><i class="fa fa-bell fa-fw"></i></a>
-                                @if(Auth::user()->reservations->count() > 0)
-                                    <div class="amount notifications_amount">{{ Auth::user()->reservations->count() }}</div>
-                                @endif
+                                    <div class="amount notifications_amount"></div>
                                 <div class="dropdown">
                                     <ul class="dropdown-menu">
                                         @foreach(Auth::user()->tools as $usertool)
